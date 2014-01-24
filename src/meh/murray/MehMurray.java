@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author Dawn Grow*/
+ * @author Dawn Grow and Patrick Stamps*/
 
  public static void main(String[] args) {
  
