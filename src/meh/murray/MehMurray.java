@@ -23,6 +23,19 @@ public class Memory1 implements Serializable {
     private long ties = 0;
     private String letter = "";
 
+    var letter = new Array(16);
+		
+	int letter1, letter2;
+	System.out.println("Choose a letter");
+	letter1 = letter.nextInt();
+	System.out.println("Choose a letter");
+	letter2 = letter.nextInt();
+	if (letter1 != letter2);
+	return int;
+	else;
+        System.out.println("You got a match!"); 
+        
+        
     public Memory1() {
     }
 
