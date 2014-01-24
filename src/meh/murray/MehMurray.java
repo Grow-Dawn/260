@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package memory1;
+package meh.murray;
 
 import java.io.Serializable;
 
@@ -15,6 +15,7 @@ import java.io.Serializable;
  public static void main(String[] args) {
  
 public class Memory1 implements Serializable {
+    int name, instructions, letter1, letter2;
     private String name;
     private String instructions = "A player tries to match tiles.   If the tiles chosen match, they will disappear.  Find all 8 matches before time runs out.  Need help?  Click on one tile and click on “hint”.  “OK”.";
     private long wins = 0;
