@@ -90,14 +90,18 @@ public class MehMurray implements Serializable {
         this.letter = letter;
     }
     
+    public static void displayHelp()
+    {
+        System.out.println("Help... please!!! LOL");
+    }
+    
      /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    System.out.println("Hello player");
-    
-    
+    displayHelp();
+       
     
         
     }
