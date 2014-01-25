@@ -7,6 +7,7 @@
 package meh.murray;
 
 import java.io.Serializable;
+/*import java.lang.reflect.Array;*/
 
 /**
  *
@@ -14,16 +15,19 @@ import java.io.Serializable;
 
  public static void main(String[] args) {
  
-public class Memory1 implements Serializable {
-    int name, instructions, letter1, letter2;
+public class MehMurray implements Serializable {
+   /* int name, instructions, letter1, letter2;*/
     private String name;
-    private String instructions = "A player tries to match tiles.   If the tiles chosen match, they will disappear.  Find all 8 matches before time runs out.  Need help?  Click on one tile and click on “hint”.  “OK”.";
+    private String instructions = "A player tries to match tiles.\n"
+                   +"If the tiles chosen match, they will disappear.\n"
+                    +"Find all 8 matches before time runs out.  Need help?\n"
+                    + "Click on one tile and click on “hint”.  “OK”.";
     private long wins = 0;
     private long losses = 0;
     private long ties = 0;
     private String letter = "";
 
-    var letter = new Array(16);
+  /*  var letter = new Array(16);
 		
 	int letter1, letter2;
 	System.out.println("Choose a letter");
@@ -33,10 +37,10 @@ public class Memory1 implements Serializable {
 	if (letter1 != letter2);
 	return int;
 	else;
-        System.out.println("You got a match!"); 
+        System.out.println("You got a match!"); */
         
         
-    public Memory1() {
+    public MehMurray() {
     }
 
     public String getName() {
