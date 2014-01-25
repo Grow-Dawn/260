@@ -113,7 +113,7 @@ public class MehMurray implements Serializable {
     {
         System.out.println("Welcome " + this.name + "Meh Murray (memory)");
         System.out.println(this.instructions);
-    displayHelp(); //PBS
+    
     }
        
     
