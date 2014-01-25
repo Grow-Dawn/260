@@ -1,5 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
+
+ /* To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -13,10 +13,9 @@ import java.io.Serializable;
  *
  * @author Dawn Grow and Patrick Stamps*/
 
- public static void main(String[] args) {
- 
 public class MehMurray implements Serializable {
    /* int name, instructions, letter1, letter2;*/
+    
     private String name;
     private String instructions = "A player tries to match tiles.\n"
                    +"If the tiles chosen match, they will disappear.\n"
@@ -91,7 +90,12 @@ public class MehMurray implements Serializable {
         this.letter = letter;
     }
     
-    
+     /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    System.out.println("Hello player");
     
     
     
