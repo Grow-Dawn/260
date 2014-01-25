@@ -2,19 +2,23 @@
 ===
 Task Checklist:
 
+----
 
-help (instructions)
+MAIN MENU [PBS]
 
-options (sound and tile delay and scores list)
+Help Menu (Display Instructions, View Scores button)
 
-play (start)
+Options Menu (Enable/Disable Sound, Tile Selection Time, Enable/Disable Scores List)
 
-Exit (close game)
+Play Menu (Start Game button, Main Menu button)
 
+Exit (Exit Button to close the game)
 
+----
 
 scores: how tally?
 
 timer:
 
 tries:
+
