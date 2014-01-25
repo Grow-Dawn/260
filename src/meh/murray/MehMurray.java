@@ -7,6 +7,7 @@
 package meh.murray;
 
 import java.io.Serializable;
+import java.util.Scanner;
 /*import java.lang.reflect.Array;*/
 
 /**
@@ -15,7 +16,7 @@ import java.io.Serializable;
 
 public class MehMurray implements Serializable {
    /* int name, instructions, letter1, letter2;*/
-    
+   
     private String name;
     private String instructions = "A player tries to match tiles.\n"
                    +"If the tiles chosen match, they will disappear.\n"
@@ -42,7 +43,7 @@ public class MehMurray implements Serializable {
     public MehMurray() {
     }
 
-    public String getName() {
+    /*public String getName() {
         return name;
     }
 
@@ -88,23 +89,34 @@ public class MehMurray implements Serializable {
 
     public void setLetter(String letter) {
         this.letter = letter;
-    }
+    }*/
     
-    public static void displayHelp() //PBS
-    {
-        System.out.println("Help... please!!! LOL");
-    }
+    
     
      /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        MehMurray myGame = new MehMurray();
+        myGame.getName();
+        myGame.displayHelp();
+    }
         // TODO code application logic here
-        
+
+   
+    public void getName(){
+        Scanner input = new Scanner(System.in);
+        System.out.println ("Enter your name:");
+        this.name = input.next();
+    }
+    public void displayHelp() //PBS
+    {
+        System.out.println("Welcome " + this.name + "Meh Murray (memory)");
+        System.out.println(this.instructions);
     displayHelp(); //PBS
+    }
        
     
         
     }
     
-}
