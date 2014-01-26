@@ -110,9 +110,9 @@ public class MehMurray implements Serializable {
         
 	System.out.println ();
         
-        timer setTimer = new timer();
+        Timer setTimer = new Timer();
         setTimer.setTime ();        
-        System.out.println(setTimer:clock());
+        System.out.println(setTimer);
         
         Exit answerExit = new Exit();
         answerExit.getExit();   
