@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+//This class will be useless until the full GUI is up and running
 package meh.murray;
 
 /**
