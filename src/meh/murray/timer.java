@@ -10,7 +10,7 @@ package meh.murray;
  *
  * @author photos plus
  */
-public class timer {
+public class Timer {
     private int second;
     private Object[] seconds;
 
