@@ -18,14 +18,14 @@ public class Timer {
      *
      * @param s
      */
-    public void setTime(int s);
+    public void setTime(int s){}
     
     public String clock() {
         return String.format("%02d", seconds);
         
     }
 
-    void setTime() {
+    public void setTime() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
