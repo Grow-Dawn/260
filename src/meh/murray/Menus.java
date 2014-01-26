@@ -11,7 +11,7 @@ package meh.murray;
 public class Menus
 {
 
-    MainMenu Help = new MainMenu();
+    MainMenu HelpMenu = new MainMenu();
     MainMenu Options = new MainMenu();
     MainMenu Play = new MainMenu();
     
