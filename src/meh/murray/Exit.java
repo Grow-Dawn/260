@@ -13,14 +13,15 @@ import java.util.Scanner;
  * @author Dawn Grow
  */
 public class Exit {
+    private String name;
     private String getExit;
     public void getExit(){
         
         Scanner answer = new Scanner(System.in);
         System.out.println("Are you sure you want to exit game?");
-        this.name = input.next();
+        this.name = answer.next();
        
-        if (getExit == "no")
+        if ("no".equals(getExit))
             System.out.println("Continue");
         else 
             System.out.println("Close game");
