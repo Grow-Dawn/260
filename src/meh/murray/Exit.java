@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Dawn Grow
  */
 public class Exit {
-    private String name;
+    public String name;
     private String getExit;
     public void getExit(){
         
