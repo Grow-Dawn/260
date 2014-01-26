@@ -107,6 +107,12 @@ public class MehMurray implements Serializable {
         myGameOptions.matchSeconds = 4; //The default is four seconds.
         myGameOptions.score = true; //The default is true.
         myGameOptions.sound = true; //The default is true.
+        
+	System.out.println ();
+        
+        Exit answerExit = new Exit();
+        answerExit.getExit();   
+
     }
     
     
