@@ -114,6 +114,10 @@ public class MehMurray implements Serializable {
         setTimer.setTime ();        
         System.out.println(setTimer);*/
         
+        Score answerScore = new Score();
+        answerScore.getScore();
+        
+        
         Exit answerExit = new Exit();
         answerExit.getExit();   
 
