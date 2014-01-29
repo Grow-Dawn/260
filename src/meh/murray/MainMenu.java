@@ -20,8 +20,21 @@ public class MainMenu
 {
     //just an exercise... the menus will be created using Swing later in the course...
     
-    boolean Enabled;
-    boolean Main;
+    boolean enabled;
+    boolean main;
     boolean Sub;
+    
+    public void Show()
+    {
+        if(enabled == true)
+        {
+            System.out.println("Main Menu");
+            System.out.println("¯¯¯¯¯¯¯¯¯");
+            System.out.println("1. Play");
+            System.out.println("2. Options");
+            System.out.println("3. Help");
+            System.out.println("4. Quit");
+        }
+    }
     
 }

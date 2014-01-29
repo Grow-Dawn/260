@@ -17,10 +17,7 @@ public class MehMurray implements Serializable {
    /* int name, instructions, letter1, letter2;*/
    
     private String name;
-    private String instructions = "A player tries to match tiles.\n"
-                   +"If the tiles chosen match, they will disappear.\n"
-                    +"Find all 8 matches before time runs out.  Need help?\n"
-                    + "Click on one tile and click on “hint”.  “OK”.";
+    
     private long wins = 0;
     private long losses = 0;
     private long ties = 0;
@@ -28,7 +25,7 @@ public class MehMurray implements Serializable {
     public int matchSeconds;
     public boolean keepScore;
     public boolean enableSound;
-
+    
   /*  var letter = new Array(16);
 		
 	int letter1, letter2;
@@ -101,13 +98,25 @@ public class MehMurray implements Serializable {
     public static void main(String[] args) {
         MehMurray myGame = new MehMurray();
         myGame.getName();
-        myGame.displayHelp();
+        //myGame.displayHelp();
         
+        // Create the Options variables
         Options myGameOptions = new Options();
         myGameOptions.matchSeconds = 4; //The default is four seconds.
         myGameOptions.score = true; //The default is true.
         myGameOptions.sound = true; //The default is true.
         
+        //Display the Main menu
+        MainMenu m = new MainMenu();
+        m.enabled = true;
+        m.Show();
+        
+        //Display the Help menu
+        HelpMenu h = new HelpMenu();
+        h.enabled = false;
+        h.Show();
+               
+        //Add a line between console text output.
 	System.out.println ();
         
         /*Timer setTimer = new Timer();
@@ -122,13 +131,12 @@ public class MehMurray implements Serializable {
         answerExit.getExit();   
 
     }
-    
-    
-    
+      
     public void getName(){
         Scanner input = new Scanner(System.in);
-        System.out.println ("Enter your name:");
+        System.out.println ("Enter your name: ");
         this.name = input.next();
+        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + "." + "\n");
     }
     
     public void displayHelp()
@@ -139,13 +147,13 @@ public class MehMurray implements Serializable {
         myGameOptions.score = true; //The default is true.
         myGameOptions.sound = true; //The default is true.
         
-        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + ".");
-        System.out.println("\n" + "How to play: " + this.instructions);
-        System.out.println("\n" + "Current Options \n"
-                + "\n Seconds allowed to make a match: " + myGameOptions.matchSeconds
-                + "\n Score will be kept: " + myGameOptions.score
-                + "\n Sound will be heard: " + myGameOptions.score
-                +"\n");
+//        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + ".");
+//        System.out.println("\n" + "How to play: " + this.instructions);
+//        System.out.println("\n" + "Current Options \n"
+//                + "\n Seconds allowed to make a match: " + myGameOptions.matchSeconds
+//                + "\n Score will be kept: " + myGameOptions.score
+//                + "\n Sound will be heard: " + myGameOptions.score
+//                +"\n");
     
     }
        
