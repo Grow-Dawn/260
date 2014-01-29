@@ -131,7 +131,7 @@ public class MehMurray implements Serializable {
         this.name = input.next();
     }
     
-    public void displayHelp() //PBS
+    public void displayHelp()
     {  
         //Had to create object in this static method; it would not work otherwise... Darn encapsulation!
         Options myGameOptions = new Options();
