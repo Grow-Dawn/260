@@ -13,7 +13,7 @@ package meh.murray;
 public class Score {
  //private String getScore;
     public void getScore(){
-        int tries = 0, timer = 0, finalScore;
+        int tries = 0, timer = 0, finalScore, underScore, topScore;
 		finalScore = tries * timer;
         System.out.println("Your score is " + finalScore);
 		if(finalScore  == 0 || finalScore < 30){
@@ -25,10 +25,12 @@ public class Score {
         else if (finalScore == 60 || finalScore <90){
             System.out.println("You did well!");
            }
-        else (finalScore == finalScore <90){
+        else {
             System.out.println("That was good but I know you can do better!");
-           }
-
+        }
+        topScore =90;
+	underScore = topScore - finalScore;
+	System.out.println("Your score is " + underScore + " points under the best score!");
 	}
     }
 		
