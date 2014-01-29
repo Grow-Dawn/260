@@ -115,6 +115,11 @@ public class MehMurray implements Serializable {
         HelpMenu h = new HelpMenu();
         h.enabled = false;
         h.Show();
+        
+        //Display the Play menu
+        PlayMenu p = new PlayMenu();
+        p.enabled = false;
+        p.Show();
                
         //Add a line between console text output.
 	System.out.println ();
