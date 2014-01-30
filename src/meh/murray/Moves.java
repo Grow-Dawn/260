@@ -13,21 +13,28 @@ package meh.murray;
 public class Moves {
  //private String getScore;
     public void getMoves(){
-        int guess, x, y;
+         int guess, x, y;
 		// guess will be the number of clicks the player makes
 		guess = 0;
 		//tries = x;
 		//finalScore = tries * timer;
-        System.out.println("What is your first guess?");
+        for(x = 0; x < 100; x++){
+            System.out.println("What is your first guess?");
+		Scanner answer1 = new Scanner(System.in);
+                x++;
+        System.out.println("What is your next guess?");
+		Scanner answer2 = new Scanner(System.in);
+        if(answer1 == answer2); 
+                //freeze tiles if correct
+        //else();
+                //reset 2 tiles
+                return;
+       		} 
+                guess = x/2;
+		System.out.println("Moves: " + guess);
 		
-		for(x = 0; x < 100; x++){
-			guess = x/2;
-			return;
-		}
-		System.out.println("Moves:" + guess);
 		
-		
-		}
-    }
+		}   
+}
 		
 		
