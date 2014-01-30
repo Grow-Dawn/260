@@ -14,27 +14,42 @@ import java.util.Scanner;
  */
 public class Moves {
  //private String getScore;
-    public void getMoves(){
-        int guess, x, y;
+    @SuppressWarnings("empty-statement")
+    public String getMoves(){
+        int guess, tiles, x = 0; //, y = (int)(10 * Math.random()) ;
 		// guess will be the number of clicks the player makes
-		guess = 0;
-		//tries = x;
-		//finalScore = tries * timer;
-        for(x = 0; x < 100; x++){
-            System.out.println("What is your first guess?");
+		// y represents the clicks until the game is over
+		tiles = 8;
+            String scoreMsg = "\n" + "\"Let's begin!\"";
+            //moveLoop;
+	for( ; x <= tiles; x++){
+            //System.out.println("What is your first guess?");
+            scoreMsg = "\n" + "\"What is your first guess?\"";
 		Scanner answer1 = new Scanner(System.in);
                 x++;
-        System.out.println("What is your next guess?");
+        //System.out.println("What is your next guess?");
+        scoreMsg = "\n" + "\"What is your next guess?\"";
 		Scanner answer2 = new Scanner(System.in);
-        if(answer1 == answer2); 
-                //freeze tiles if correct
-        //else();
-                //reset 2 tiles
-                return;
-       		} 
-                guess = x/2;
-		System.out.println("Moves: " + guess);
-		
+        
+        if(answer1 == answer2){
+                tiles-- ;
+                //System.out.println("You got one!  Try again!");
+                scoreMsg = "\n" + "\"You got one!  Try again!\"";
+                }//freeze tiles if correct
+        else{
+                //System.out.println("Try again!");
+                scoreMsg = "\n" + "\"Try again!\"";
+                        }//reset 2 tiles
+                //return moveLoop;
+            }
+        //if(tiles == 0){
+            scoreMsg = "\n" + "\"You won the game!\""; 
+            guess = x/2;
+		//System.out.println("Moves: " + guess);
+                scoreMsg = "\n" + "\"Moves: " + guess;
+        return null;
+        }
 		
 		}   
-}
+
+
