@@ -128,6 +128,11 @@ public class MehMurray implements Serializable {
         setTimer.setTime ();        
         System.out.println(setTimer);*/
         
+        
+        Moves answerMoves = new Moves();
+        answerMoves.getMoves();
+        
+        
         Score answerScore = new Score();
         answerScore.getScore();
         
