@@ -19,15 +19,15 @@ public class Score {
                 //System.out.println(tries.ToString() + "\n" + timer.ToString());
                 String scoreMsg = "\"Great Score!!!\"";
         System.out.println("\"Your score is " + finalScore + "\"");
-		if(finalScore  == 0 || finalScore < 30){
+		if(finalScore  == 0 || finalScore < 300){
             //System.out.println("\"You are awesome!\"");
              scoreMsg = "\n" + "\"You are awesome!\"";
             }
-        else if (finalScore == 30 || finalScore <60) {
+        else if (finalScore == 300 || finalScore <600) {
             //System.out.println("\"That was great!  Good job!\"");
             scoreMsg = "\n"+ "\"That was great!  Good job!\"";
             }
-        else if (finalScore == 60 || finalScore <90){
+        else if (finalScore == 600 || finalScore <900){
             //System.out.println("\"You did well!\"");
             scoreMsg = "\"You did well!\"";
            }
