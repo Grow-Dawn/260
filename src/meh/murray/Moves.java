@@ -6,6 +6,8 @@
 
 package meh.murray;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Dawn Grow
@@ -13,7 +15,7 @@ package meh.murray;
 public class Moves {
  //private String getScore;
     public void getMoves(){
-         int guess, x, y;
+        int guess, x, y;
 		// guess will be the number of clicks the player makes
 		guess = 0;
 		//tries = x;
@@ -36,5 +38,3 @@ public class Moves {
 		
 		}   
 }
-		
-		
