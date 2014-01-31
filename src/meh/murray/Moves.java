@@ -12,44 +12,59 @@ import java.util.Scanner;
  *
  * @author Dawn Grow
  */
-public class Moves {
+
+public class Moves { 
+     public String name;
+     public Moves() {   //
+    }
+    public static void main(String[] args) {    //
  //private String getScore;
     @SuppressWarnings("empty-statement")
-    public String getMoves(){
+    //public String moveMsg;
+        Moves answers = new Moves();
+            System.out.println("Let's begin!");
+            //String moveMsg = "\n" + "\"Let's begin!\"";
+        //answers.answerBoth();
+        //answers.answers();
+        //answers.answer1();
+        //answers.displayHelp();
         int guess, tiles, x = 0; //, y = (int)(10 * Math.random()) ;
 		// guess will be the number of clicks the player makes
 		// y represents the clicks until the game is over
-		tiles = 8;
-            String scoreMsg = "\n" + "\"Let's begin!\"";
-            //moveLoop;
+		tiles = 16;
+                //moveLoop;
+        //public void answersBoth(){        
 	for( ; x <= tiles; x++){
-            //System.out.println("What is your first guess?");
-            scoreMsg = "\n" + "\"What is your first guess?\"";
+            //public void answers1(){
+            System.out.println("What is your first guess?");
+            //moveMsg = "\n" + "\"What is your first guess?\"";
 		Scanner answer1 = new Scanner(System.in);
+                this.name = answer1.next();
                 x++;
-        //System.out.println("What is your next guess?");
-        scoreMsg = "\n" + "\"What is your next guess?\"";
+            //public void answers2(){    
+            System.out.println("What is your next guess?");
+                 //moveMsg = "\n" + "\"What is your next guess?\"";
 		Scanner answer2 = new Scanner(System.in);
+                this.name = answer2.next();
         
         if(answer1 == answer2){
                 tiles-- ;
-                //System.out.println("You got one!  Try again!");
-                scoreMsg = "\n" + "\"You got one!  Try again!\"";
+                System.out.println("You got one!  Try again!");
+                //moveMsg = "\n" + "\"You got one!  Try again!\"";
                 }//freeze tiles if correct
         else{
-                //System.out.println("Try again!");
-                scoreMsg = "\n" + "\"Try again!\"";
+                System.out.println("Try again!");
+                //moveMsg = "\n" + "\"Try again!\"";
                         }//reset 2 tiles
                 //return moveLoop;
             }
         //if(tiles == 0){
-            scoreMsg = "\n" + "\"You won the game!\""; 
+            System.out.println("You won the game!");
+            //moveMsg = "\n" + "\"You won the game!\""; 
             guess = x/2;
-		//System.out.println("Moves: " + guess);
-                scoreMsg = "\n" + "\"Moves: " + guess;
-        return null;
+		System.out.println("Moves: " + guess);
+                //moveMsg = "\n" + "\"Moves: " + guess;
+       // return null;
         }
 		
 		}   
-
-
