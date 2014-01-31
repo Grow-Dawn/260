@@ -20,7 +20,7 @@ public class HelpMenu
                     + "Find all 8 matches before time runs out.  Need help?\n"
                     + "Click on one tile and click on “hint”.  “OK”.";
     
-    public void Show()
+    public void Show(boolean enabled)
     {
         if(enabled == true)
         {

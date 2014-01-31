@@ -96,15 +96,15 @@ public class MehMurray implements Serializable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MehMurray myGame = new MehMurray();
-        myGame.getName();
-        //myGame.displayHelp();
+        MehMurray mm = new MehMurray();
+        mm.getName();
+        //mm.displayHelp();
         
         // Create the Options variables
-        Options myGameOptions = new Options();
-        myGameOptions.matchSeconds = 4; //The default is four seconds.
-        myGameOptions.score = true; //The default is true.
-        myGameOptions.sound = true; //The default is true.
+        Options o = new Options();
+        o.matchSeconds = 4; //The default is four seconds.
+        o.score = true; //The default is true.
+        o.sound = true; //The default is true.
         
         //Display the Main menu
         MainMenu m = new MainMenu();
@@ -114,7 +114,7 @@ public class MehMurray implements Serializable {
         //Display the Help menu
         HelpMenu h = new HelpMenu();
         h.enabled = false;
-        h.Show();
+        h.Show(h.enabled);
         
         //Display the Play menu
         PlayMenu p = new PlayMenu();
@@ -149,21 +149,10 @@ public class MehMurray implements Serializable {
         System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + "." + "\n");
     }
     
-    public void displayHelp()
+    public void displayHelp(boolean enabled)
     {  
-        //Had to create object in this static method; it would not work otherwise... Darn encapsulation!
-        Options myGameOptions = new Options();
-        myGameOptions.matchSeconds = 4; //The default is four seconds.
-        myGameOptions.score = true; //The default is true.
-        myGameOptions.sound = true; //The default is true.
-        
-//        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + ".");
-//        System.out.println("\n" + "How to play: " + this.instructions);
-//        System.out.println("\n" + "Current Options \n"
-//                + "\n Seconds allowed to make a match: " + myGameOptions.matchSeconds
-//                + "\n Score will be kept: " + myGameOptions.score
-//                + "\n Sound will be heard: " + myGameOptions.score
-//                +"\n");
+        HelpMenu hi = new HelpMenu();
+        hi.Show(enabled);
     
     }
        

@@ -34,7 +34,13 @@ public class MainMenu
             System.out.println("2. Options");
             System.out.println("3. Help");
             System.out.println("4. Quit");
+            System.out.println("");
         }
+    }
+    
+    public void Select()
+    {
+        
     }
     
 }
