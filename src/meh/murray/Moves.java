@@ -11,13 +11,16 @@ import java.util.Scanner;
 /**
  *
  * @author Dawn Grow
+ * 
  */
 
 public class Moves { 
+     
      public String name;
+     public String UserIn;
      public Moves() {   //
     }
-    public static void main(String[] args) {    //
+    public static void main(String score) {    //
  //private String getScore;
     @SuppressWarnings("empty-statement")
     //public String moveMsg;
@@ -38,14 +41,15 @@ public class Moves {
             //public void answers1(){
             System.out.println("What is your first guess?");
             //moveMsg = "\n" + "\"What is your first guess?\"";
-		Scanner answer1 = new Scanner(System.in);
-                this.name = answer1.next();
+            
+            Scanner answer1 = new Scanner(System.in);
+                //this.name = answer1.next();
                 x++;
             //public void answers2(){    
             System.out.println("What is your next guess?");
                  //moveMsg = "\n" + "\"What is your next guess?\"";
 		Scanner answer2 = new Scanner(System.in);
-                this.name = answer2.next();
+                //this.name = answer2.next();
         
         if(answer1 == answer2){
                 tiles-- ;
@@ -66,5 +70,29 @@ public class Moves {
                 //moveMsg = "\n" + "\"Moves: " + guess;
        // return null;
         }
-		
-		}   
+
+    public boolean getMatch(String Move1, String Move2)
+    {
+        boolean Match = false;
+        
+        if (Move1 == Move2)
+        {
+            Match = true;
+        }
+        else
+        {
+            Match = false;
+        }
+        
+        return Match;
+    }
+    
+    public String getTile(String getTileMsg)
+    {
+        Scanner Move = new Scanner(System.in);
+        System.out.println (getTileMsg);
+        this.UserIn = Move.next();
+        return this.UserIn;
+    }
+    
+}   

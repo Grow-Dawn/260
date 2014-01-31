@@ -130,7 +130,9 @@ public class MehMurray implements Serializable {
         
         
         Moves answerMoves = new Moves();
-        answerMoves.getMoves();
+        String prompt1 = "Please specify the first tile.";
+        String prompt2 = "Please specify the second tile.";
+        answerMoves.getMatch(answerMoves.getTile(prompt1), answerMoves.getTile(prompt2));
         
         
         Score answerScore = new Score();
