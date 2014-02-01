@@ -4,6 +4,8 @@
  */
 package meh.murray;
 
+import java.util.Scanner;
+
 /**
  *
  * @author patricks
@@ -18,11 +20,14 @@ package meh.murray;
 
 public class MainMenu
 {
-    //just an exercise... the menus will be created using Swing later in the course...
-    
     boolean enabled;
     boolean main;
     boolean Sub;
+    int menuPlay = 1;
+    int menuOpt =  2;
+    int menuHelp = 3;
+    int menuQuit = 4;
+    int menuItem = 1; //Default menu item is 1, which loops
     
     public void Show()
     {
@@ -36,6 +41,24 @@ public class MainMenu
             System.out.println("4. Quit");
             System.out.println("");
         }
+        
+        //Call the getMenuItem function
+        User u = new User();
+        switch ((Integer.valueOf(u.getInput("(Menu Number: )"))).intValue())
+        {
+            case 1: System.out.println(menuPlay);
+            break;
+            case 2: System.out.println(menuOpt);
+            break;
+            case 3: System.out.println(menuHelp);
+            break;
+            case 4: System.out.println(menuQuit);
+            break;
+            default: System.out.println(menuPlay);
+            break;
+        }
+        
+        
     }
     
     public void Select()

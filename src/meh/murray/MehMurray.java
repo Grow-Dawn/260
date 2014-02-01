@@ -97,8 +97,11 @@ public class MehMurray implements Serializable {
      */
     public static void main(String[] args) {
         MehMurray mm = new MehMurray();
-        mm.getName();
+        //mm.getName();
         //mm.displayHelp();
+        User u = new User();
+        u.enabled = false;
+        u.user = u.getInput("Enter your name: ");
         
         // Create the Options variables
         Options o = new Options();
@@ -129,10 +132,11 @@ public class MehMurray implements Serializable {
         System.out.println(setTimer);*/
         
         
-        Moves answerMoves = new Moves();
+        User moves = new User();
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
-        answerMoves.getMatch(answerMoves.getTile(prompt1), answerMoves.getTile(prompt2));
+        Moves answerMoves = new Moves();
+        answerMoves.getMatch(moves.getInput(prompt1), moves.getInput(prompt2));
         
         
         Score answerScore = new Score();
