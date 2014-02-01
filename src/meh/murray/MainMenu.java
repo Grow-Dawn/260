@@ -25,6 +25,14 @@ public class MainMenu
     
     public void Show(String uname)
     {
+         //Instantiate classes
+        ASCII_Sound beep = new ASCII_Sound();
+        ASCII_Art welcome = new ASCII_Art();
+        Options o = new Options();
+        MainMenu m = new MainMenu();
+        PlayMenu p = new PlayMenu();
+        HelpMenu h = new HelpMenu();
+        
         if(enabled == true)
         {
             System.out.println("Main Menu");
@@ -38,17 +46,19 @@ public class MainMenu
         
         //Call the getMenuItem function
         User u = new User();
-        switch ((Integer.valueOf(u.getInput("Select a number, " + uname + ":", false))).intValue())
+        switch ((Integer.valueOf(u.getInput("What do you want to do, " + uname + "? ", false))).intValue())
         {
-            case 1: System.out.println(menuPlay);
+            case 1: p.Show();
             break;
-            case 2: System.out.println(menuOpt);
+            case 2: o.Show(enabled);
             break;
-            case 3: System.out.println(menuHelp);
+            case 3: h.Show(enabled);
             break;
-            case 4: System.out.println(menuQuit);
+            case 4: 
+                    System.out.println("Buh-bye!\n");
+                    System.exit(0);
             break;
-            default: System.out.println(menuPlay);
+            default: p.Show();
             break;
         }
         

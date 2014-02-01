@@ -6,6 +6,7 @@
 
 package meh.murray;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -14,16 +15,33 @@ import java.util.Scanner;
  */
 public class Exit {
     public String name;
-    private String getExit;
-    public void getExit(){
+    private String getEx;
+    public boolean getExit(){
         
-        Scanner answer = new Scanner(System.in);
-        System.out.println("Are you sure you want to exit game?");
-        this.name = answer.next();
+        User ex = new User();
+        getEx = (ex.getInput("Quit? [y/n]", false).toUpperCase());  
        
-        if ("no".equals(getExit))
-            System.out.println("Continue");
+        if ("N".equals(getEx))
+        {
+            System.out.println("Pull up a chair and stay a while...\n");
+            try
+            {
+                Process p = Runtime.getRuntime().exec("cmd /c cls");
+            }
+            catch (IOException x)
+            {
+                // Ignore if the screen doesn't clear - oh well!
+            }
+            
+            return false;
+        }
         else 
-            System.out.println("Close game");
-}
+        {
+            System.out.println("Buh-bye!\n");
+            System.exit(0);
+        }
+        
+        return false;
+        
+    }
 }

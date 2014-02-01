@@ -13,16 +13,14 @@ public class HelpMenu
     boolean enabled;
     boolean main;
     boolean Sub;
-    private String instructions = "\n" + "Welcome to Meh Murray (Memory)." + "\n"
-                    + "\n" + "How to Play:" + "\n"
+    private String instructions = "\n" + "How to Play:" + "\n"
                     + "A player tries to match tiles.\n"
                     + "If the tiles chosen match, they will disappear.\n"
-                    + "Find all 8 matches before time runs out.  Need help?\n"
-                    + "Click on one tile and click on “hint”.  “OK”.";
+                    + "Find all 8 matches before time runs out.\n";
     
     public void Show(boolean enabled)
     {
-        if(enabled == true)
+        if(enabled)
         {
             System.out.println(instructions);
         }

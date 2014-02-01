@@ -25,6 +25,7 @@ public class MehMurray implements Serializable {
     public int matchSeconds;
     public boolean keepScore;
     public boolean enableSound;
+    public boolean exitMM = false;
     
   /*  var letter = new Array(16);
 		
@@ -104,6 +105,7 @@ public class MehMurray implements Serializable {
         MainMenu m = new MainMenu();
         PlayMenu p = new PlayMenu();
         HelpMenu h = new HelpMenu();
+        User u = new User();
         
         //Sound is KING!!! - Unless you're not in the forest when the tree falls. ;)
         beep.RingBell();
@@ -115,7 +117,7 @@ public class MehMurray implements Serializable {
         MehMurray mm = new MehMurray();
         //mm.getName();
         //mm.displayHelp();
-        User u = new User();
+        
         u.enabled = false;
         u.user = u.getInput("Name? ", true);
         
@@ -124,55 +126,69 @@ public class MehMurray implements Serializable {
         o.score = true; //The default is true.
         o.sound = true; //The default is true.
         
-        //Display the Main menu
-        m.enabled = true;
-        m.Show(u.user);
+        //Display the Main menu in a loop
+        Exit answerExit = new Exit();
         
-        //Display the Help menu
-        h.enabled = false;
-        h.Show(h.enabled);
+        do
+        {
+            m.enabled = true;
+            m.Show(u.user);
+        }
         
-        //Display the Play menu
-        p.enabled = false;
-        p.Show();
+        while (answerExit.getExit() == false);
+
+        // *******************************
+        // Stop here - Menu has taken over
+        // *******************************
+        
+//        m.enabled = true;
+//        m.Show(u.user);
+//        
+//        //Display the Help menu
+//        h.enabled = false;
+//        h.Show(h.enabled);
+//        
+//        //Display the Play menu
+//        p.enabled = false;
+//        p.Show();
                
         //Add a line between console text output.
-	System.out.println ();
+	//System.out.println ();
         
         /*Timer setTimer = new Timer();
         setTimer.setTime ();        
         System.out.println(setTimer);*/
         
         
-        User moves = new User();
-        String prompt1 = "Please specify the first tile.";
-        String prompt2 = "Please specify the second tile.";
-        Moves answerMoves = new Moves();
-        answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
+//        User moves = new User();
+//        String prompt1 = "Please specify the first tile.";
+//        String prompt2 = "Please specify the second tile.";
+//        Moves answerMoves = new Moves();
+//        answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
+//        
+//        Score answerScore = new Score();
+//        answerScore.getScore();
         
-        Score answerScore = new Score();
-        answerScore.getScore();
-        
-        Exit answerExit = new Exit();
-        answerExit.getExit();   
+//        Exit answerExit = new Exit();
+//        answerExit.getExit();
 
     }
       
-    public void getName(){
-        Scanner input = new Scanner(System.in);
-        System.out.println ("Enter your name: ");
-        this.name = input.next();
-        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + "." + "\n");
-    }
+//    public void getName(){
+//        Scanner input = new Scanner(System.in);
+//        System.out.println ("Enter your name: ");
+//        this.name = input.next();
+//        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + "." + "\n");
+//    }
     
-    public void displayHelp(boolean enabled)
-    {  
-        HelpMenu hi = new HelpMenu();
-        hi.Show(enabled);
-    
-    }
-       
+//    public void displayHelp(boolean enabled)
+//    {  
+//        HelpMenu hi = new HelpMenu();
+//        hi.Show(enabled);
+//    
+//    }
+//       
     
         
-    }
+}
     
