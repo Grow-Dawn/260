@@ -39,11 +39,62 @@ public class PlayMenu
         System.out.println("Choose a tile number (1-8):");
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
-        Moves answerMoves = new Moves();
-        answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
+        String msgSuccess = "Match!"; String msgFailure = "Sorry!";
+        int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false))).intValue());
+        int t2 = printTile((Integer.valueOf(moves.getInput(prompt2, false))).intValue());
+        //Quick and easy score
+        if (t1 + t2 == 9)
+        {
+            System.out.println(msgSuccess);
+        }
+        else
+        {
+            System.out.println(msgFailure);
+        }
         
-        Score answerScore = new Score();
-        answerScore.getScore();
+        //Moves answerMoves = new Moves();
+        //answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
+        
+        
+        
+//        Score answerScore = new Score();
+//        answerScore.getScore();
 
     }
+    
+    public int printTile(int usrChoice)
+    {
+        ASCII_Tiles tiles = new ASCII_Tiles();
+        int passBack = 0;
+        switch (usrChoice)
+        {
+            case 1: System.out.println(tiles.tile1);
+                    passBack = 1;
+                    break;
+            case 2: System.out.println(tiles.tile2);
+                    passBack = 2;
+                    break;
+            case 3: System.out.println(tiles.tile3);
+                    passBack = 3;
+                    break;
+            case 4: System.out.println(tiles.tile4);
+                    passBack = 4;
+                    break;
+            case 5: System.out.println(tiles.tile5);
+                    passBack = 5;
+                    break;
+            case 6: System.out.println(tiles.tile6);
+                    passBack = 6;
+                    break;
+            case 7: System.out.println(tiles.tile7);
+                    passBack = 7;
+                    break;
+            case 8: System.out.println(tiles.tile8);
+                    passBack = 8;
+                    break;
+        }
+        
+        return passBack;
+    }
+    
 }

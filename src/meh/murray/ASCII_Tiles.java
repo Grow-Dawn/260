@@ -10,14 +10,19 @@ package meh.murray;
  */
 public class ASCII_Tiles
 {
-    public String tileA1 = "♥";
-    public String tileA2 = "♦";
-    public String tileA3 = "♣";
-    public String tileA4 = "♠";
-    public String tileB1 = "♥";
-    public String tileB2 = "♦";
-    public String tileB3 = "♣";
-    public String tileB4 = "♠";
+    public String tile1 = "♥";
+    public String tile2 = "♦";
+    public String tile3 = "♣";
+    public String tile4 = "♠";
+    public String tile5 = "♠";
+    public String tile6 = "♣";
+    public String tile7 = "♦";
+    public String tile8 = "♥";
     
+//1 + 8 = 9 
+//2 + 7 = 9
+//3 + 6 = 9
+//4 + 5 = 9
+
 }
 
