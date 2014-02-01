@@ -36,6 +36,8 @@ public class MainMenu
         if(enabled == true)
         {
             System.out.println("Main Menu");
+            System.out.println("_________");
+            System.out.println(" " + welcome.hphones());
             System.out.println("¯¯¯¯¯¯¯¯¯");
             System.out.println("1. Play");
             System.out.println("2. Options");
@@ -46,7 +48,7 @@ public class MainMenu
         
         //Call the getMenuItem function
         User u = new User();
-        switch ((Integer.valueOf(u.getInput("What do you want to do, " + uname + "? ", false))).intValue())
+        switch ((Integer.valueOf(u.getInput("What do you want to do, " + uname + "? " + "\n (Enter a #)", false))).intValue())
         {
             case 1: p.Show();
             break;

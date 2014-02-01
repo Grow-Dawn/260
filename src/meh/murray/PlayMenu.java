@@ -36,6 +36,7 @@ public class PlayMenu
     public void Show()
     {
         User moves = new User();
+        System.out.println("Choose a tile number (1-8):");
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
         Moves answerMoves = new Moves();
