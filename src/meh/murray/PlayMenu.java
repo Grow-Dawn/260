@@ -36,6 +36,7 @@ public class PlayMenu
     public void Show()
     {
         User moves = new User();
+        ASCII_Art a = new ASCII_Art();
         System.out.println("Choose a tile number (1-8):");
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
@@ -46,10 +47,12 @@ public class PlayMenu
         if (t1 + t2 == 9)
         {
             System.out.println(msgSuccess);
+            System.out.println(a.music());
         }
         else
         {
             System.out.println(msgFailure);
+            System.out.println(a.fish());
         }
         
         //Moves answerMoves = new Moves();
