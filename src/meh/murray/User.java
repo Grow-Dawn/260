@@ -16,12 +16,19 @@ public class User
     public String user;
     public boolean enabled;
     
-    public String getInput(String msg2Usr)
+    public String getInput(String msg2Usr, boolean crlf)
     {
         Scanner getIn = new Scanner(System.in);
         System.out.println (msg2Usr);
         this.userIn = getIn.next();
+        
+        if (crlf)
+        {
+           System.out.println(""); 
+        }
+        
         return this.userIn;
+        
     }
     
 }

@@ -96,31 +96,43 @@ public class MehMurray implements Serializable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        //Instantiate classes
+        ASCII_Sound beep = new ASCII_Sound();
+        ASCII_Art welcome = new ASCII_Art();
+        Options o = new Options();
+        MainMenu m = new MainMenu();
+        PlayMenu p = new PlayMenu();
+        HelpMenu h = new HelpMenu();
+        
+        //Sound is KING!!! - Unless you're not in the forest when the tree falls. ;)
+        beep.RingBell();
+        
+        //Print "Welcome" art
+        System.out.println(welcome.title());
+        
+        //Instantiate new instance
         MehMurray mm = new MehMurray();
         //mm.getName();
         //mm.displayHelp();
         User u = new User();
         u.enabled = false;
-        u.user = u.getInput("Enter your name: ");
+        u.user = u.getInput("Name? ", true);
         
-        // Create the Options variables
-        Options o = new Options();
+        //Populate Options variables
         o.matchSeconds = 4; //The default is four seconds.
         o.score = true; //The default is true.
         o.sound = true; //The default is true.
         
         //Display the Main menu
-        MainMenu m = new MainMenu();
         m.enabled = true;
-        m.Show();
+        m.Show(u.user);
         
         //Display the Help menu
-        HelpMenu h = new HelpMenu();
         h.enabled = false;
         h.Show(h.enabled);
         
         //Display the Play menu
-        PlayMenu p = new PlayMenu();
         p.enabled = false;
         p.Show();
                
@@ -136,12 +148,10 @@ public class MehMurray implements Serializable {
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
         Moves answerMoves = new Moves();
-        answerMoves.getMatch(moves.getInput(prompt1), moves.getInput(prompt2));
-        
+        answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
         
         Score answerScore = new Score();
         answerScore.getScore();
-        
         
         Exit answerExit = new Exit();
         answerExit.getExit();   

@@ -9,13 +9,7 @@ import java.util.Scanner;
 /**
  *
  * @author patricks
- * Step 2: Brainstorm and come up with an idea for type of function to be developed. This function must perform some type of calculation and incorporate the following concepts:
  * 
- * Two or more primitive variable types.
- * Two or more mathematical operators.
- * At least one relational or logical operator.
- * A type conversion using type casting.
- * At least two character escape sequences.
  */
 
 public class MainMenu
@@ -29,7 +23,7 @@ public class MainMenu
     int menuQuit = 4;
     int menuItem = 1; //Default menu item is 1, which loops
     
-    public void Show()
+    public void Show(String uname)
     {
         if(enabled == true)
         {
@@ -44,7 +38,7 @@ public class MainMenu
         
         //Call the getMenuItem function
         User u = new User();
-        switch ((Integer.valueOf(u.getInput("(Menu Number: )"))).intValue())
+        switch ((Integer.valueOf(u.getInput("Select a number, " + uname + ":", false))).intValue())
         {
             case 1: System.out.println(menuPlay);
             break;
