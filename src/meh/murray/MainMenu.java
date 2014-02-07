@@ -48,7 +48,7 @@ public class MainMenu
         
         //Call the getMenuItem function
         User u = new User();
-        switch ((Integer.valueOf(u.getInput("What do you want to do, " + uname + "? " + "\n (Enter a #)", false))).intValue())
+        switch (u.getUserInt("What do you want to do, " + uname + "? " + "\n (Enter a #)"))
         {
             case 1: p.Show();
             break;
@@ -59,6 +59,9 @@ public class MainMenu
             case 4: 
                     System.out.println("Buh-bye!\n");
                     System.exit(0);
+            case 99:
+                    System.out.println("Invalid selection.");
+                    Show(uname);
             break;
             default: p.Show();
             break;

@@ -41,8 +41,9 @@ public class PlayMenu
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
-        int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false))).intValue());
-        int t2 = printTile((Integer.valueOf(moves.getInput(prompt2, false))).intValue());
+        //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
+        int t1 = printTile(moves.getUserInt(prompt1));
+        int t2 = printTile(moves.getUserInt(prompt2));
         //Quick and easy score
         if (t1 + t2 == 9)
         {
@@ -94,6 +95,9 @@ public class PlayMenu
                     break;
             case 8: System.out.println(tiles.tile8);
                     passBack = 8;
+                    break;
+           case 99: System.out.println(tiles.tile0); //Invalid Selection
+                    passBack = 0;
                     break;
         }
         

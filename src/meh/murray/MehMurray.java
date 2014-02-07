@@ -119,7 +119,7 @@ public class MehMurray implements Serializable {
         //mm.displayHelp();
         
         u.enabled = false;
-        u.user = u.getInput("Name? ", true);
+        u.user = u.getInput("Name? ", true, "String");
         
         //Populate Options variables
         o.matchSeconds = 4; //The default is four seconds.

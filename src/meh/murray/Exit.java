@@ -19,7 +19,7 @@ public class Exit {
     public boolean getExit(){
         
         User ex = new User();
-        getEx = (ex.getInput("Quit? [y/n]", false).toUpperCase());  
+        getEx = (ex.getInput("Quit? y/n [y]", false, "String").toUpperCase());  
        
         if ("N".equals(getEx))
         {
