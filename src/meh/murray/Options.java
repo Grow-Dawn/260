@@ -51,13 +51,13 @@ public class Options
                     System.out.println("Keep Score: " + score);
                     break;
             case 2: setScoreOptions(false);
-                    System.out.println("Soundtrack: " + score);
+                    System.out.println("Keep Score: " + score);
                     break;
             case 3: setSoundOptions(true);
-                    System.out.println("Keep Score: " + sound);
+                    System.out.println("Soundtrack: " + sound);
                     break;
             case 4: setSoundOptions(false);
-                    System.out.println("Keep Score: " + sound);
+                    System.out.println("Soundtrack: " + sound);
                     break;
             case 5: matchSeconds = u.getUserInt("How many seconds?\n [3-10]");
                     System.out.println("Timeout: " + matchSeconds);
