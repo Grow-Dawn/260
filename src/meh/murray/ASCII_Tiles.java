@@ -10,7 +10,7 @@ package meh.murray;
  */
 public class ASCII_Tiles
 {
-    public String tile0 = "invalid selection";
+    public String tile0 = "exit";
     public String tile1 = "♥";
     public String tile2 = "♦";
     public String tile3 = "♣";

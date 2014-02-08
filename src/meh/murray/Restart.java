@@ -25,7 +25,7 @@ public class Restart {
         System.out.println("Let's start over!  \n");
         //System.PlayMenu(0);
             PlayMenu p = new PlayMenu();
-             p.Show();
+             p.Show("player");
              return false;
         
             

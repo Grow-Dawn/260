@@ -36,4 +36,12 @@ public class ASCII_Art
         return "¸¸♬·¯·♩¸¸♪·¯·♫¸¸";
     }
     
+    public String options()
+    {
+         return " _  _ |_. _  _  _\n" +
+                 "(_)|_)| |(_)| )_) \n" +
+                 "   |   ";
+
+    }
+    
 }

@@ -19,6 +19,7 @@ public class User
     public boolean enabled;
     public String errMsg = "Invalid choice; please try again.";
     public int intErr = 99;
+    public int intExit = 0;
     public String retVal;
     
     public int getUserInt(String msg2Usr)

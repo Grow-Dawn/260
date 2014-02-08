@@ -26,7 +26,7 @@ public class Exit {
             System.out.println("Pull up a chair and stay a while...\n");
             try
             {
-                Process p = Runtime.getRuntime().exec("cmd /c cls");
+                Process p = Runtime.getRuntime().exec("cls");
             }
             catch (IOException x)
             {

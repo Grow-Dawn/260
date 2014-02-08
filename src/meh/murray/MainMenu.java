@@ -50,9 +50,9 @@ public class MainMenu
         User u = new User();
         switch (u.getUserInt("What do you want to do, " + uname + "? " + "\n (Enter a #)"))
         {
-            case 1: p.Show();
+            case 1: p.Show(uname);
             break;
-            case 2: o.Show(enabled);
+            case 2: o.Show(enabled, uname);
             break;
             case 3: h.Show(enabled);
             break;
@@ -63,7 +63,7 @@ public class MainMenu
                     System.out.println("Invalid selection.");
                     Show(uname);
             break;
-            default: p.Show();
+            default: p.Show(uname);
             break;
         }
         

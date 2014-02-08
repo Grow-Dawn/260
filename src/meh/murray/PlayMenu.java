@@ -15,6 +15,7 @@ public class PlayMenu
     boolean main;
     boolean sub;
     boolean clear;
+    int t1; int t2;
        
 //    public void Show()
 //    {
@@ -33,17 +34,21 @@ public class PlayMenu
 //        }
 //    }
     
-    public void Show()
+    public void Show(String uname)
     {
         User moves = new User();
         ASCII_Art a = new ASCII_Art();
         System.out.println("Choose a tile number (1-8):");
+        System.out.println("(0 exits to Main Menu)");
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
+        
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
-        int t1 = printTile(moves.getUserInt(prompt1));
-        int t2 = printTile(moves.getUserInt(prompt2));
+        t1 = printTile(moves.getUserInt(prompt1));
+        checkExit(t1, uname);
+        t2 = printTile(moves.getUserInt(prompt2));
+        checkExit(t2, uname);
         //Quick and easy score
         if (t1 + t2 == 9)
         {
@@ -59,11 +64,28 @@ public class PlayMenu
         //Moves answerMoves = new Moves();
         //answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
         
+        do
+        {
+            Show(uname);          
+        }
         
+        while (t1 != 0 || t2 != 0);
         
 //        Score answerScore = new Score();
 //        answerScore.getScore();
 
+    }
+    
+    public void checkExit(int Exit, String uname)
+    {
+        if(Exit == 0)
+        {
+            t1 = 0;
+            t2 = 0;
+            MainMenu m = new MainMenu();
+            m.enabled = true;
+            m.Show(uname);
+        }    
     }
     
     public int printTile(int usrChoice)
@@ -96,7 +118,7 @@ public class PlayMenu
             case 8: System.out.println(tiles.tile8);
                     passBack = 8;
                     break;
-           case 99: System.out.println(tiles.tile0); //Invalid Selection
+           case 0: System.out.println(tiles.tile0); //Invalid Selection
                     passBack = 0;
                     break;
         }
