@@ -137,6 +137,10 @@ public class MehMurray implements Serializable {
         }
         
         while (answerExit.getExit() == false);
+        
+        // will need to move this to right spot later.
+        Restart answerStart = new Restart();
+        answerStart.beginner();
 
         // *******************************
         // Stop here - Menu has taken over
