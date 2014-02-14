@@ -68,12 +68,12 @@ public class PlayMenu
         //Moves answerMoves = new Moves();
         //answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
         
-        do
+        /*do
         {
             Show(uname);          
         }
         
-        while (t1 != 0 || t2 != 0);
+        while (t1 != 0 || t2 != 0);*/
         
 //        Score answerScore = new Score();
 //        answerScore.getScore();
