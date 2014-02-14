@@ -16,6 +16,7 @@ public class PlayMenu
     boolean sub;
     boolean clear;
     int t1; int t2;
+    int count;
        
 //    public void Show()
 //    {
@@ -43,8 +44,9 @@ public class PlayMenu
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
-        
+        count = 0;
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
+       while (count !=4){ 
         t1 = printTile(moves.getUserInt(prompt1));
         checkExit(t1, uname);
         t2 = printTile(moves.getUserInt(prompt2));
@@ -52,6 +54,7 @@ public class PlayMenu
         //Quick and easy score
         if (t1 + t2 == 9)
         {
+            count++;
             System.out.println(msgSuccess);
             System.out.println(a.music());
         }
@@ -60,7 +63,8 @@ public class PlayMenu
             System.out.println(msgFailure);
             System.out.println(a.fish());
         }
-        
+        continue;
+       }
         //Moves answerMoves = new Moves();
         //answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
         
@@ -81,7 +85,7 @@ public class PlayMenu
         if(Exit == 0)
         {
             t1 = 0;
-            t2 = 0;
+            t2 = 0;            
             MainMenu m = new MainMenu();
             m.enabled = true;
             m.Show(uname);
