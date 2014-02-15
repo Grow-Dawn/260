@@ -65,9 +65,11 @@ public class PlayMenu
             
             System.out.println(msgFailure);
             System.out.println(a.fish());
-            for(losses=0; ; losses++);
+            for(losses=0; ; losses++)
+            {
             Score answerLoss = new Score();
             answerLoss.getScore(losses);
+            }
             //answerScore.Show(losses);
         }
         continue;
