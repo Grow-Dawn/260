@@ -13,8 +13,17 @@ package meh.murray;
  */
 public class Score {
  //private String getScore;
-    public String getScore(){
-        int tries = (int)(10 * Math.random()), timer = (int)(10 * Math.random()), finalScore, underScore, topScore;
+    public String getScore(int losses)
+    {
+        //Instantiate classes
+       /* ASCII_Sound beep = new ASCII_Sound();
+        ASCII_Art welcome = new ASCII_Art();
+        Options o = new Options();
+        MainMenu m = new MainMenu();
+        PlayMenu p = new PlayMenu();
+        HelpMenu h = new HelpMenu();*/
+        
+        /*int tries = (int)(10 * Math.random()), timer = (int)(10 * Math.random()), finalScore, underScore, topScore;
 		finalScore = tries * timer;
                 //System.out.println(tries.ToString() + "\n" + timer.ToString());
                 String scoreMsg = "\"Great Score!!!\"";
@@ -41,8 +50,14 @@ public class Score {
 	//System.out.println("\"Your score is " + underScore + " points under the best score!\"");
         return scoreMsg;
 	}
-                
-        return scoreMsg;
+        return scoreMsg;*/
+        
+        //PlayMenu answerLoss = new PlayMenu();
+        
+        //answerLoss.Show(losses);
+        //m.Show(losses);
+        
+        System.out.println("Your score is " + losses);
     }
     
     
