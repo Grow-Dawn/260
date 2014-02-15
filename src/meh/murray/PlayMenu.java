@@ -16,7 +16,7 @@ public class PlayMenu
     boolean sub;
     boolean clear;
     int t1; int t2;
-    int count;
+    int count; int losses;
        
 //    public void Show()
 //    {
@@ -35,6 +35,7 @@ public class PlayMenu
 //        }
 //    }
     
+    @SuppressWarnings("empty-statement")
     public void Show(String uname)
     {
         User moves = new User();
@@ -45,6 +46,7 @@ public class PlayMenu
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
         count = 0;
+        //var = losses;
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
        while (count !=4){ 
         t1 = printTile(moves.getUserInt(prompt1));
@@ -60,8 +62,13 @@ public class PlayMenu
         }
         else
         {
+            
             System.out.println(msgFailure);
             System.out.println(a.fish());
+            for(losses=0; ; losses++);
+            Score answerLoss = new Score();
+            answerLoss.getScore(losses);
+            //answerScore.Show(losses);
         }
         continue;
        }
