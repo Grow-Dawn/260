@@ -13,8 +13,10 @@ package meh.murray;
  */
 public class Score {
  //private String getScore;
-    public String getScore(int losses)
+    public void getScore(int losses)
     {
+        int tally;
+        tally = 0;
         //Instantiate classes
        /* ASCII_Sound beep = new ASCII_Sound();
         ASCII_Art welcome = new ASCII_Art();
@@ -57,7 +59,9 @@ public class Score {
         //answerLoss.Show(losses);
         //m.Show(losses);
         
-        System.out.println("Your score is " + losses);
+        tally = losses *5;
+        // timer will input the time to be tallied in also later
+        System.out.println("Your score is " + tally);
     }
     
     
