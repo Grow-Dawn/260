@@ -13,6 +13,9 @@ package meh.murray;
  */
 public class Score {
  //private String getScore;
+    boolean match[] = new boolean[9];
+    int misses[] = new int[9];
+    
     public void getScore(int losses)
     {
         int tally;

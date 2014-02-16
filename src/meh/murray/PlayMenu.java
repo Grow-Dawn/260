@@ -17,7 +17,9 @@ public class PlayMenu
     boolean clear;
     int t1; int t2;
     int count; int losses;
-       
+    ASCII_Tiles t = new ASCII_Tiles();
+    Score s = new Score();
+    
 //    public void Show()
 //    {
 //        if(enabled == true)
@@ -34,7 +36,7 @@ public class PlayMenu
 //            System.out.println("2. Main Menu");
 //        }
 //    }
-    
+       
     @SuppressWarnings("empty-statement")
     public void Show(String uname)
     {
@@ -48,7 +50,7 @@ public class PlayMenu
         count = 0;
         //var = losses;
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
-       while (count !=4){ 
+       while (count !=4){        
         t1 = printTile(moves.getUserInt(prompt1));
         checkExit(t1, uname);
         t2 = printTile(moves.getUserInt(prompt2));
@@ -56,6 +58,8 @@ public class PlayMenu
         //Quick and easy score
         if (t1 + t2 == 9)
         {
+            s.match[t1] = true;
+            s.match[t2] = true;
             count++;
             System.out.println(msgSuccess);
             System.out.println(a.music());
@@ -63,16 +67,44 @@ public class PlayMenu
         else
         {
             
+            s.misses[t1] = (s.misses[t1] + 1);
+            s.misses[t2] = (s.misses[t2] + 1);
             System.out.println(msgFailure);
             System.out.println(a.fish());
-            for(losses=0; ; losses++)
-            {
-            Score answerLoss = new Score();
-            answerLoss.getScore(losses);
-            }
-            //answerScore.Show(losses);
+            
         }
+        
+            //Patrick
+            System.out.println("\n" + "Current Matches: \n");
+            try
+            {
+                for(int i = 1; i <= 9; i++)
+                {
+                    System.out.println("Tile " + i + ": " + s.match[i]);
+                }
+            }
+            catch (Exception x)
+            {
+                // Ignore
+            }
+            
+            //Dawn
+            System.out.println("\n" + "Current Misses: \n");
+            try
+            {
+                for(int i = 1; i <= 9; i++)
+                {
+                    System.out.println("Tile " + i + ": " + s.misses[i]);
+                }
+            }
+            catch (Exception x)
+            {
+                // Ignore 
+            }
+            
+            System.out.println("");
         continue;
+        
        }
         //Moves answerMoves = new Moves();
         //answerMoves.getMatch(moves.getInput(prompt1, true), moves.getInput(prompt2, true));
