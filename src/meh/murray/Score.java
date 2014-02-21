@@ -17,6 +17,7 @@ public class Score {
     int matchTile[] = {1, 2, 3, 4, 5, 6, 7, 8};
     int misses[] = new int[8]; int missesCopy[] = new int[8]; int missTile[] = new int[8];
     int matches[] = new int[8];
+    int countMatches = 0;
     
     public void getScore(int losses)
     {

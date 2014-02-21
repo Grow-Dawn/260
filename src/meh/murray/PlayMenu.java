@@ -70,8 +70,8 @@ public class PlayMenu
         }
         else
         {
-            s.match[t1 - 1] = false;
-            s.match[t2 - 1] = false;
+//            s.match[t1 - 1] = false;
+//            s.match[t2 - 1] = false;
             s.misses[t1 - 1] = (s.misses[t1 - 1] + 1);
             s.misses[t2 - 1] = (s.misses[t2 - 1] + 1);
             System.out.println(msgFailure);
@@ -96,14 +96,10 @@ public class PlayMenu
                     //Track number of tiles matched
                     if(b == true)
                     {
-                        countMatches++;
+                        s.countMatches++;
                     }
                     
-                    //If matched tiles = 8, exit loop via Continue
-                    if(countMatches == 8)
-                    {
-                        continue;
-                    }
+                    
                 }
             }
             catch (Exception x)
@@ -132,6 +128,14 @@ public class PlayMenu
             }
             
             System.out.println("");
+            
+        //If matched tiles = 8, exit loop via Continue
+        if(s.countMatches == 8)
+        {
+            count = 4;
+            continue;
+        }
+            
         continue;
         
        }
