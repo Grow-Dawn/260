@@ -32,6 +32,7 @@ public class MainMenu
         MainMenu m = new MainMenu();
         PlayMenu p = new PlayMenu();
         HelpMenu h = new HelpMenu();
+        Score s = new Score();
         
         if(enabled == true)
         {
@@ -42,7 +43,8 @@ public class MainMenu
             System.out.println("1. Play");
             System.out.println("2. Options");
             System.out.println("3. Help");
-            System.out.println("4. Quit");
+            System.out.println("4. Scores");
+            System.out.println("5. Quit");
             System.out.println("");
         }
         
@@ -56,7 +58,9 @@ public class MainMenu
             break;
             case 3: h.Show(enabled);
             break;
-            case 4: 
+            case 4: s.sortNumBubble(s.misses);
+                    p.Show(uname);
+            case 5: 
                     System.out.println("Buh-bye!\n");
                     System.exit(0);
             case 99:

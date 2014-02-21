@@ -52,49 +52,78 @@ public class PlayMenu
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
        while (count !=4){        
         t1 = printTile(moves.getUserInt(prompt1));
-        checkExit(t1, uname);
+        checkExit(t1, uname); checkMatched(t1 - 1, uname);
         t2 = printTile(moves.getUserInt(prompt2));
-        checkExit(t2, uname);
+        checkExit(t2, uname); checkMatched(t2 - 1, uname);
         //Quick and easy score
-        if (t1 + t2 == 9)
+        if (t1+ t2 == 9)
         {
-            s.match[t1] = true;
-            s.match[t2] = true;
+            s.match[t1 - 1] = true;
+            s.matchTile[t1 - 1] = (t1 - 1);
+            s.match[t2 - 1] = true;
+            s.matchTile[t2 - 1] = (t2 - 1);
+            s.matches[t1 - 1] = (s.matches[t1 - 1] + 1);
+            s.matches[t2 - 1] = (s.matches[t2 - 1] + 1);
             count++;
             System.out.println(msgSuccess);
             System.out.println(a.music());
         }
         else
         {
-            
-            s.misses[t1] = (s.misses[t1] + 1);
-            s.misses[t2] = (s.misses[t2] + 1);
+            s.match[t1 - 1] = false;
+            s.match[t2 - 1] = false;
+            s.misses[t1 - 1] = (s.misses[t1 - 1] + 1);
+            s.misses[t2 - 1] = (s.misses[t2 - 1] + 1);
             System.out.println(msgFailure);
-            System.out.println(a.fish());
-            
+            System.out.println(a.fish());            
         }
         
             //Patrick
-            System.out.println("\n" + "Current Matches: \n");
+            s.copyArrBoo(s.match, s.matchCopy);
+            s.sortBubbleBoo(s.matchCopy);
+                 
+            System.out.println("\n" + "Current Matches (sorted status): \n");
             try
             {
-                for(int i = 1; i <= 9; i++)
+                int c = 0; int countMatches = 0;
+                
+                for(boolean b : s.matchCopy)
                 {
-                    System.out.println("Tile " + i + ": " + s.match[i]);
+                    //System.out.println("Tile Rank/Matched: " + (s.matchTile[c] + 1) + "/" +  b);
+                    System.out.println(b);
+                    c++;
+                    
+                    //Track number of tiles matched
+                    if(b == true)
+                    {
+                        countMatches++;
+                    }
+                    
+                    //If matched tiles = 8, exit loop via Continue
+                    if(countMatches == 8)
+                    {
+                        continue;
+                    }
                 }
             }
             catch (Exception x)
             {
-                // Ignore
+                System.out.println("Exception: " + x);
             }
             
             //Dawn
+            
+            s.copyArrInt(s.misses, s.missesCopy);
+            s.sortNumBubble(s.missesCopy);
+            
+            int missesMax = s.missesCopy.length;
+            
             System.out.println("\n" + "Current Misses: \n");
             try
             {
-                for(int i = 1; i <= 9; i++)
+                for(int i = 1; i <= missesMax; i++)
                 {
-                    System.out.println("Tile " + i + ": " + s.misses[i]);
+                    System.out.println("Tile " + i + ": " + s.missesCopy[i]);
                 }
             }
             catch (Exception x)
@@ -130,7 +159,20 @@ public class PlayMenu
             MainMenu m = new MainMenu();
             m.enabled = true;
             m.Show(uname);
-        }    
+        }
+        
+    }
+    
+    public void checkMatched(int Tile, String uname)
+    {
+        
+        // Check for previously matched tiles
+        if (s.match[Tile] == true)
+        {
+            System.out.println("Tile already chosen.");
+            this.Show(uname);
+        }
+        
     }
     
     public int printTile(int usrChoice)
