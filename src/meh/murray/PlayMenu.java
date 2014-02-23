@@ -48,6 +48,8 @@ public class PlayMenu
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
         count = 0;
+        long startTime = System.currentTimeMillis();
+        
         //var = losses;
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
        while (count !=4){        
@@ -151,9 +153,12 @@ public class PlayMenu
         
 //        Score answerScore = new Score();
 //        answerScore.getScore();
-
+        long endTime   = System.currentTimeMillis();
+        for(endTime, startTime){
+            long totalTime = endTime - startTime;
+            System.out.println("Your play time is " + totalTime);
     }
-    
+    }
     public void checkExit(int Exit, String uname)
     {
         if(Exit == 0)
@@ -163,6 +168,9 @@ public class PlayMenu
             MainMenu m = new MainMenu();
             m.enabled = true;
             m.Show(uname);
+            
+        
+            
         }
         
     }
@@ -216,5 +224,6 @@ public class PlayMenu
         
         return passBack;
     }
+    
     
 }
