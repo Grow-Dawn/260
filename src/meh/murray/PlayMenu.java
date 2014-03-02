@@ -46,9 +46,6 @@ public class PlayMenu
         Options o = new Options();
         t.tilePairs = o.tilePairs;
         t.intTiles = (t.tilePairs * 2);
-//        t.createTileArrays(t.tilePairs);
-//        t.printTiles(t.pairOne);
-//        t.printTiles(t.pairTwo);
         t.createTileArray(t.intTiles);
         s.match = new boolean [t.intTiles];
         s.misses = new int [t.intTiles];
@@ -60,16 +57,13 @@ public class PlayMenu
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
         count = 0;
-        long startTime = System.currentTimeMillis();
-        
-        //var = losses;
-        //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
-       //while (count < t.intTiles){
-        
-      while (s.countMatches < t.tilePairs){
-        t1 = (moves.getUserInt(prompt1) - 1);
+    
+    while (s.countMatches < t.tilePairs)
+    {     
+        // Get user input for first tile guess
         try
         {
+            t1 = (moves.getUserInt(prompt1) - 1);
             System.out.println(t.returnTile(t.arrTiles[t1]) + "\n");
             //System.out.println(t.pairOne[t1] + "\n");
             checkExit(t1, uname); checkMatched(t1, uname);
@@ -87,6 +81,7 @@ public class PlayMenu
             continue;
         }
         
+        // Get user input for second tile guess
         try
         {
             t2 = (moves.getUserInt(prompt2) - 1);
@@ -106,36 +101,28 @@ public class PlayMenu
             count = t.intTiles;
             continue;
         }
-                
-        //Quick and easy score
-        //if (t1 + t2 == 9)
-        //if (t.tiles[t1] == t.tiles[t2])
-        //if (t.pairOne[t1] == t.pairTwo[t2])
-        if (t.returnTile(t.arrTiles[t1]) == t.returnTile(t.arrTiles[t2])) //The chiasmus code checking logic ***would*** work (line 71; == 17), but duplicates are currently allowed, which would throw off the math.
+        
+        /* 
+         * Compare user input; if dupes are disabled, alternate checking can be used with current random tile allocation
+         * X|aBBa|chiasmus (e.g. t1 + t2 = 9)
+        */
+        if (t.returnTile(t.arrTiles[t1]) == t.returnTile(t.arrTiles[t2]))
         {
             try
             {
-                
             s.match[t1] = true;
-            //s.match2[count][count] = {0},(t1 - 1)};
             s.matchTile[t1] = (t1);
             s.match[t2] = true;
-            //s.matchTile[t2 - 1] = (t2 - 1);
             s.matches[t1] = (s.matches[t1] + 1);
             s.matches[t2] = (s.matches[t2] + 1);
             count++;
             s.countMatches++;
             System.out.println(msgSuccess + " " + a.music());
-            //System.out.println(a.music());
-            
             }
             catch (Exception x)
             {
                 System.out.println("Error: " + x + "\n");
                 this.Show(uname);
-//                s.countMatches = t.tilePairs;
-//                count = t.intTiles;
-//                continue;
             }
                     
         }
@@ -147,16 +134,12 @@ public class PlayMenu
             s.match[t2] = false;
             s.misses[t1] = (s.misses[t1] + 1);
             s.misses[t2] = (s.misses[t2] + 1);
-            System.out.println(msgFailure + " " + a.fish());
-            //System.out.println(a.fish());            
+            System.out.println(msgFailure + " " + a.fish());         
             }
             catch (Exception x)
             {
                 System.out.println("Error: " + x + "\n");
                 this.Show(uname);
-//                s.countMatches = t.tilePairs;
-//                count = t.intTiles;
-//                continue;
             }
         }
 
@@ -182,7 +165,6 @@ public class PlayMenu
                     {
                         s.countMatches++;
                     }
-                    
                     
                 }
             }
@@ -236,11 +218,11 @@ public class PlayMenu
         
 //        Score answerScore = new Score();
 //        answerScore.getScore();
-        long endTime   = System.currentTimeMillis();
-        for(endTime, startTime){
-            long totalTime = endTime - startTime;
-            System.out.println("Your play time is " + totalTime);
-    }
+//        long endTime   = System.currentTimeMillis();
+//        for(endTime, startTime){
+//            long totalTime = endTime - startTime;
+//            System.out.println("Your play time is " + totalTime);
+//    }
     }
     public void checkExit(int Exit, String uname)
     {
@@ -251,11 +233,7 @@ public class PlayMenu
             MainMenu m = new MainMenu();
             m.enabled = true;
             m.Show(uname);
-            
-        
-            
-        }
-        
+        }  
     }
     
     public void checkMatched(int Tile, String uname)
@@ -278,8 +256,6 @@ public class PlayMenu
 //            t2 = 0;  
 //            this.Show(uname);
 //        }
-        
     }
-    
     
 }

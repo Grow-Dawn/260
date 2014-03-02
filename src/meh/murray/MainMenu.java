@@ -54,7 +54,7 @@ public class MainMenu
         
         //Call the getMenuItem function
         User u = new User();
-        switch (u.getUserInt("What do you want to do, " + uname + "? " + "\n (Enter a #)"))
+        switch (u.getUserInt("What do you want to do, " + uname + "?" + "\n (Enter a #)"))
         {
             case 1: p.Show(uname);
             break;

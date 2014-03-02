@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  *
- * @author PATRICKS
+ * @author PATRICKS, DG
  */
 public class ASCII_Tiles
 {
@@ -38,11 +38,6 @@ public class ASCII_Tiles
     String [] arrTileChars = {tile0, tile1, tile2, tile3, tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14, tile15};
     int [] arrTilesCount; 
             
-    //Arrays for Pair1 and Pair2; the second guess must be the user's guess minus tilePairs.
-    String [] pairOne = new String [tilePairs];
-    String pairTwo [] = new String [tilePairs];
-    int pairIndex [] = new int [tilePairs];
-
  public void createTileArray(int numTiles)
  {
      arrTiles = new int[numTiles];
@@ -52,19 +47,11 @@ public class ASCII_Tiles
      
      try
      {
-//        for (int n : arrTiles)
-//        {
-//            arrTiles[c] = randomTile2(numTiles);
-//            //System.out.println(returnTile(c));
-//            System.out.println(returnTile2(arrTiles[c]));
-//            c++;
-//        }
          
          // First set of tiles
          for (int n = 0; n < (halfTiles); n++)
          {
              arrTiles[n] = randomTile2(halfTiles);
-             //System.out.println(returnTile2(arrTiles[n]));
          }
          
          // Second set of tiles, using the first set as the source: X / Chiasmus style... Meet in the middle!
@@ -73,7 +60,6 @@ public class ASCII_Tiles
          {
              arrTiles[o] = arrTiles[x];
              x++;
-             //System.out.println(returnTile2(arrTiles[o]));
          }
      }
      catch (Exception x)
@@ -112,123 +98,12 @@ public class ASCII_Tiles
     
     return returnRandom;
  }
-
- public void createTileArrays(int numTiles)
- {  
-        //int rr = Integer.valueOf(String.valueOf(r), 16);
-        //return Character.toString((char)rand.nextInt(r));
-        //return Character.toString((char)rr);        
-        
-        // Populate pairOne[]
-        for (int a = 0; a < numTiles - 1; a++)
-        {
-            try
-            {
-                pairOne[a] = randomTile(a);
-                System.out.println(pairOne[a]);
-            }
-            catch (Exception x)
-            {
-                //a--;
-            }
-               
-        }
-        
-        // Populate pairTwo[]
-        for (int a = 0; a < numTiles; a++)
-        {
-            try
-            {
-                pairTwo[a] = randomTile(a);
-                System.out.println(pairTwo[a]);
-            }
-            catch (Exception x)
-            {
-                //a--;
-            }
-               
-        }
-        
-        System.out.println("Ready to play!\n");
- }
-
- public String randomTile(int a)
- {
-    Random rand = new Random(); int r; String rr;
-    boolean booFound = false;
-    boolean booPass = false;
-    int passes = 0;
-    // Check generated value for duplicates/previously generated numbers
-    do
-    {  
-        r = rand.nextInt(tilePairs - 1);
-    
-        for (int p : pairIndex)
-        {
-            if (r == p)
-            {
-                booFound = true;
-            }
-            else
-            {
-                booFound = false;              
-            }
-        }
-        
-        if (!booFound)
-        {
-            booPass = true;
-        }
-        else
-        {
-            if (passes > pairIndex.length - 1)
-            {
-                System.out.println("Not found...");
-                booPass = true;
-            }
-        }
-
-        passes++;
-        
-    }
-    while (booPass == false);
-            
-        switch (r)
-        {
-            case 0: rr = tile0; pairIndex[a] = 0; break;
-            case 1: rr = tile1; pairIndex[a] = 1; break;
-            case 2: rr = tile2; pairIndex[a] = 2; break;
-            case 3: rr = tile3; pairIndex[a] = 3; break;
-            case 4: rr = tile4; pairIndex[a] = 4; break;                
-            case 5: rr = tile5; pairIndex[a] = 5; break;
-            case 6: rr = tile6; pairIndex[a] = 6; break;
-            case 7: rr = tile7; pairIndex[a] = 7; break;
-            case 8: rr = tile8; pairIndex[a] = 8; break;
-            case 9: rr = tile9; pairIndex[a] = 9; break;
-            case 10: rr = tile10; pairIndex[a] = 10; break;
-            case 11: rr = tile11; pairIndex[a] = 11; break;
-            case 12: rr = tile12; pairIndex[a] = 12; break;                
-            case 13: rr = tile13; pairIndex[a] = 13; break;
-            case 14: rr = tile14; pairIndex[a] = 14; break;
-            case 15: rr = tile15; pairIndex[a] = 15; break;
-            default: rr = "exit";
-        }
-        return rr;
- }
- 
-    public void printTiles(String arrTiles[])
-    {
-        for (String a : arrTiles)
-        {   
-            System.out.println(a);
-        }   
-     }
     
     public String returnTile(int Tile)
     {
-        String t = "!";
+        String t = "!"; // Hello Class!
         
-        switch ((Tile))
+        switch (Tile)
         {
             case 0: t = tile0; break;
             case 1: t = tile1; break;
