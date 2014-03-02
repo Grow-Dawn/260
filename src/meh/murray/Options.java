@@ -13,7 +13,8 @@ public class Options
     User u = new User();
     boolean sound; // Sound is on (true) or off (false)
     boolean score; // Score is tracked; on (true) or off (false)
-    int matchSeconds = 4; //n seconds allowed to make a match (configurable)   
+    int matchSeconds = 4; //n seconds allowed to make a match (configurable)
+    int tilePairs = 4; // 4 is the default, 8 tiles; 16 is the maximum, 32 tiles.
     
     
     public void Show(boolean enabled, String uname)

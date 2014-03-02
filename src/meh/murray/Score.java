@@ -13,11 +13,32 @@ package meh.murray;
  */
 public class Score {
  //private String getScore;
-    boolean match[] = new boolean[8]; boolean matchCopy[] = new boolean[8];
-    int matchTile[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    int misses[] = new int[8]; int missesCopy[] = new int[8]; int missTile[] = new int[8];
-    int matches[] = new int[8];
+    boolean match[]; // = new boolean[8];
+    boolean matchCopy[]; // = new boolean[8];
+    int match2[][]; // = new int[8][8];
+    int matchCopy2[][]; // = new int[8][8];
+    int matchTile[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32};
+    int misses[]; // = new int[8];
+    int missesCopy[]; // = new int[8];
+    int missTile[]; // = new int[8];
+    int matches[]; // = new int[8];
     int countMatches = 0;
+    Options o = new Options();
+    
+    public void Show()
+    {
+        System.out.println("Scores:\n");
+        
+        matches = new int[o.tilePairs * 2];
+        
+        for (int m : matches)
+        {
+            System.out.println(m);
+        }
+        
+        System.out.println("");
+        
+    }
     
     public void getScore(int losses)
     {
@@ -108,7 +129,7 @@ public class Score {
             }
             catch (Exception x)
             {
-                // Ignore
+                System.out.println("Oops!\n" + x);
             }
     }
     
@@ -127,8 +148,25 @@ public class Score {
             }
             catch (Exception x)
             {
-                // Ignore
+                System.out.println("Oops!\n" + x);
             }
+    }
+    
+    // This method copies integer arrays
+    public int copyArr2Int(int Int1[][], int Int2[][])
+    {
+        try
+        {
+            for(int a = 0; a < Int1.length; a++)
+            {
+            Int2[a][a] = Int1[a][a];
+            }
+            return 1;
+        }
+        catch (Exception x)
+        {
+            return 2;
+        }
     }
     
     // This is the Bubble sort.
@@ -151,45 +189,19 @@ public class Score {
                     boo[b] = t;                    
                 }
             }
+
         }
+        
+        System.out.println("First: " + boo[0]);
+        System.out.println("Last: " + boo[boo.length - 1]);
+        
         }
         catch(Exception z)
         {
-            // Ignore
+            System.out.println("Oops!\n" + z);
         }
     }
-    
-    // Sort method borrowed from assigned reading
-    public static void sortBooBubble(boolean boo[])
-    {
-        boolean flag = true;   // set flag to true to begin first pass
-        boolean tmp;   //holding variable
-        int length = boo.length;
-        int i = 0;
-
-        while(flag)
-        {
-            flag = false;    //set flag to false awaiting a possible swap
-            for(boolean b : boo)
-            {
-                if(!b) // change to b for descending sort
-                {
-                    try
-                    {
-                        tmp = b; // swap elements
-                        boo[i] = boo[i + 1];
-                        boo[i + 1] = tmp;
-                        flag = true; // shows a swap occurred
-                        i++;
-                    }
-                    catch (Exception x)
-                    {
-                        //System.out.println("dude");
-                    }
-                }
-            }
-        } 
-    }
+   
     
     /**
     *

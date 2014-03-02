@@ -5,6 +5,7 @@
 package meh.murray;
 
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
@@ -33,6 +34,9 @@ public class MainMenu
         PlayMenu p = new PlayMenu();
         HelpMenu h = new HelpMenu();
         Score s = new Score();
+//        ASCII_Tiles t = new ASCII_Tiles();
+//        t.tilePairs = 16;
+//        t.createTileArray(t.tilePairs);
         
         if(enabled == true)
         {
@@ -58,8 +62,8 @@ public class MainMenu
             break;
             case 3: h.Show(enabled);
             break;
-            case 4: s.sortNumBubble(s.misses);
-                    p.Show(uname);
+            case 4: s.Show();
+                    Show(uname);
             case 5: 
                     System.out.println("Buh-bye!\n");
                     System.exit(0);
