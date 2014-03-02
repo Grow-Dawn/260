@@ -60,6 +60,7 @@ public class PlayMenu
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
         count = 0;
+        long startTime = System.currentTimeMillis();
         
         //var = losses;
         //int t1 = printTile((Integer.valueOf(moves.getInput(prompt1, false, "int"))).intValue());
@@ -235,9 +236,12 @@ public class PlayMenu
         
 //        Score answerScore = new Score();
 //        answerScore.getScore();
-
+        long endTime   = System.currentTimeMillis();
+        for(endTime, startTime){
+            long totalTime = endTime - startTime;
+            System.out.println("Your play time is " + totalTime);
     }
-    
+    }
     public void checkExit(int Exit, String uname)
     {
         if(Exit == -1)
@@ -247,6 +251,9 @@ public class PlayMenu
             MainMenu m = new MainMenu();
             m.enabled = true;
             m.Show(uname);
+            
+        
+            
         }
         
     }
@@ -274,42 +281,5 @@ public class PlayMenu
         
     }
     
-//    public int printTile(int usrChoice)
-//    {
-//        ASCII_Tiles tiles = new ASCII_Tiles();
-//        int passBack = 0;
-//        switch (usrChoice)
-//        {
-//            case 1: System.out.println(tiles.tile1);
-//                    passBack = 1;
-//                    break;
-//            case 2: System.out.println(tiles.tile2);
-//                    passBack = 2;
-//                    break;
-//            case 3: System.out.println(tiles.tile3);
-//                    passBack = 3;
-//                    break;
-//            case 4: System.out.println(tiles.tile4);
-//                    passBack = 4;
-//                    break;
-//            case 5: System.out.println(tiles.tile5);
-//                    passBack = 5;
-//                    break;
-//            case 6: System.out.println(tiles.tile6);
-//                    passBack = 6;
-//                    break;
-//            case 7: System.out.println(tiles.tile7);
-//                    passBack = 7;
-//                    break;
-//            case 8: System.out.println(tiles.tile8);
-//                    passBack = 8;
-//                    break;
-//           case 0: System.out.println(tiles.tile0); //Invalid Selection
-//                    passBack = 0;
-//                    break;
-//        }
-//        
-//        return passBack;
-//    }
-   
+    
 }
