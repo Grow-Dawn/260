@@ -4,11 +4,14 @@
  */
 package meh.murray;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author patricks
  */
-public class Options
+public class Options implements Serializable
 {
     User u = new User();
     boolean sound; // Sound is on (true) or off (false)
@@ -103,6 +106,89 @@ public class Options
         System.out.println("Keep Score: " + score);
         System.out.println("Soundtrack: " + sound);
         System.out.println("Timeout: " + matchSeconds);      
+    }
+
+    public User getU() {
+        return u;
+    }
+
+    public void setU(User u) {
+        this.u = u;
+    }
+
+    public boolean isSound() {
+        return sound;
+    }
+
+    public void setSound(boolean sound) {
+        this.sound = sound;
+    }
+
+    public boolean isScore() {
+        return score;
+    }
+
+    public void setScore(boolean score) {
+        this.score = score;
+    }
+
+    public int getMatchSeconds() {
+        return matchSeconds;
+    }
+
+    public void setMatchSeconds(int matchSeconds) {
+        this.matchSeconds = matchSeconds;
+    }
+
+    public int getTilePairs() {
+        return tilePairs;
+    }
+
+    public void setTilePairs(int tilePairs) {
+        this.tilePairs = tilePairs;
+    }
+
+    @Override
+    public String toString() {
+        return "Options{" + "u=" + u + ", sound=" + sound + ", score=" + score + ", matchSeconds=" + matchSeconds + ", tilePairs=" + tilePairs + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 83 * hash + Objects.hashCode(this.u);
+        hash = 83 * hash + (this.sound ? 1 : 0);
+        hash = 83 * hash + (this.score ? 1 : 0);
+        hash = 83 * hash + this.matchSeconds;
+        hash = 83 * hash + this.tilePairs;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Options other = (Options) obj;
+        if (!Objects.equals(this.u, other.u)) {
+            return false;
+        }
+        if (this.sound != other.sound) {
+            return false;
+        }
+        if (this.score != other.score) {
+            return false;
+        }
+        if (this.matchSeconds != other.matchSeconds) {
+            return false;
+        }
+        if (this.tilePairs != other.tilePairs) {
+            return false;
+        }
+        return true;
     }
     
 }
