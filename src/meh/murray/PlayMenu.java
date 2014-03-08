@@ -4,38 +4,27 @@
  */
 package meh.murray;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author patricks
  */
-public class PlayMenu
+public class PlayMenu implements Serializable
 {
 
-    boolean enabled;
-    boolean main;
-    boolean sub;
-    boolean clear;
-    int t1; int t2;
-    int count; int losses;
+    private boolean enabled;
+    private boolean main;
+    private boolean sub;
+    private boolean clear;
+    private int t1;
+    private int t2;
+    private int count;
+    private int losses;
+    
     ASCII_Tiles t = new ASCII_Tiles();
     Score s = new Score();
-    
-//    public void Show()
-//    {
-//        if(enabled == true)
-//        {
-//            if(clear == true)
-//            {
-//                //Runtime.getRuntime().exec("cls");
-//                //System.out.print("\f");
-//            }
-//            
-//            System.out.println("Play Menu");
-//            System.out.println("¯¯¯¯¯¯¯¯¯");
-//            System.out.println("1. Start New Game");
-//            System.out.println("2. Main Menu");
-//        }
-//    }
        
     @SuppressWarnings("empty-statement")
     public void Show(String uname)
@@ -44,27 +33,27 @@ public class PlayMenu
         ASCII_Art a = new ASCII_Art();
         ASCII_Tiles t = new ASCII_Tiles();
         Options o = new Options();
-        t.tilePairs = o.tilePairs;
-        t.intTiles = (t.tilePairs * 2);
-        t.createTileArray(t.intTiles);
-        s.match = new boolean [t.intTiles];
-        s.misses = new int [t.intTiles];
-        s.matches = new int [t.intTiles];
+        t.setTilePairs(o.getTilePairs());
+        t.setIntTiles(t.getTilePairs() * 2);
+        t.createTileArray(t.getIntTiles());
+        s.match = new boolean [t.getIntTiles()];
+        s.misses = new int [t.getIntTiles()];
+        s.matches = new int [t.getIntTiles()];
         //s.matchTile = new int [t.intTiles];
-        System.out.println("Choose a tile number (1-" + (t.intTiles) + "):");
+        System.out.println("Choose a tile number (1-" + (t.getIntTiles()) + "):");
         System.out.println("(0 exits to Main Menu)");
         String prompt1 = "Please specify the first tile.";
         String prompt2 = "Please specify the second tile.";
         String msgSuccess = "Match!"; String msgFailure = "Sorry!";
         count = 0;
     
-    while (s.countMatches < t.tilePairs)
+    while (s.countMatches < t.getTilePairs())
     {     
         // Get user input for first tile guess
         try
         {
             t1 = (moves.getUserInt(prompt1) - 1);
-            System.out.println(t.returnTile(t.arrTiles[t1]) + "\n");
+            System.out.println(t.returnTile2(t.getArrTiles(t1)) + "\n");
             //System.out.println(t.pairOne[t1] + "\n");
             checkExit(t1, uname); checkMatched(t1, uname);
         }
@@ -75,9 +64,9 @@ public class PlayMenu
                 checkExit(-1, uname);
             }
             
-            System.out.println("Invalid guess (" + t.tilePairs * 2 + " is the max.)");
-            s.countMatches = t.tilePairs;
-            count = t.intTiles;
+            System.out.println("Invalid guess (" + t.getTilePairs() * 2 + " is the max.)");
+            s.countMatches = t.getTilePairs();
+            count = t.getIntTiles();
             continue;
         }
         
@@ -85,7 +74,7 @@ public class PlayMenu
         try
         {
             t2 = (moves.getUserInt(prompt2) - 1);
-            System.out.println(t.returnTile(t.arrTiles[t2]) + "\n");
+            System.out.println(t.returnTile2(t.getArrTiles(t2)) + "\n");
             //System.out.println(t.pairTwo[t2] + "\n");
             checkExit(t2, uname); checkMatched(t2, uname);
         }
@@ -96,9 +85,9 @@ public class PlayMenu
                 checkExit(-1, uname);
             }
             
-            System.out.println("Invalid guess (" + t.tilePairs * 2 + " is the max.)");
-            s.countMatches = t.tilePairs;
-            count = t.intTiles;
+            System.out.println("Invalid guess (" + t.getTilePairs() * 2 + " is the max.)");
+            s.countMatches = t.getTilePairs();
+            count = t.getIntTiles();
             continue;
         }
         
@@ -106,7 +95,8 @@ public class PlayMenu
          * Compare user input; if dupes are disabled, alternate checking can be used with current random tile allocation
          * X|aBBa|chiasmus (e.g. t1 + t2 = 9)
         */
-        if (t.returnTile(t.arrTiles[t1]) == t.returnTile(t.arrTiles[t2]))
+        System.out.println("");
+        if (t.getArrTiles(t1) == t.getArrTiles(t2))
         {
             try
             {
@@ -117,7 +107,7 @@ public class PlayMenu
             s.matches[t2] = (s.matches[t2] + 1);
             count++;
             s.countMatches++;
-            System.out.println(msgSuccess + " " + a.music());
+            System.out.println(msgSuccess + " " + a.getMusic());
             }
             catch (Exception x)
             {
@@ -134,7 +124,7 @@ public class PlayMenu
             s.match[t2] = false;
             s.misses[t1] = (s.misses[t1] + 1);
             s.misses[t2] = (s.misses[t2] + 1);
-            System.out.println(msgFailure + " " + a.fish());         
+            System.out.println(msgFailure + " " + a.getFish());         
             }
             catch (Exception x)
             {
@@ -197,9 +187,9 @@ public class PlayMenu
             System.out.println("");
             
         //If matched tiles = tilePairs, exit loop via Continue
-        if(s.countMatches == t.tilePairs)
+        if(s.countMatches == t.getTilePairs())
         {
-            count = t.intTiles;
+            count = t.getIntTiles();
             continue;
         }
             
@@ -231,7 +221,7 @@ public class PlayMenu
             t1 = 0;
             t2 = 0;            
             MainMenu m = new MainMenu();
-            m.enabled = true;
+            m.setEnabled(true);
             m.Show(uname);
         }  
     }
@@ -256,6 +246,142 @@ public class PlayMenu
 //            t2 = 0;  
 //            this.Show(uname);
 //        }
+    }
+
+    public PlayMenu() {
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isMain() {
+        return main;
+    }
+
+    public void setMain(boolean main) {
+        this.main = main;
+    }
+
+    public boolean isSub() {
+        return sub;
+    }
+
+    public void setSub(boolean sub) {
+        this.sub = sub;
+    }
+
+    public boolean isClear() {
+        return clear;
+    }
+
+    public void setClear(boolean clear) {
+        this.clear = clear;
+    }
+
+    public int getT1() {
+        return t1;
+    }
+
+    public void setT1(int t1) {
+        this.t1 = t1;
+    }
+
+    public int getT2() {
+        return t2;
+    }
+
+    public void setT2(int t2) {
+        this.t2 = t2;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getLosses() {
+        return losses;
+    }
+
+    public void setLosses(int losses) {
+        this.losses = losses;
+    }
+
+    public ASCII_Tiles getT() {
+        return t;
+    }
+
+    public void setT(ASCII_Tiles t) {
+        this.t = t;
+    }
+
+    public Score getS() {
+        return s;
+    }
+
+    public void setS(Score s) {
+        this.s = s;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayMenu{" + "enabled=" + enabled + ", main=" + main + ", sub=" + sub + ", clear=" + clear + ", t1=" + t1 + ", t2=" + t2 + ", count=" + count + ", losses=" + losses + ", t=" + t + ", s=" + s + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PlayMenu other = (PlayMenu) obj;
+        if (this.enabled != other.enabled) {
+            return false;
+        }
+        if (this.main != other.main) {
+            return false;
+        }
+        if (this.sub != other.sub) {
+            return false;
+        }
+        if (this.clear != other.clear) {
+            return false;
+        }
+        if (this.t1 != other.t1) {
+            return false;
+        }
+        if (this.t2 != other.t2) {
+            return false;
+        }
+        if (this.count != other.count) {
+            return false;
+        }
+        if (this.losses != other.losses) {
+            return false;
+        }
+        if (!Objects.equals(this.t, other.t)) {
+            return false;
+        }
+        if (!Objects.equals(this.s, other.s)) {
+            return false;
+        }
+        return true;
     }
     
 }

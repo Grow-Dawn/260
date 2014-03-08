@@ -11,9 +11,9 @@ import java.util.Objects;
  * @author patricks (and now Dawn)
  */
 public class HelpMenu implements Serializable {
-    boolean enabled;
-    boolean main;
-    boolean Sub;
+    private boolean enabled;
+    private boolean main;
+    private boolean Sub;
     private String instructions = "\n" + "How to Play:" + "\n"
                     + "A player tries to match tiles.\n"
                     + "If the tiles chosen match, they will disappear.\n"
@@ -24,7 +24,6 @@ public class HelpMenu implements Serializable {
         if(enabled)
         {
             System.out.println(instructions);
-        
         }
     }
 

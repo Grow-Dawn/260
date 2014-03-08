@@ -29,7 +29,7 @@ public class Score {
     {
         System.out.println("Scores:\n");
         
-        matches = new int[o.tilePairs * 2];
+        matches = new int[o.getTilePairs() * 2];
         
         for (int m : matches)
         {

@@ -7,6 +7,8 @@
 package meh.murray;
 
 import java.util.Scanner;
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -14,13 +16,14 @@ import java.util.Scanner;
  * 
  */
 
-public class Moves { 
+public class Moves implements Serializable { 
      
-     public String name;
-     public String UserIn;
-     public Moves() {   //
+     private String name;
+     private String UserIn;
+     private Moves() {   //
     }
-    public static void main(String score) {    //
+    
+     public static void main(String score) {    //
  //private String getScore;
     @SuppressWarnings("empty-statement")
     //public String moveMsg;
@@ -94,5 +97,55 @@ public class Moves {
         this.UserIn = Move.next();
         return this.UserIn;
     }
-    
+
+    public Moves(String name, String UserIn) {
+        this.name = name;
+        this.UserIn = UserIn;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUserIn() {
+        return UserIn;
+    }
+
+    public void setUserIn(String UserIn) {
+        this.UserIn = UserIn;
+    }
+
+    @Override
+    public String toString() {
+        return "Moves{" + "name=" + name + ", UserIn=" + UserIn + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Moves other = (Moves) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.UserIn, other.UserIn)) {
+            return false;
+        }
+        return true;
+    }
+        
 }   

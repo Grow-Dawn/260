@@ -6,6 +6,7 @@ package meh.murray;
 
 import java.util.Scanner;
 import java.util.Random;
+import java.io.Serializable;
 
 /**
  *
@@ -13,21 +14,21 @@ import java.util.Random;
  * 
  */
 
-public class MainMenu
+public class MainMenu implements Serializable
 {
-    boolean enabled;
-    boolean main;
-    boolean Sub;
-    int menuPlay = 1;
-    int menuOpt =  2;
-    int menuHelp = 3;
-    int menuQuit = 4;
-    int menuItem = 1; //Default menu item is 1, which loops
+    private boolean enabled;
+    private boolean main;
+    private boolean Sub;
+    private int menuPlay = 1;
+    private int menuOpt =  2;
+    private int menuHelp = 3;
+    private int menuQuit = 4;
+    private int menuItem = 1; //Default menu item is 1, which loops
     
     public void Show(String uname)
     {
          //Instantiate classes
-        ASCII_Sound beep = new ASCII_Sound();
+        ASCII_Sound beep = new ASCII_Sound(false);
         ASCII_Art welcome = new ASCII_Art();
         Options o = new Options();
         MainMenu m = new MainMenu();
@@ -42,7 +43,7 @@ public class MainMenu
         {
             System.out.println("Main Menu");
             System.out.println("_________");
-            System.out.println(" " + welcome.hphones());
+            System.out.println(" " + welcome.getHphones());
             System.out.println("¯¯¯¯¯¯¯¯¯");
             System.out.println("1. Play");
             System.out.println("2. Options");
@@ -82,5 +83,124 @@ public class MainMenu
     {
         
     }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isMain() {
+        return main;
+    }
+
+    public void setMain(boolean main) {
+        this.main = main;
+    }
+
+    public boolean isSub() {
+        return Sub;
+    }
+
+    public void setSub(boolean Sub) {
+        this.Sub = Sub;
+    }
+
+    public int getMenuPlay() {
+        return menuPlay;
+    }
+
+    public void setMenuPlay(int menuPlay) {
+        this.menuPlay = menuPlay;
+    }
+
+    public int getMenuOpt() {
+        return menuOpt;
+    }
+
+    public void setMenuOpt(int menuOpt) {
+        this.menuOpt = menuOpt;
+    }
+
+    public int getMenuHelp() {
+        return menuHelp;
+    }
+
+    public void setMenuHelp(int menuHelp) {
+        this.menuHelp = menuHelp;
+    }
+
+    public int getMenuQuit() {
+        return menuQuit;
+    }
+
+    public void setMenuQuit(int menuQuit) {
+        this.menuQuit = menuQuit;
+    }
+
+    public int getMenuItem() {
+        return menuItem;
+    }
+
+    public void setMenuItem(int menuItem) {
+        this.menuItem = menuItem;
+    }
+
+    @Override
+    public String toString() {
+        return "MainMenu{" + "enabled=" + enabled + ", main=" + main + ", Sub=" + Sub + ", menuPlay=" + menuPlay + ", menuOpt=" + menuOpt + ", menuHelp=" + menuHelp + ", menuQuit=" + menuQuit + ", menuItem=" + menuItem + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MainMenu other = (MainMenu) obj;
+        if (this.enabled != other.enabled) {
+            return false;
+        }
+        if (this.main != other.main) {
+            return false;
+        }
+        if (this.Sub != other.Sub) {
+            return false;
+        }
+        if (this.menuPlay != other.menuPlay) {
+            return false;
+        }
+        if (this.menuOpt != other.menuOpt) {
+            return false;
+        }
+        if (this.menuHelp != other.menuHelp) {
+            return false;
+        }
+        if (this.menuQuit != other.menuQuit) {
+            return false;
+        }
+        if (this.menuItem != other.menuItem) {
+            return false;
+        }
+        return true;
+    }
+
+//    public MainMenu(boolean enabled, boolean main, boolean Sub) {
+//        this.enabled = enabled;
+//        this.main = main;
+//        this.Sub = Sub;
+//    }
+    
+    
     
 }

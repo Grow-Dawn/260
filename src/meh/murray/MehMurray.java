@@ -6,6 +6,7 @@
 package meh.murray;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Scanner;
 /*import java.lang.reflect.Array;*/
 
@@ -16,16 +17,15 @@ import java.util.Scanner;
 public class MehMurray implements Serializable {
    /* int name, instructions, letter1, letter2;*/
    
-    private String name;
-    
+    private String name; 
     private long wins = 0;
     private long losses = 0;
     private long ties = 0;
     private String letter = "";
-    public int matchSeconds;
-    public boolean keepScore;
-    public boolean enableSound;
-    public boolean exitMM = false;
+    private int matchSeconds;
+    private boolean keepScore;
+    private boolean enableSound;
+    private boolean exitMM = false;
     
   /*  var letter = new Array(16);
 		
@@ -99,7 +99,7 @@ public class MehMurray implements Serializable {
     public static void main(String[] args) {
         
         //Instantiate classes
-        ASCII_Sound beep = new ASCII_Sound();
+        ASCII_Sound beep = new ASCII_Sound(false);
         ASCII_Art welcome = new ASCII_Art();
         Options o = new Options();
         MainMenu m = new MainMenu();
@@ -111,7 +111,7 @@ public class MehMurray implements Serializable {
         beep.RingBell();
         
         //Print "Welcome" art
-        System.out.println(welcome.title());
+        System.out.println(welcome.getTitle());
         
         //Instantiate new instance
         MehMurray mm = new MehMurray();
@@ -122,7 +122,7 @@ public class MehMurray implements Serializable {
         u.user = u.getInput("Name? ", true, "String");
         
         //Populate Options variables
-        o.matchSeconds = 4; //The default is four seconds.
+        o.setMatchSeconds(4); //The default is four seconds.
         o.score = true; //The default is true.
         o.sound = true; //The default is true.
         
@@ -131,7 +131,7 @@ public class MehMurray implements Serializable {
         
         do
         {
-            m.enabled = true;
+            m.setEnabled(true);
             m.Show(u.user);
             
         }
@@ -178,21 +178,150 @@ public class MehMurray implements Serializable {
 //        answerExit.getExit();
 
     }
-      
-//    public void getName(){
-//        Scanner input = new Scanner(System.in);
-//        System.out.println ("Enter your name: ");
-//        this.name = input.next();
-//        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + "." + "\n");
-//    }
+
+    //    public void getName(){
+    //        Scanner input = new Scanner(System.in);
+    //        System.out.println ("Enter your name: ");
+    //        this.name = input.next();
+    //        System.out.println("\n" + "Welcome to Meh Murray (Memory), " + this.name + "." + "\n");
+    //    }
+    //    public void displayHelp(boolean enabled)
+    //    {
+    //        HelpMenu hi = new HelpMenu();
+    //        hi.Show(enabled);
+    //
+    //    }
+    //
     
-//    public void displayHelp(boolean enabled)
-//    {  
-//        HelpMenu hi = new HelpMenu();
-//        hi.Show(enabled);
-//    
-//    }
-//       
+    public MehMurray(String name, int matchSeconds, boolean keepScore, boolean enableSound) {
+        this.name = name;
+        this.matchSeconds = matchSeconds;
+        this.keepScore = keepScore;
+        this.enableSound = enableSound;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getWins() {
+        return wins;
+    }
+
+    public void setWins(long wins) {
+        this.wins = wins;
+    }
+
+    public long getLosses() {
+        return losses;
+    }
+
+    public void setLosses(long losses) {
+        this.losses = losses;
+    }
+
+    public long getTies() {
+        return ties;
+    }
+
+    public void setTies(long ties) {
+        this.ties = ties;
+    }
+
+    public String getLetter() {
+        return letter;
+    }
+
+    public void setLetter(String letter) {
+        this.letter = letter;
+    }
+
+    public int getMatchSeconds() {
+        return matchSeconds;
+    }
+
+    public void setMatchSeconds(int matchSeconds) {
+        this.matchSeconds = matchSeconds;
+    }
+
+    public boolean isKeepScore() {
+        return keepScore;
+    }
+
+    public void setKeepScore(boolean keepScore) {
+        this.keepScore = keepScore;
+    }
+
+    public boolean isEnableSound() {
+        return enableSound;
+    }
+
+    public void setEnableSound(boolean enableSound) {
+        this.enableSound = enableSound;
+    }
+
+    public boolean isExitMM() {
+        return exitMM;
+    }
+
+    public void setExitMM(boolean exitMM) {
+        this.exitMM = exitMM;
+    }
+
+    @Override
+    public String toString() {
+        return "MehMurray{" + "name=" + name + ", wins=" + wins + ", losses=" + losses + ", ties=" + ties + ", letter=" + letter + ", matchSeconds=" + matchSeconds + ", keepScore=" + keepScore + ", enableSound=" + enableSound + ", exitMM=" + exitMM + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MehMurray other = (MehMurray) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (this.wins != other.wins) {
+            return false;
+        }
+        if (this.losses != other.losses) {
+            return false;
+        }
+        if (this.ties != other.ties) {
+            return false;
+        }
+        if (!Objects.equals(this.letter, other.letter)) {
+            return false;
+        }
+        if (this.matchSeconds != other.matchSeconds) {
+            return false;
+        }
+        if (this.keepScore != other.keepScore) {
+            return false;
+        }
+        if (this.enableSound != other.enableSound) {
+            return false;
+        }
+        if (this.exitMM != other.exitMM) {
+            return false;
+        }
+        return true;
+    }
+    
     
         
 }

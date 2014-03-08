@@ -16,15 +16,14 @@ public class Options implements Serializable
     User u = new User();
     boolean sound; // Sound is on (true) or off (false)
     boolean score; // Score is tracked; on (true) or off (false)
-    int matchSeconds = 4; //n seconds allowed to make a match (configurable)
-    int tilePairs = 4; // 4 is the default, 8 tiles; 16 is the maximum, 32 tiles.
-    
+    private int matchSeconds = 4; //n seconds allowed to make a match (configurable)
+    private int tilePairs = 4; // 4 is the default, 8 tiles; 16 is the maximum, 32 tiles.
     
     public void Show(boolean enabled, String uname)
     {
                  
          //Instantiate classes
-        ASCII_Sound beep = new ASCII_Sound();
+        ASCII_Sound beep = new ASCII_Sound(false);
         ASCII_Art welcome = new ASCII_Art();
         Options o = new Options();
         MainMenu m = new MainMenu();
@@ -35,15 +34,16 @@ public class Options implements Serializable
         {
             System.out.println("Options Menu");
             System.out.println("__________________");
-            System.out.println(welcome.options());
+            System.out.println(welcome.getOptions());
             System.out.println("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
             System.out.println("1. Keep Score = On");
             System.out.println("2. Keep Score = Off (Practice)");
             System.out.println("3. Sound = On");
             System.out.println("4. Sound = Off");
             System.out.println("5. Set Timeout");
-            System.out.println("6. Display Options");
-            System.out.println("7. Main Menu");
+            System.out.println("6. Set # of matches [4]");
+            System.out.println("7. Display Options");
+            System.out.println("8. Main Menu");
             System.out.println("");
         }
         
@@ -66,16 +66,20 @@ public class Options implements Serializable
             case 5: matchSeconds = u.getUserInt("How many seconds?\n [3-10]");
                     System.out.println("Timeout: " + matchSeconds);
                     break;
-            case 6: printOptions();
+            case 6: tilePairs = u.getUserInt("How many match pairs?\n [4]");
+                    System.out.println("Match Pairs: " + tilePairs);
+                    break;                
+            case 7: printOptions();
                     break;
-            case 7: m.enabled = true; m.Show(uname);
+            case 8: m.setEnabled(true); m.Show(uname);
+                    break;
             case 99:
                     System.out.println("Invalid selection.");
                     o.Show(enabled, uname);
-            break;
+                    break;
             default: System.out.println("Invalid selection.");
                     o.Show(enabled, uname);
-            break;
+                    break;
                 
         }
 
