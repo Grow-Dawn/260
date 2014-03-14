@@ -14,16 +14,16 @@ import java.io.Serializable;
  * 
  */
 
-public class MainMenu implements Serializable
+public class MainMenu extends MehMurray implements Serializable
 {
     private boolean enabled;
     private boolean main;
     private boolean Sub;
-    private int menuPlay = 1;
-    private int menuOpt =  2;
-    private int menuHelp = 3;
-    private int menuQuit = 4;
-    private int menuItem = 1; //Default menu item is 1, which loops
+//    private int menuPlay = 1;
+//    private int menuOpt =  2;
+//    private int menuHelp = 3;
+//    private int menuQuit = 4;
+//    private int menuItem = 1; //Default menu item is 1, which loops
     
     public void Show(String uname)
     {
@@ -31,6 +31,7 @@ public class MainMenu implements Serializable
         ASCII_Sound beep = new ASCII_Sound(false);
         ASCII_Art welcome = new ASCII_Art();
         Options o = new Options();
+        MehMurray mm = new MehMurray();
         MainMenu m = new MainMenu();
         PlayMenu p = new PlayMenu();
         HelpMenu h = new HelpMenu();
@@ -39,18 +40,21 @@ public class MainMenu implements Serializable
 //        t.tilePairs = 16;
 //        t.createTileArray(t.tilePairs);
         
+        // Print menu
+        
         if(enabled == true)
         {
             System.out.println("Main Menu");
             System.out.println("_________");
             System.out.println(" " + welcome.getHphones());
             System.out.println("¯¯¯¯¯¯¯¯¯");
-            System.out.println("1. Play");
-            System.out.println("2. Options");
-            System.out.println("3. Help");
-            System.out.println("4. Scores");
-            System.out.println("5. Quit");
-            System.out.println("");
+
+            for (String[] z : mm.menuItems)
+            {
+                System.out.println(z[0] + ". " + z[1]);
+            }
+            
+                System.out.println("");
         }
         
         //Call the getMenuItem function
@@ -108,49 +112,9 @@ public class MainMenu implements Serializable
         this.Sub = Sub;
     }
 
-    public int getMenuPlay() {
-        return menuPlay;
-    }
-
-    public void setMenuPlay(int menuPlay) {
-        this.menuPlay = menuPlay;
-    }
-
-    public int getMenuOpt() {
-        return menuOpt;
-    }
-
-    public void setMenuOpt(int menuOpt) {
-        this.menuOpt = menuOpt;
-    }
-
-    public int getMenuHelp() {
-        return menuHelp;
-    }
-
-    public void setMenuHelp(int menuHelp) {
-        this.menuHelp = menuHelp;
-    }
-
-    public int getMenuQuit() {
-        return menuQuit;
-    }
-
-    public void setMenuQuit(int menuQuit) {
-        this.menuQuit = menuQuit;
-    }
-
-    public int getMenuItem() {
-        return menuItem;
-    }
-
-    public void setMenuItem(int menuItem) {
-        this.menuItem = menuItem;
-    }
-
     @Override
     public String toString() {
-        return "MainMenu{" + "enabled=" + enabled + ", main=" + main + ", Sub=" + Sub + ", menuPlay=" + menuPlay + ", menuOpt=" + menuOpt + ", menuHelp=" + menuHelp + ", menuQuit=" + menuQuit + ", menuItem=" + menuItem + '}';
+        return "MainMenu{" + "enabled=" + enabled + ", main=" + main + ", Sub=" + Sub + ", menuPlay=" + ", menuOpt=" + ", menuHelp=" + ", menuQuit=" + ", menuItem=" + '}';
     }
 
     @Override
@@ -177,21 +141,7 @@ public class MainMenu implements Serializable
         if (this.Sub != other.Sub) {
             return false;
         }
-        if (this.menuPlay != other.menuPlay) {
-            return false;
-        }
-        if (this.menuOpt != other.menuOpt) {
-            return false;
-        }
-        if (this.menuHelp != other.menuHelp) {
-            return false;
-        }
-        if (this.menuQuit != other.menuQuit) {
-            return false;
-        }
-        if (this.menuItem != other.menuItem) {
-            return false;
-        }
+
         return true;
     }
 

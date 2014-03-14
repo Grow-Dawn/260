@@ -14,9 +14,29 @@ import java.util.Scanner;
  *
  * @author Dawn Grow and Patrick Stamps*/
 
-public class MehMurray implements Serializable {
-   /* int name, instructions, letter1, letter2;*/
-   
+public class MehMurray implements Serializable
+{
+
+    /* int name, instructions, letter1, letter2;*/
+    public String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+  
+    public String[][] menuItems = 
+    {
+        {"1", "Play"},
+        {"2", "Options"},
+        {"3", "Help"},
+        {"4", "Scores"},
+        {"5", "Quit"},
+    };
+            
+    private boolean enabled;
+    
     private String name; 
     private long wins = 0;
     private long losses = 0;
@@ -114,7 +134,7 @@ public class MehMurray implements Serializable {
         System.out.println(welcome.getTitle());
         
         //Instantiate new instance
-        MehMurray mm = new MehMurray();
+        //MehMurray mm = new MehMurray();
         //mm.getName();
         //mm.displayHelp();
         
