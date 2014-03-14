@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 public class MainMenu extends MehMurray implements Serializable
 {
-    private boolean enabled;
+    private boolean enabled; // Not part of Superclass
     private boolean main;
     private boolean Sub;
 //    private int menuPlay = 1;
@@ -44,12 +44,14 @@ public class MainMenu extends MehMurray implements Serializable
         
         if(enabled == true)
         {
+                System.out.println("");
+            
             System.out.println("Main Menu");
             System.out.println("_________");
             System.out.println(" " + welcome.getHphones());
             System.out.println("¯¯¯¯¯¯¯¯¯");
 
-            for (String[] z : mm.menuItems)
+            for (String[] z : mm.getMenuItems())
             {
                 System.out.println(z[0] + ". " + z[1]);
             }
@@ -145,11 +147,10 @@ public class MainMenu extends MehMurray implements Serializable
         return true;
     }
 
-//    public MainMenu(boolean enabled, boolean main, boolean Sub) {
-//        this.enabled = enabled;
-//        this.main = main;
-//        this.Sub = Sub;
-//    }
+    public MainMenu() {
+
+        
+    }
     
     
     

@@ -25,8 +25,8 @@ public class MehMurray implements Serializable
     public boolean isEnabled() {
         return enabled;
     }
-  
-    public String[][] menuItems = 
+     
+    private String[][] menuItems = 
     {
         {"1", "Play"},
         {"2", "Options"},
@@ -35,7 +35,7 @@ public class MehMurray implements Serializable
         {"5", "Quit"},
     };
             
-    private boolean enabled;
+    private boolean enabled = true;
     
     private String name; 
     private long wins = 0;
@@ -61,8 +61,9 @@ public class MehMurray implements Serializable
         
         
     public MehMurray() {
+        //super(MehMurray.menuItems);
     }
-
+    
     /*public String getName() {
         return name;
     }

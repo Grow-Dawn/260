@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author patricks
  */
-public class Options implements Serializable
+public class Options extends MehMurray implements Serializable
 {
     User u = new User();
     boolean sound; // Sound is on (true) or off (false)

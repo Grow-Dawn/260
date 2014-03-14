@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author patricks (and now Dawn)
  */
-public class HelpMenu implements Serializable {
+public class HelpMenu extends MehMurray implements Serializable {
     private boolean enabled;
     private boolean main;
     private boolean Sub;
