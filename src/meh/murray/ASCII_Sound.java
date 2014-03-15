@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author PATRICKS
  */
-public class ASCII_Sound
+public class ASCII_Sound extends ASCII_Art
 {
 
     private boolean ring;

@@ -12,33 +12,41 @@ import java.util.Random;
  *
  * @author PATRICKS, DG
  */
-public class ASCII_Tiles
+public class ASCII_Tiles extends ASCII_Art
 {
+    //Variables specific to this class
     private int[] arrTiles;
     private int tilePairs = 4; //Number of tile pairs - 4 by default (8 tiles); up to 8 pairs (16 tiles).
     private int intTiles = tilePairs * 2; //Default number of tiles, 32 is the limit
     
+    // Inherited variables define tile assignments
     // Tile character assignments; randomly selecting Unicode characters directly = phase 2
-    private String  tile0 = "♥";
-    private String  tile1 = "♦";
-    private String  tile2 = "♣";
-    private String  tile3 = "♠";
-    private String  tile4 = "☼";
-    private String  tile5 = "♪";
-    private String  tile6 = "♫";
-    private String  tile7 = "♯";
-    private String  tile8 = "☺";
-    private String  tile9 = "☻";
-    private String  tile10 = "▲";
-    private String  tile11 = "►";
-    private String  tile12 = "▼";
-    private String  tile13 = "◄";
-    private String  tile14 = "۞";
-    private String  tile15 = "ʘ";
+    ASCII_Art a = new ASCII_Art();
+    private String  tile0 = a.getHeart();
+    private String  tile1 = a.getDiamond();
+    private String  tile2 = a.getClover();
+    private String  tile3 = a.getSpade();
+    private String  tile4 = a.getSun();
+    private String  tile5 = a.getEighth_note();
+    private String  tile6 = a.getSixteenth_note();
+    private String  tile7 = a.getSharp();
+    private String  tile8 = a.getSmiley_light();
+    private String  tile9 = a.getSmiley_dark();
+    private String  tile10 = a.getTriangle_up();
+    private String  tile11 = a.getTriangle_right();
+    private String  tile12 = a.getTriangle_down();
+    private String  tile13 = a.getTriangle_left();
+    private String  tile14 = a.getThing1();
+    private String  tile15 = a.getBullseye();
     
     // Put the tiles into a 1D array
     private String [] arrTileChars = {tile0, tile1, tile2, tile3, tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14, tile15};
-    private int [] arrTilesCount; 
+    private int [] arrTilesCount;
+    
+    public ASCII_Tiles()
+    {
+        
+    }
             
  public void createTileArray(int numTiles)
  {
