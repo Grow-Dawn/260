@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author patricks
  */
-public class PlayMenu implements Serializable
+public class PlayMenu extends MehMurray implements Serializable
 {
 
     private boolean enabled;
@@ -32,6 +32,8 @@ public class PlayMenu implements Serializable
         User moves = new User();
         ASCII_Art a = new ASCII_Art();
         ASCII_Tiles t = new ASCII_Tiles();
+        //Display EQ
+        delayASC(a.getEq(), 250);
         Options o = new Options();
         t.setTilePairs(o.getTilePairs());
         t.setIntTiles(t.getTilePairs() * 2);
@@ -305,10 +307,6 @@ public class PlayMenu implements Serializable
 
     public void setCount(int count) {
         this.count = count;
-    }
-
-    public int getLosses() {
-        return losses;
     }
 
     public void setLosses(int losses) {

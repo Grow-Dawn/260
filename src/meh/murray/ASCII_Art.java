@@ -35,6 +35,7 @@ public class ASCII_Art implements Serializable
     private final static String  triangle_left = "◄";
     private final static String  thing1 = "۞";
     private final static String  bullseye = "ʘ";
+    private boolean titlePrinted;
     
     public String getHeart() {
         return heart;
@@ -133,9 +134,21 @@ public class ASCII_Art implements Serializable
 //
 //    }
 
-    public ASCII_Art() {
-    }
-
+    
+    public ASCII_Art()
+    {
+        
+    }        
+    
+    public ASCII_Art(boolean printTitle)
+    {
+        if (printTitle)
+        {
+            //runEQ();
+        }
+     
+    }   
+    
     public String getTitle() {
         return title;
     }
@@ -144,7 +157,7 @@ public class ASCII_Art implements Serializable
     public String getEq() {
         return eq;
     }
-
+      
     public String getHphones() {
         return hphones;
     }
@@ -246,6 +259,26 @@ public class ASCII_Art implements Serializable
             return false;
         }
         return true;
+    }
+    
+    // Method to print the EQ in sequence
+    public void runEQ()
+    {
+        String[] arrEQ = eq.split(" ");
+        for (String e : arrEQ)
+        {
+            try
+            {
+                System.out.print(e + " ");
+                Thread.sleep(1 * arrEQ.length * 200);
+            }
+            catch (Exception x)
+            {
+                // Do nothing!
+            }
+        }
+        
+        System.out.println("");
     }
    
 }

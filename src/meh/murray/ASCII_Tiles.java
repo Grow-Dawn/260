@@ -21,23 +21,23 @@ public class ASCII_Tiles extends ASCII_Art
     
     // Inherited variables define tile assignments
     // Tile character assignments; randomly selecting Unicode characters directly = phase 2
-    ASCII_Art a = new ASCII_Art();
-    private String  tile0 = a.getHeart();
-    private String  tile1 = a.getDiamond();
-    private String  tile2 = a.getClover();
-    private String  tile3 = a.getSpade();
-    private String  tile4 = a.getSun();
-    private String  tile5 = a.getEighth_note();
-    private String  tile6 = a.getSixteenth_note();
-    private String  tile7 = a.getSharp();
-    private String  tile8 = a.getSmiley_light();
-    private String  tile9 = a.getSmiley_dark();
-    private String  tile10 = a.getTriangle_up();
-    private String  tile11 = a.getTriangle_right();
-    private String  tile12 = a.getTriangle_down();
-    private String  tile13 = a.getTriangle_left();
-    private String  tile14 = a.getThing1();
-    private String  tile15 = a.getBullseye();
+    
+    private String  tile0 = getHeart(); // Call inherited get function
+    private String  tile1 = getDiamond(); // Call inherited get function
+    private String  tile2 = getClover(); // Call inherited get function
+    private String  tile3 = getSpade(); // Call inherited get function
+    private String  tile4 = getSun(); // Call inherited get function
+    private String  tile5 = getEighth_note(); // Call inherited get function
+    private String  tile6 = getSixteenth_note(); // Call inherited get function
+    private String  tile7 = getSharp(); // Call inherited get function
+    private String  tile8 = getSmiley_light(); // Call inherited get function
+    private String  tile9 = getSmiley_dark(); // Call inherited get function
+    private String  tile10 = getTriangle_up(); // Call inherited get function
+    private String  tile11 = getTriangle_right(); // Call inherited get function
+    private String  tile12 = getTriangle_down(); // Call inherited get function
+    private String  tile13 = getTriangle_left(); // Call inherited get function
+    private String  tile14 = getThing1(); // Call inherited get function
+    private String  tile15 = getBullseye(); // Call inherited get function
     
     // Put the tiles into a 1D array
     private String [] arrTileChars = {tile0, tile1, tile2, tile3, tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14, tile15};
@@ -45,7 +45,7 @@ public class ASCII_Tiles extends ASCII_Art
     
     public ASCII_Tiles()
     {
-        
+        super(true);
     }
             
  public void createTileArray(int numTiles)

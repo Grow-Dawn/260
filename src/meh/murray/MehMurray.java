@@ -131,8 +131,8 @@ public class MehMurray implements Serializable
         //Sound is KING!!! - Unless you're not in the forest when the tree falls. ;)
         beep.RingBell();
         
-        //Print "Welcome" art
-        System.out.println(welcome.getTitle());
+        // Print "Welcome" art
+        System.out.println(welcome.getTitle()); //Can be printed using super() directly from ASCII_Art super class (comment out here, then enable)
         
         //Instantiate new instance
         //MehMurray mm = new MehMurray();
@@ -343,7 +343,42 @@ public class MehMurray implements Serializable
         return true;
     }
     
-    
+    public void delayASC(String ascArt)
+    {
+        String[] arrEQ = ascArt.split(" ");
+        for (String e : arrEQ)
+        {
+            try
+            {
+                System.out.print(e + " ");
+                Thread.sleep(1 * 200);
+            }
+            catch (Exception x)
+            {
+                // Do nothing!
+            }
+        }
         
+        System.out.println("");
+    }
+  
+    public void delayASC(String ascArt, int ascDelay)
+    {
+        String[] arrEQ = ascArt.split(" ");
+        for (String e : arrEQ)
+        {
+            try
+            {
+                System.out.print(e + " ");
+                Thread.sleep(1 * ascDelay);
+            }
+            catch (Exception x)
+            {
+                // Do nothing!
+            }
+        }
+        
+        System.out.println("");
+    }
 }
     
