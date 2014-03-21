@@ -6,17 +6,19 @@
 
 package meh.murray;
 
+import java.io.Serializable;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
  *
  * @author Dawn Grow
  */
-public class Restart {
+public class Restart implements Serializable{
     // this will be a button on the original game board to Restart the game and will not be seen at this time
-    public String name1;
+    private String name1;
     private String getStart;
-    public boolean beginner(){
+    private boolean beginner(){
     User st = new User();
     getStart = (st.getInput("Are you sure you want to start over? [y/n]", false, "String").toUpperCase());  
         Scanner redo = new Scanner(System.in);
@@ -37,10 +39,55 @@ public class Restart {
                 System.exit(0);
             return false;
   
-
-
     }
-       
-        
+           
         }
+
+    public String getName1() {
+        return name1;
+    }
+
+    public void setName1(String name1) {
+        this.name1 = name1;
+    }
+
+    public String getGetStart() {
+        return getStart;
+    }
+
+    public void setGetStart(String getStart) {
+        this.getStart = getStart;
+    }
+
+    @Override
+    public String toString() {
+        return "Restart{" + "name1=" + name1 + ", getStart=" + getStart + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.name1);
+        hash = 37 * hash + Objects.hashCode(this.getStart);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Restart other = (Restart) obj;
+        if (!Objects.equals(this.name1, other.name1)) {
+            return false;
+        }
+        if (!Objects.equals(this.getStart, other.getStart)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

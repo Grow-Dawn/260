@@ -2,11 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package meh.murray;
+package cit260.mehmurray.menus;
 
+import cit260.mehmurray.menus.HelpMenu;
 import java.util.Scanner;
 import java.util.Random;
 import java.io.Serializable;
+import meh.murray.ASCII_Art;
+import meh.murray.ASCII_Sound;
+import meh.murray.MehMurray;
+import meh.murray.Options;
+import meh.murray.PlayMenu;
+import meh.murray.Score;
+import meh.murray.User;
 
 /**
  *

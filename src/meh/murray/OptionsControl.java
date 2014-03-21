@@ -4,10 +4,20 @@
  */
 package meh.murray;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PATRICKS
  */
-public class OptionsControl {
+public class OptionsControl implements Serializable{
+
+    public OptionsControl() {
+    }
+
+    @Override
+    public String toString() {
+        return "OptionsControl{" + '}';
+    }
     
 }

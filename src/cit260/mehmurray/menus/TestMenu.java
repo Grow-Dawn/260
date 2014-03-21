@@ -2,7 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package meh.murray;
+package cit2mehmurray.menusray;
+
+import cit260.mehmurray.menus.Menu;
 
 /**
  *

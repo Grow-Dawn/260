@@ -2,10 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package meh.murray;
+package cit260.mehmurray.menus;
 
 import java.io.Serializable;
 import java.util.Objects;
+import meh.murray.MehMurray;
 /**
  *
  * @author patricks (and now Dawn)
