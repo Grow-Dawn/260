@@ -12,6 +12,8 @@ package cit260.mehmurray.interfaces;
  */
 public interface DisplayInfo {
     
-    void display ();
+    void display();
     
 }
+
+

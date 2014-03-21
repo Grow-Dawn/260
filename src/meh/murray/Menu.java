@@ -31,7 +31,7 @@ public abstract class Menu implements Serializable
     
     }
     
-    protected final void display()
+    public void display()
     {
         
     }
