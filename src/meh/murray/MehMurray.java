@@ -5,6 +5,8 @@
 
 package meh.murray;
 
+import cit260.mehmurray.ascii.ASCII_Sound;
+import cit260.mehmurray.ascii.ASCII_Art;
 import cit260.mehmurray.menus.MainMenu;
 import cit260.mehmurray.menus.HelpMenu;
 import java.io.Serializable;

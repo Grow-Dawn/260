@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package meh.murray;
+package cit260.mehmurray.ascii;
 
+import cit260.mehmurray.ascii.ASCII_Art;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;

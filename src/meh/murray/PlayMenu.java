@@ -4,6 +4,8 @@
  */
 package meh.murray;
 
+import cit260.mehmurray.ascii.ASCII_Tiles;
+import cit260.mehmurray.ascii.ASCII_Art;
 import cit260.mehmurray.menus.MainMenu;
 import java.io.Serializable;
 import java.util.Objects;

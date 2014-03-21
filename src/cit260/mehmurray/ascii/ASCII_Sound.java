@@ -3,7 +3,8 @@
  * and open the template in the editor.
  */
 
-package meh.murray;
+package cit260.mehmurray.ascii;
+import cit260.mehmurray.ascii.ASCII_Art;
 import java.awt.*;
 import java.io.Serializable;
 

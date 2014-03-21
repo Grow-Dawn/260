@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package meh.murray;
+package cit260.mehmurray.ascii;
 import java.io.Serializable;
 import java.util.Objects;
 

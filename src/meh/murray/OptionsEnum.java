@@ -8,7 +8,7 @@ package meh.murray;
 
 /**
  *
- * @author photos plus
+ * @author Dawn
  */
 public enum OptionsEnum {
     setScoreOptions("Keep Score: " + score),
