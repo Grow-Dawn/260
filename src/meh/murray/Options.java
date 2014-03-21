@@ -4,6 +4,8 @@
  */
 package meh.murray;
 
+import cit260.mehmurray.menus.MainMenu;
+import cit260.mehmurray.menus.HelpMenu;
 import java.io.Serializable;
 import java.util.Objects;
 
