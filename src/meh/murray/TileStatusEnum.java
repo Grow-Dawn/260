@@ -11,6 +11,8 @@ package meh.murray;
  * @author photos plus
  */
 public enum TileStatusEnum {
+    // Begin tile constants
+    
     tile1,
     tile2,
     tile3,
@@ -25,5 +27,16 @@ public enum TileStatusEnum {
     tile12,
     tile13,
     tile14,
-    tile15
+    tile15,
+    tile16,
+    
+    // Begin Status constants
+    
+    Open,
+    Closed,
+    Matched,
+    Unmatched,
+    Paired,
+    Unpaired
+    
 }

@@ -36,19 +36,28 @@ public class Options extends MehMurray implements Serializable
         
         if(enabled == true)
         {
-            System.out.println("Options Menu");
-            System.out.println("__________________");
-            System.out.println(welcome.getOptions());
-            System.out.println("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-            System.out.println("1. Keep Score = On");
-            System.out.println("2. Keep Score = Off (Practice)");
-            System.out.println("3. Sound = On");
-            System.out.println("4. Sound = Off");
-            System.out.println("5. Set Timeout");
-            System.out.println("6. Set # of matches [4]");
-            System.out.println("7. Display Options");
-            System.out.println("8. Main Menu");
-            System.out.println("");
+//            System.out.println("Options Menu");
+//            System.out.println("__________________");
+//            System.out.println(welcome.getOptions());
+//            System.out.println("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
+            
+            for (OptionsEnum options : OptionsEnum.values())
+            {
+                if (options.getMenuChoice() != 0)
+                {
+                    System.out.printf("%s. %s\n", options.getMenuChoice(), options.getMessage());
+                }
+            }
+                    
+//            System.out.println("1. Keep Score = On");
+//            System.out.println("2. Keep Score = Off (Practice)");
+//            System.out.println("3. Sound = On");
+//            System.out.println("4. Sound = Off");
+//            System.out.println("5. Set Timeout");
+//            System.out.println("6. Set # of matches [4]");
+//            System.out.println("7. Display Options");
+//            System.out.println("8. Main Menu");
+//            System.out.println("");
         }
         
         //Call the getMenuItem function

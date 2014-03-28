@@ -69,9 +69,10 @@ public class MainMenu extends MehMurray implements Serializable
         
         //Call the getMenuItem function
         User u = new User();
-        try{
-            switch (u.getUserInt("What do you want to do, " + uname + "?" + "\n (Enter a #)"))
+        try
         {
+            switch (u.getUserInt("What do you want to do, " + uname + "?" + "\n (Enter a #)"))
+            {
             case 1: p.Show(uname);
             break;
             case 2: o.Show(enabled, uname);
@@ -89,17 +90,16 @@ public class MainMenu extends MehMurray implements Serializable
             break;
             default: p.Show(uname);
             break;
+            }
         }
-        catch{
+        catch (Exception x)
+        {
             System.out.println("That was not an option!");
             System.out.println("Please choose one of the options listed above.");
-                return;
-           }
+        }
         finally {
                 System.out.println("If in doubt, maybe this isn't the right game for you.");
-                }
-        } 
-        
+                }    
     }
     
     public void Select()
