@@ -141,6 +141,9 @@ public class ASCII_Tiles extends ASCII_Art
             System.out.println("You need to choose a tile between 1 and 16,");
             System.out.println("Please choose another tile.");
         }
+       
+       return t;
+       
     }
     
     

@@ -9,9 +9,10 @@ import cit260.mehmurray.ascii.ASCII_Sound;
 import cit260.mehmurray.ascii.ASCII_Art;
 import cit260.mehmurray.menus.MainMenu;
 import cit260.mehmurray.menus.HelpMenu;
+import cit260.mehmurray.jframes.MainFrame;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.Scanner;
+//import java.util.Scanner;
 /*import java.lang.reflect.Array;*/
 
 /**
@@ -116,12 +117,35 @@ public class MehMurray implements Serializable
         this.letter = letter;
     }*/
     
-    
-    
      /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        // Start GUI
+        MehMurray meh = null;
+        
+        try
+        {
+            // Create and display the form
+            java.awt.EventQueue.invokeLater(new Runnable()
+                    {
+                        public void run()
+                        {
+                            MainFrame mainFrame = new MainFrame();
+                            mainFrame.setVisible(true);
+                        }
+                    });
+        }
+        catch(Exception x)
+        {
+            System.out.println("Unexpected error: " + x.getMessage());
+        }
+        finally
+        {
+            System.out.println("Bottom's Up!");
+        }
+
         
         //Instantiate classes
         ASCII_Sound beep = new ASCII_Sound(false);
