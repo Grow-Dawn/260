@@ -4,6 +4,11 @@
  */
 package cit260.mehmurray.jframes;
 
+import cit260.mehmurray.menus.MainMenu;
+import cit260.mehmurray.menus.HelpMenu;
+import cit260.mehmurray.menus.Menu;
+import meh.murray.PlayMenu;
+
 /**
  *
  * @author PATRICKS
@@ -31,7 +36,7 @@ public class MainFrame extends javax.swing.JFrame {
         jlTitle = new javax.swing.JLabel();
         jpMenuItems = new javax.swing.JPanel();
         jPlay = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbOptions = new javax.swing.JButton();
         jbHelp = new javax.swing.JButton();
         jbScores = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
@@ -51,8 +56,9 @@ public class MainFrame extends javax.swing.JFrame {
         jpTitle.setBackground(new java.awt.Color(204, 204, 204));
 
         jlTitle.setBackground(new java.awt.Color(204, 204, 204));
+        jlTitle.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlTitle.setText("▁ ▄ ▅ ▇ ▅ ▄ ▁ m e h ▁ m u r r a y ▁ ▄ ▅ ▇ ▅ ▄ ▁");
+        jlTitle.setText("meh murray");
         jlTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
@@ -77,48 +83,73 @@ public class MainFrame extends javax.swing.JFrame {
         jPlay.setBackground(new java.awt.Color(153, 153, 153));
         jPlay.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jPlay.setForeground(new java.awt.Color(255, 255, 255));
-        jPlay.setText("Start");
+        jPlay.setText("start");
         jPlay.setActionCommand(" New Game ");
         jPlay.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPlayActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Options");
-        jButton2.setBorder(null);
+        jbOptions.setBackground(new java.awt.Color(153, 153, 153));
+        jbOptions.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jbOptions.setForeground(new java.awt.Color(255, 255, 255));
+        jbOptions.setText("options");
+        jbOptions.setBorder(null);
+        jbOptions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOptionsActionPerformed(evt);
+            }
+        });
 
         jbHelp.setBackground(new java.awt.Color(153, 153, 153));
         jbHelp.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jbHelp.setForeground(new java.awt.Color(255, 255, 255));
-        jbHelp.setText("Help");
+        jbHelp.setText("help");
         jbHelp.setBorder(null);
+        jbHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpActionPerformed(evt);
+            }
+        });
 
         jbScores.setBackground(new java.awt.Color(153, 153, 153));
         jbScores.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jbScores.setForeground(new java.awt.Color(255, 255, 255));
-        jbScores.setText("Scores");
+        jbScores.setText("scores");
         jbScores.setBorder(null);
+        jbScores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbScoresActionPerformed(evt);
+            }
+        });
 
         jbQuit.setBackground(new java.awt.Color(153, 153, 153));
         jbQuit.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jbQuit.setForeground(new java.awt.Color(255, 255, 255));
-        jbQuit.setText("Quit");
+        jbQuit.setText("quit");
         jbQuit.setBorder(null);
+        jbQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbQuitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(85, 85, 85)
                 .addComponent(jPlay)
-                .addGap(29, 29, 29)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbOptions)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbScores)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbHelp)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbQuit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -126,7 +157,7 @@ public class MainFrame extends javax.swing.JFrame {
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                 .addComponent(jPlay)
-                .addComponent(jButton2)
+                .addComponent(jbOptions)
                 .addComponent(jbScores)
                 .addComponent(jbHelp)
                 .addComponent(jbQuit))
@@ -222,10 +253,11 @@ public class MainFrame extends javax.swing.JFrame {
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpBodyLayout.setVerticalGroup(
@@ -258,6 +290,57 @@ public class MainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
+        this.dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jbQuitActionPerformed
+
+    private void jPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPlayActionPerformed
+
+    private void jbOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOptionsActionPerformed
+        
+        try
+        {
+            // Create and display the form
+            java.awt.EventQueue.invokeLater(new Runnable()
+                    {
+                        public void run()
+                        {
+                            OptionsFrame options = new OptionsFrame();
+                            options.setLocationRelativeTo(null);
+                            options.setVisible(true);
+                            //boolean running = true;
+                        }
+                    });
+        }
+        catch(Exception x)
+        {
+            System.out.println("Unexpected error: " + x.getMessage());
+        }
+        finally
+        {
+
+            //mainFrame.dispose(); - cannot be found due to encapsulation.... and meh doesn't do the trick.
+//            if (!running)
+//            {
+//                System.exit(0);
+//            }
+        }
+        
+    }//GEN-LAST:event_jbOptionsActionPerformed
+
+    private void jbScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbScoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbScoresActionPerformed
+
+    private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
+        HelpMenu help = new HelpMenu();
+        jtaFirstTile.setText(help.getInstructions());
+               
+    }//GEN-LAST:event_jbHelpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,11 +377,11 @@ public class MainFrame extends javax.swing.JFrame {
 //        });
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jPlay;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JButton jbHelp;
+    private javax.swing.JButton jbOptions;
     private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbScores;
     private javax.swing.JLabel jlTitle;

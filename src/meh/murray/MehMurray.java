@@ -123,7 +123,8 @@ public class MehMurray implements Serializable
     public static void main(String[] args) {
         
         // Start GUI
-        MehMurray meh = null;
+        //MainFrame mainFrame = new MainFrame();
+        boolean running = false;
         
         try
         {
@@ -133,7 +134,9 @@ public class MehMurray implements Serializable
                         public void run()
                         {
                             MainFrame mainFrame = new MainFrame();
+                            mainFrame.setLocationRelativeTo(null);
                             mainFrame.setVisible(true);
+                            //boolean running = true;
                         }
                     });
         }
@@ -143,7 +146,12 @@ public class MehMurray implements Serializable
         }
         finally
         {
-            System.out.println("Bottom's Up!");
+
+            //mainFrame.dispose(); - cannot be found due to encapsulation.... and meh doesn't do the trick.
+//            if (!running)
+//            {
+//                System.exit(0);
+//            }
         }
 
         
