@@ -82,7 +82,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jPlay.setBackground(new java.awt.Color(153, 153, 153));
         jPlay.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jPlay.setForeground(new java.awt.Color(255, 255, 255));
+        jPlay.setForeground(new java.awt.Color(0, 51, 153));
         jPlay.setText("start");
         jPlay.setActionCommand(" New Game ");
         jPlay.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -94,7 +94,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jbOptions.setBackground(new java.awt.Color(153, 153, 153));
         jbOptions.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jbOptions.setForeground(new java.awt.Color(255, 255, 255));
+        jbOptions.setForeground(new java.awt.Color(0, 51, 153));
         jbOptions.setText("options");
         jbOptions.setBorder(null);
         jbOptions.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +105,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jbHelp.setBackground(new java.awt.Color(153, 153, 153));
         jbHelp.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jbHelp.setForeground(new java.awt.Color(255, 255, 255));
+        jbHelp.setForeground(new java.awt.Color(0, 51, 153));
         jbHelp.setText("help");
         jbHelp.setBorder(null);
         jbHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jbScores.setBackground(new java.awt.Color(153, 153, 153));
         jbScores.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jbScores.setForeground(new java.awt.Color(255, 255, 255));
+        jbScores.setForeground(new java.awt.Color(0, 51, 153));
         jbScores.setText("scores");
         jbScores.setBorder(null);
         jbScores.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +127,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jbQuit.setBackground(new java.awt.Color(153, 153, 153));
         jbQuit.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        jbQuit.setForeground(new java.awt.Color(255, 255, 255));
+        jbQuit.setForeground(new java.awt.Color(0, 51, 153));
         jbQuit.setText("quit");
+        jbQuit.setToolTipText("");
         jbQuit.setBorder(null);
         jbQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,16 +142,16 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jPlay)
+                .addGap(74, 74, 74)
+                .addComponent(jPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbOptions)
+                .addComponent(jbOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbScores)
+                .addComponent(jbScores, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbHelp)
+                .addComponent(jbHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbQuit)
+                .addComponent(jbQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
@@ -211,7 +212,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpSecondTileLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jpSecondTileLayout.setVerticalGroup(
             jpSecondTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,12 +228,12 @@ public class MainFrame extends javax.swing.JFrame {
             jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpGameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpSecondTile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpSecondTile, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jpGameLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jpFirstTile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpFirstTile, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         jpGameLayout.setVerticalGroup(
