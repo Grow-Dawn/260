@@ -54,24 +54,25 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jslideMatchPairs" alignment="1" pref="219" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jcbTimerEnabled" min="-2" max="-2" attributes="0"/>
                               <Component id="jcbSoundEnabled" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jcbScoreEnabled" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jslideMatchPairs" alignment="1" pref="219" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jlMatchPairs" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,8 +81,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jcbSoundEnabled" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jcbScoreEnabled" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jcbTimerEnabled" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jlMatchPairs" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
@@ -94,6 +97,7 @@
       <SubComponents>
         <Component class="javax.swing.JCheckBox" name="jcbSoundEnabled">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="sound enabled"/>
           </Properties>
           <Events>
@@ -126,6 +130,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="match pairs"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jcbTimerEnabled">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="timer enabled"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbTimerEnabledActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

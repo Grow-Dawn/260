@@ -31,6 +31,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jpBody = new javax.swing.JPanel();
         jpTitle = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
@@ -42,11 +43,17 @@ public class MainFrame extends javax.swing.JFrame {
         jbQuit = new javax.swing.JButton();
         jpGame = new javax.swing.JPanel();
         jpFirstTile = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jtaFirstTile = new javax.swing.JTextArea();
-        jpSecondTile = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jtaSecondTile = new javax.swing.JTextArea();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("memory");
@@ -56,9 +63,9 @@ public class MainFrame extends javax.swing.JFrame {
         jpTitle.setBackground(new java.awt.Color(204, 204, 204));
 
         jlTitle.setBackground(new java.awt.Color(204, 204, 204));
-        jlTitle.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        jlTitle.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlTitle.setText("meh murray");
+        jlTitle.setText("meh, murray");
         jlTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
@@ -81,7 +88,7 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jPlay.setBackground(new java.awt.Color(153, 153, 153));
-        jPlay.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jPlay.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jPlay.setForeground(new java.awt.Color(0, 51, 153));
         jPlay.setText("start");
         jPlay.setActionCommand(" New Game ");
@@ -93,7 +100,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbOptions.setBackground(new java.awt.Color(153, 153, 153));
-        jbOptions.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jbOptions.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbOptions.setForeground(new java.awt.Color(0, 51, 153));
         jbOptions.setText("options");
         jbOptions.setBorder(null);
@@ -104,7 +111,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbHelp.setBackground(new java.awt.Color(153, 153, 153));
-        jbHelp.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jbHelp.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbHelp.setForeground(new java.awt.Color(0, 51, 153));
         jbHelp.setText("help");
         jbHelp.setBorder(null);
@@ -115,7 +122,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbScores.setBackground(new java.awt.Color(153, 153, 153));
-        jbScores.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jbScores.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbScores.setForeground(new java.awt.Color(0, 51, 153));
         jbScores.setText("scores");
         jbScores.setBorder(null);
@@ -126,7 +133,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbQuit.setBackground(new java.awt.Color(153, 153, 153));
-        jbQuit.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jbQuit.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jbQuit.setForeground(new java.awt.Color(0, 51, 153));
         jbQuit.setText("quit");
         jbQuit.setToolTipText("");
@@ -142,17 +149,17 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addContainerGap()
                 .addComponent(jPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(42, 42, 42)
                 .addComponent(jbOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(36, 36, 36)
                 .addComponent(jbScores, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addComponent(jbQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,56 +177,15 @@ public class MainFrame extends javax.swing.JFrame {
         jpFirstTile.setToolTipText("");
         jpFirstTile.setPreferredSize(new java.awt.Dimension(335, 140));
 
-        jtaFirstTile.setEditable(false);
-        jtaFirstTile.setColumns(20);
-        jtaFirstTile.setRows(5);
-        jtaFirstTile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jtaFirstTile.setEnabled(false);
-        jtaFirstTile.setName(""); // NOI18N
-        jScrollPane3.setViewportView(jtaFirstTile);
-
         javax.swing.GroupLayout jpFirstTileLayout = new javax.swing.GroupLayout(jpFirstTile);
         jpFirstTile.setLayout(jpFirstTileLayout);
         jpFirstTileLayout.setHorizontalGroup(
             jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpFirstTileLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+            .addGap(0, 374, Short.MAX_VALUE)
         );
         jpFirstTileLayout.setVerticalGroup(
             jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpFirstTileLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jpSecondTile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jpSecondTile.setPreferredSize(new java.awt.Dimension(335, 140));
-
-        jtaSecondTile.setEditable(false);
-        jtaSecondTile.setColumns(20);
-        jtaSecondTile.setRows(5);
-        jtaSecondTile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jtaSecondTile.setEnabled(false);
-        jScrollPane4.setViewportView(jtaSecondTile);
-
-        javax.swing.GroupLayout jpSecondTileLayout = new javax.swing.GroupLayout(jpSecondTile);
-        jpSecondTile.setLayout(jpSecondTileLayout);
-        jpSecondTileLayout.setHorizontalGroup(
-            jpSecondTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpSecondTileLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        jpSecondTileLayout.setVerticalGroup(
-            jpSecondTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpSecondTileLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addGap(0, 313, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jpGameLayout = new javax.swing.GroupLayout(jpGame);
@@ -227,26 +193,14 @@ public class MainFrame extends javax.swing.JFrame {
         jpGameLayout.setHorizontalGroup(
             jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpGameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpSecondTile, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                .addComponent(jpFirstTile, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpGameLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jpFirstTile, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
         jpGameLayout.setVerticalGroup(
             jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpGameLayout.createSequentialGroup()
-                .addContainerGap(187, Short.MAX_VALUE)
-                .addComponent(jpSecondTile, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpGameLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(184, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpGameLayout.createSequentialGroup()
+                .addGap(0, 48, Short.MAX_VALUE)
+                .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
@@ -256,10 +210,9 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(jpGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(jpMenuItems, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,14 +231,14 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -339,7 +292,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
         HelpMenu help = new HelpMenu();
-        jtaFirstTile.setText(help.getInstructions());
+        //jtaFirstTile.setText(help.getInstructions());
                
     }//GEN-LAST:event_jbHelpActionPerformed
 
@@ -378,9 +331,8 @@ public class MainFrame extends javax.swing.JFrame {
 //        });
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jPlay;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JButton jbHelp;
     private javax.swing.JButton jbOptions;
     private javax.swing.JButton jbQuit;
@@ -390,9 +342,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpFirstTile;
     private javax.swing.JPanel jpGame;
     private javax.swing.JPanel jpMenuItems;
-    private javax.swing.JPanel jpSecondTile;
     private javax.swing.JPanel jpTitle;
-    private javax.swing.JTextArea jtaFirstTile;
-    private javax.swing.JTextArea jtaSecondTile;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package cit260.mehmurray.jframes;
 
+import meh.murray.Options;
+
 /**
  *
  * @author PATRICKS
@@ -31,12 +33,14 @@ public class OptionsFrame extends javax.swing.JFrame {
         jcbScoreEnabled = new javax.swing.JCheckBox();
         jslideMatchPairs = new javax.swing.JSlider();
         jlMatchPairs = new javax.swing.JLabel();
+        jcbTimerEnabled = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("memory");
 
         jpOptionsMenu.setBorder(javax.swing.BorderFactory.createTitledBorder("options"));
 
+        jcbSoundEnabled.setSelected(true);
         jcbSoundEnabled.setText("sound enabled");
         jcbSoundEnabled.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +72,13 @@ public class OptionsFrame extends javax.swing.JFrame {
 
         jlMatchPairs.setText("match pairs");
 
+        jcbTimerEnabled.setText("timer enabled");
+        jcbTimerEnabled.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbTimerEnabledActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpOptionsMenuLayout = new javax.swing.GroupLayout(jpOptionsMenu);
         jpOptionsMenu.setLayout(jpOptionsMenuLayout);
         jpOptionsMenuLayout.setHorizontalGroup(
@@ -75,25 +86,28 @@ public class OptionsFrame extends javax.swing.JFrame {
             .addGroup(jpOptionsMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpOptionsMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jslideMatchPairs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                     .addGroup(jpOptionsMenuLayout.createSequentialGroup()
                         .addGroup(jpOptionsMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jcbTimerEnabled)
                             .addComponent(jcbSoundEnabled)
                             .addComponent(jcbScoreEnabled))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jslideMatchPairs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsMenuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlMatchPairs)
-                .addGap(90, 90, 90))
+                .addGap(89, 89, 89))
         );
         jpOptionsMenuLayout.setVerticalGroup(
             jpOptionsMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpOptionsMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jcbSoundEnabled)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcbScoreEnabled)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcbTimerEnabled)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlMatchPairs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -122,54 +136,67 @@ public class OptionsFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jcbSoundEnabledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbSoundEnabledActionPerformed
-        // TODO add your handling code here:
+        Options opt = new Options();
+        opt.setSound(jcbSoundEnabled.isSelected());
     }//GEN-LAST:event_jcbSoundEnabledActionPerformed
 
     private void jcbScoreEnabledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbScoreEnabledActionPerformed
-        // TODO add your handling code here:
+        Options opt = new Options();
+        opt.setScore(jcbScoreEnabled.isSelected());
     }//GEN-LAST:event_jcbScoreEnabledActionPerformed
 
     private void jslideMatchPairsAncestorMoved(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jslideMatchPairsAncestorMoved
-        // TODO add your handling code here:
+        Options opt = new Options();
+        opt.setTilePairs(jslideMatchPairs.getMaximum());
     }//GEN-LAST:event_jslideMatchPairsAncestorMoved
+
+    private void jcbTimerEnabledActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTimerEnabledActionPerformed
+        Options opt = new Options();
+        if (jcbTimerEnabled.isSelected())
+        {
+        opt.setMatchSeconds(300);
+        }
+    }//GEN-LAST:event_jcbTimerEnabledActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new OptionsFrame().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(OptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new OptionsFrame().setVisible(true);
+//            }
+//        });
+//    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox jcbScoreEnabled;
     private javax.swing.JCheckBox jcbSoundEnabled;
+    private javax.swing.JCheckBox jcbTimerEnabled;
     private javax.swing.JLabel jlMatchPairs;
     private javax.swing.JPanel jpOptionsMenu;
     private javax.swing.JSlider jslideMatchPairs;

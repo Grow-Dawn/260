@@ -281,13 +281,14 @@ public class ScoresFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
-        close onclick
+        //close onclick;
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //Display the Help menu
-        h.enabled = false;
-        h.Show(h.enabled);
+//        h.enabled = false;
+//        h.Show(h.enabled);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void closeWinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeWinMouseExited
@@ -300,7 +301,7 @@ public class ScoresFrame extends javax.swing.JFrame {
         // Score answerScore = new Score();
         // answerScore.getScore();
         
-        this.keepScore = keepScore;
+        //this.keepScore = keepScore;
     }//GEN-LAST:event_recentScoreInputMethodTextChanged
 
     /**
