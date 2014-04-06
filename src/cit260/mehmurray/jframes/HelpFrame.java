@@ -35,10 +35,12 @@ public class HelpFrame extends javax.swing.JFrame {
         jpTitle = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
         jpMenuItems = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jpGame = new javax.swing.JPanel();
         jpFirstTile = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         instructMe = new javax.swing.JTextArea();
+        closeWin1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         show.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
@@ -92,15 +94,23 @@ public class HelpFrame extends javax.swing.JFrame {
         jpMenuItems.setBackground(new java.awt.Color(153, 153, 153));
         jpMenuItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel3.setText("Help Menu");
+        jLabel3.setToolTipText("");
+
         javax.swing.GroupLayout jpMenuItemsLayout = new javax.swing.GroupLayout(jpMenuItems);
         jpMenuItems.setLayout(jpMenuItemsLayout);
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(jpMenuItemsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 24, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
         jpGame.setBackground(new java.awt.Color(204, 204, 204));
@@ -141,6 +151,13 @@ public class HelpFrame extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        closeWin1.setText("OK");
+        closeWin1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                closeWin1MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpGameLayout = new javax.swing.GroupLayout(jpGame);
         jpGame.setLayout(jpGameLayout);
         jpGameLayout.setHorizontalGroup(
@@ -149,13 +166,18 @@ public class HelpFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jpFirstTile, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jpGameLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(closeWin1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpGameLayout.setVerticalGroup(
             jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpGameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(closeWin1))
         );
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
@@ -209,7 +231,7 @@ public class HelpFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 351, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 362, Short.MAX_VALUE)
                 .addComponent(closeWin)
                 .addGap(24, 24, 24))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,6 +259,10 @@ public class HelpFrame extends javax.swing.JFrame {
         h.enabled = false;
        h.Show(h.enabled);
     }//GEN-LAST:event_instructMeInputMethodTextChanged
+
+    private void closeWin1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeWin1MouseExited
+        // window clses on click
+    }//GEN-LAST:event_closeWin1MouseExited
 
     /**
      * @param args the command line arguments
@@ -275,9 +301,11 @@ public class HelpFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton closeWin;
+    private javax.swing.JButton closeWin1;
     private javax.swing.JTextArea instructMe;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;
