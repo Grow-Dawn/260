@@ -15,10 +15,16 @@ public class HelpMenu extends MehMurray implements Serializable {
     private boolean enabled;
     private boolean main;
     private boolean Sub;
-    private String instructions = "\n" + "How to Play:" + "\n"
-                    + "A player tries to match tiles.\n"
-                    + "If the tiles chosen match, they will disappear.\n"
-                    + "Find all 8 matches before time runs out.\n";
+//    private String instructions = "\n" + "How to Play:" + "\n"
+//                    + "A player tries to match tiles.\n"
+//                    + "If the tiles chosen match, they will disappear.\n"
+//                    + "Find all 8 matches before time runs out.\n";
+    
+    private String instructions = "How to Play:" + "\n" +
+                                    "1. Slide the x pairs bar over to select how many pairs you want to match." + "\n" + 
+                                    "2. Select the first tile number from the first drop-down menu." + "\n" + 
+                                    "3. Select the first tile number from the first drop-down menu." + "\n" + 
+                                    "4. Repeat until complete.";
     
     public void Show(boolean enabled)
     {

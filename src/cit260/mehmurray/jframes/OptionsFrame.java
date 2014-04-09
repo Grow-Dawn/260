@@ -4,14 +4,94 @@
  */
 package cit260.mehmurray.jframes;
 
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
 import meh.murray.Options;
 
 /**
  *
  * @author PATRICKS
  */
-public class OptionsFrame extends javax.swing.JFrame {
+public class OptionsFrame extends javax.swing.JFrame  {
 
+    public int getTilePairs() {
+        return tilePairs;
+    }
+
+    public boolean isSoundEnabled() {
+        return soundEnabled;
+    }
+
+    public boolean isTimerEnabled() {
+        return timerEnabled;
+    }
+
+    public JCheckBox getJcbScoreEnabled() {
+        return jcbScoreEnabled;
+    }
+
+    public JCheckBox getJcbSoundEnabled() {
+        return jcbSoundEnabled;
+    }
+
+    public JCheckBox getJcbTimerEnabled() {
+        return jcbTimerEnabled;
+    }
+
+    public JLabel getJlMatchPairs() {
+        return jlMatchPairs;
+    }
+
+    public JPanel getJpOptionsMenu() {
+        return jpOptionsMenu;
+    }
+
+    public JSlider getJslideMatchPairs() {
+        return jslideMatchPairs;
+    }
+
+    public void setTilePairs(int tilePairs) {
+        this.tilePairs = tilePairs;
+    }
+
+    public void setSoundEnabled(boolean soundEnabled) {
+        this.soundEnabled = soundEnabled;
+    }
+
+    public void setTimerEnabled(boolean timerEnabled) {
+        this.timerEnabled = timerEnabled;
+    }
+
+    public void setJcbScoreEnabled(JCheckBox jcbScoreEnabled) {
+        this.jcbScoreEnabled = jcbScoreEnabled;
+    }
+
+    public void setJcbSoundEnabled(JCheckBox jcbSoundEnabled) {
+        this.jcbSoundEnabled = jcbSoundEnabled;
+    }
+
+    public void setJcbTimerEnabled(JCheckBox jcbTimerEnabled) {
+        this.jcbTimerEnabled = jcbTimerEnabled;
+    }
+
+    public void setJlMatchPairs(JLabel jlMatchPairs) {
+        this.jlMatchPairs = jlMatchPairs;
+    }
+
+    public void setJpOptionsMenu(JPanel jpOptionsMenu) {
+        this.jpOptionsMenu = jpOptionsMenu;
+    }
+
+    public void setJslideMatchPairs(JSlider jslideMatchPairs) {
+        this.jslideMatchPairs = jslideMatchPairs;
+    }
+
+    private int tilePairs;
+    private boolean soundEnabled;
+    private boolean timerEnabled;
+    
     /**
      * Creates new form OptionsFrame
      */
@@ -62,6 +142,11 @@ public class OptionsFrame extends javax.swing.JFrame {
         jslideMatchPairs.setPaintTicks(true);
         jslideMatchPairs.setSnapToTicks(true);
         jslideMatchPairs.setValue(1);
+        jslideMatchPairs.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jslideMatchPairsStateChanged(evt);
+            }
+        });
         jslideMatchPairs.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
                 jslideMatchPairsAncestorMoved(evt);
@@ -157,6 +242,13 @@ public class OptionsFrame extends javax.swing.JFrame {
         opt.setMatchSeconds(300);
         }
     }//GEN-LAST:event_jcbTimerEnabledActionPerformed
+
+    private void jslideMatchPairsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jslideMatchPairsStateChanged
+        Options opt = new Options();
+        opt.setTilePairs(jslideMatchPairs.getValue());
+        setTilePairs(jslideMatchPairs.getValue());
+        //System.out.println(jslideMatchPairs.getValue());
+    }//GEN-LAST:event_jslideMatchPairsStateChanged
 
     /**
      * @param args the command line arguments
