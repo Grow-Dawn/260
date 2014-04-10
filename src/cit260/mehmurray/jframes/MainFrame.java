@@ -15,6 +15,12 @@ import cit260.mehmurray.menus.Menu;
 import meh.murray.PlayMenu;
 import meh.murray.Options;
 import cit260.mehmurray.jframes.OptionsFrame;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
+import java.net.URL;
 
 /**
  *
@@ -27,6 +33,25 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        Image Meh; Image Mur;
+        URL meh; URL mur;
+        
+        //URLs for meh and murray pictures
+        try
+        {
+        meh = new URL("http://i20.photobucket.com/albums/b212/HighlandSniper58/Emoticons/homer-simpson-meh.png");
+        mur = new URL("http://1.bp.blogspot.com/_N1npI6e3LGQ/Sj-uVQ86UMI/AAAAAAAABRI/qWfsaLhwkLM/s1600-h/Ghostbusters-Peter-Venkman.gif");
+        Meh = Toolkit.getDefaultToolkit().getImage(meh);
+        Mur = Toolkit.getDefaultToolkit().getImage(mur);
+        
+        jPanelMeh.imageUpdate(Meh, 100, 100, 100, 100, 100);
+        jPanelMurray.imageUpdate(Mur, 100, 100, 100, 100, 100);
+        }
+        catch(Exception U)
+        {
+            System.out.println(U.toString());
+        }
+        
     }
 
     /**
@@ -46,10 +71,13 @@ public class MainFrame extends javax.swing.JFrame {
         jbQuit = new javax.swing.JButton();
         jpGame = new javax.swing.JPanel();
         jpFirstTile = new javax.swing.JPanel();
+        txtTile = new javax.swing.JTextField();
+        jSlide1 = new javax.swing.JSlider();
+        jSlide2 = new javax.swing.JSlider();
         jlSelectTile1 = new javax.swing.JLabel();
         jlSelectTile2 = new javax.swing.JLabel();
-        jcbTile1 = new javax.swing.JComboBox();
-        jcbTile2 = new javax.swing.JComboBox();
+        jPanelMeh = new javax.swing.JPanel();
+        jPanelMurray = new javax.swing.JPanel();
         jtMatchStatus = new javax.swing.JTextField();
         jpOptions = new javax.swing.JPanel();
         jslideMatchPairs = new javax.swing.JSlider();
@@ -110,10 +138,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jbHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addContainerGap())
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,43 +152,152 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbQuit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbQuit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         jpGame.setBackground(new java.awt.Color(204, 204, 204));
 
-        jpFirstTile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jpFirstTile.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jpFirstTile.setToolTipText("");
         jpFirstTile.setPreferredSize(new java.awt.Dimension(335, 140));
+
+        txtTile.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        txtTile.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTile.setToolTipText("");
+        txtTile.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
+        txtTile.setEnabled(false);
+
+        jSlide1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jSlide1.setMajorTickSpacing(1);
+        jSlide1.setMaximum(16);
+        jSlide1.setMinimum(1);
+        jSlide1.setMinorTickSpacing(1);
+        jSlide1.setOrientation(javax.swing.JSlider.VERTICAL);
+        jSlide1.setPaintLabels(true);
+        jSlide1.setPaintTicks(true);
+        jSlide1.setSnapToTicks(true);
+        jSlide1.setEnabled(false);
+        jSlide1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jSlide1MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jSlide1MouseReleased(evt);
+            }
+        });
+        jSlide1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSlide1StateChanged(evt);
+            }
+        });
+        jSlide1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jSlide1MouseDragged(evt);
+            }
+        });
+
+        jSlide2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jSlide2.setMajorTickSpacing(1);
+        jSlide2.setMaximum(16);
+        jSlide2.setMinimum(1);
+        jSlide2.setMinorTickSpacing(1);
+        jSlide2.setOrientation(javax.swing.JSlider.VERTICAL);
+        jSlide2.setPaintLabels(true);
+        jSlide2.setPaintTicks(true);
+        jSlide2.setSnapToTicks(true);
+        jSlide2.setEnabled(false);
+        jSlide2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jSlide2MouseReleased(evt);
+            }
+        });
+        jSlide2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSlide2StateChanged(evt);
+            }
+        });
+
+        jlSelectTile1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jlSelectTile1.setText("First Selection");
+
+        jlSelectTile2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jlSelectTile2.setText("Second Selection");
+
+        jPanelMeh.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        javax.swing.GroupLayout jPanelMehLayout = new javax.swing.GroupLayout(jPanelMeh);
+        jPanelMeh.setLayout(jPanelMehLayout);
+        jPanelMehLayout.setHorizontalGroup(
+            jPanelMehLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelMehLayout.setVerticalGroup(
+            jPanelMehLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jPanelMurray.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        javax.swing.GroupLayout jPanelMurrayLayout = new javax.swing.GroupLayout(jPanelMurray);
+        jPanelMurray.setLayout(jPanelMurrayLayout);
+        jPanelMurrayLayout.setHorizontalGroup(
+            jPanelMurrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 114, Short.MAX_VALUE)
+        );
+        jPanelMurrayLayout.setVerticalGroup(
+            jPanelMurrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jpFirstTileLayout = new javax.swing.GroupLayout(jpFirstTile);
         jpFirstTile.setLayout(jpFirstTileLayout);
         jpFirstTileLayout.setHorizontalGroup(
             jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jpFirstTileLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSlide1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpFirstTileLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jlSelectTile1)))
+                .addGap(22, 22, 22)
+                .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelMurray, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtTile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                        .addComponent(jPanelMeh, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSlide2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlSelectTile2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jpFirstTileLayout.setVerticalGroup(
             jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 286, Short.MAX_VALUE)
+            .addGroup(jpFirstTileLayout.createSequentialGroup()
+                .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpFirstTileLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jPanelMeh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanelMurray, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpFirstTileLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jSlide1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSlide2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlSelectTile1)
+                            .addComponent(jlSelectTile2))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jlSelectTile1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jlSelectTile1.setText("Select First Tile");
-
-        jlSelectTile2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jlSelectTile2.setText("Select Second Tile");
-
-        jcbTile1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jcbTile1.setEnabled(false);
-        jcbTile1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbTile1ActionPerformed(evt);
-            }
-        });
-
-        jcbTile2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jcbTile2.setEnabled(false);
+        jSlide1.getAccessibleContext().setAccessibleName("");
+        jSlide1.getAccessibleContext().setAccessibleDescription("");
 
         jtMatchStatus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jtMatchStatus.setEnabled(false);
@@ -182,19 +319,12 @@ public class MainFrame extends javax.swing.JFrame {
                 jslideMatchPairsStateChanged(evt);
             }
         });
-        jslideMatchPairs.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
-            public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
-                jslideMatchPairsAncestorMoved(evt);
-            }
-            public void ancestorResized(java.awt.event.HierarchyEvent evt) {
-            }
-        });
 
         javax.swing.GroupLayout jpOptionsLayout = new javax.swing.GroupLayout(jpOptions);
         jpOptions.setLayout(jpOptionsLayout);
         jpOptionsLayout.setHorizontalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jslideMatchPairs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+            .addComponent(jslideMatchPairs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,19 +338,10 @@ public class MainFrame extends javax.swing.JFrame {
         jpGameLayout.setHorizontalGroup(
             jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpGameLayout.createSequentialGroup()
-                .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jpOptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jpFirstTile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                        .addComponent(jtMatchStatus, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addGroup(jpGameLayout.createSequentialGroup()
-                        .addComponent(jlSelectTile1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcbTile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jlSelectTile2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcbTile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jpOptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpFirstTile, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
+                    .addComponent(jtMatchStatus, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpGameLayout.setVerticalGroup(
@@ -228,17 +349,11 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpGameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jpGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlSelectTile1)
-                    .addComponent(jcbTile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlSelectTile2)
-                    .addComponent(jcbTile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
                 .addComponent(jtMatchStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
@@ -248,8 +363,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpGame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +380,7 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -307,63 +421,122 @@ public class MainFrame extends javax.swing.JFrame {
         }          
     }//GEN-LAST:event_jbHelpActionPerformed
 
-    private void jcbTile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbTile1ActionPerformed
-
-        
-    }//GEN-LAST:event_jcbTile1ActionPerformed
-
-    private void jslideMatchPairsAncestorMoved(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jslideMatchPairsAncestorMoved
-
-        
-    }//GEN-LAST:event_jslideMatchPairsAncestorMoved
-
     private void jslideMatchPairsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jslideMatchPairsStateChanged
 
         // Enable controls
         if (jslideMatchPairs.getValue() >= 4)
         {
-        jcbTile1.setEnabled(true);
-        jcbTile2.setEnabled(true);
+        //jcbTile1.setEnabled(true);
+        jSlide1.setEnabled(true);
+        //jcbTile2.setEnabled(true);
+        jSlide2.setEnabled(true);
+        
+        // Reset numbers on vertical sliders
+        jSlide1.setMinimum(0);
+        jSlide1.setValue(0);
+        jSlide1.setMaximum(jslideMatchPairs.getValue());
+        jSlide2.setMinimum(0);
+        jSlide2.setValue(0);
+        jSlide2.setMaximum(jslideMatchPairs.getValue());
 
         // Clear combo boxes for new game
-        jcbTile1.removeAllItems();
-        jcbTile2.removeAllItems();
+        //jcbTile1.removeAllItems();
+        //jcbTile2.removeAllItems();
         }
         else
         {
-            jcbTile1.setEnabled(false);
-            jcbTile2.setEnabled(false);
+            //jcbTile1.setEnabled(false);
+            jSlide1.setEnabled(false);
+            //jcbTile2.setEnabled(false);
+            jSlide1.setEnabled(false);
             return;
         }
         
         // Populate combo
         PlayMenu p = new PlayMenu();
 
-        ASCII_Tiles t = new ASCII_Tiles();
-        //int tilePairs = o.getTilePairs();
-        int tilePairs = jslideMatchPairs.getValue();
-        t.setIntTiles(tilePairs * 2);
-        t.createTileArray(t.getIntTiles());
+//        ASCII_Tiles t = new ASCII_Tiles();
+//        //int tilePairs = o.getTilePairs();
+//        int tilePairs = jslideMatchPairs.getValue();
+//        t.setIntTiles(tilePairs * 2);
+//        t.createTileArray(t.getIntTiles());
 
         // Create tile array 1
-        for(int a = 1; a < (tilePairs * 2) + 1; a++)
-        {
-            jcbTile1.addItem(a);
-            //jcbTile1.addActionListener(jcbTile1);
-            //jcbTile1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dude1", "dude2", "dude3", "dude4" }));
+//        for(int a = 1; a < t.getIntTiles() + 1; a++)
+//        {
+//            jcbTile1.addItem(a);
+//            //jcbTile1.addActionListener(jcbTile1);
+//            //jcbTile1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dude1", "dude2", "dude3", "dude4" }));
+//
+//        }
 
-        }
-
-        for(int a = 1; a < (tilePairs * 2 ) + 1; a++)
-        {
-
-            jcbTile2.addItem(a);
-            //jcbTile1.addActionListener(this);
-            //jcbTile1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dude1", "dude2", "dude3", "dude4" }));
-
-        }
+//        for(int a = 1; a < t.getIntTiles() + 1; a++)
+//        {
+//
+//            jcbTile2.addItem(a);
+//            //jcbTile1.addActionListener(this);
+//            //jcbTile1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dude1", "dude2", "dude3", "dude4" }));
+//
+//        }
 
     }//GEN-LAST:event_jslideMatchPairsStateChanged
+
+    private void jSlide1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlide1StateChanged
+//        ASCII_Tiles t = new ASCII_Tiles();
+//        try
+//        {
+//            //txtTile.setText(jcbTile1.getSelectedItem().toString());
+//            int Selected = jSlide1.getValue();
+////            String Tile = t.getArrTiles(Selected) + "";
+//            txtTile.setText(Selected + "");
+//        }
+//        catch (Exception x)
+//        {
+//         // Do nothing!            
+//        }
+    }//GEN-LAST:event_jSlide1StateChanged
+
+    private void jSlide2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlide2StateChanged
+
+    }//GEN-LAST:event_jSlide2StateChanged
+
+    private void jSlide1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide1MouseExited
+
+    }//GEN-LAST:event_jSlide1MouseExited
+
+    private void jSlide1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide1MouseReleased
+        ASCII_Tiles t = new ASCII_Tiles();
+        try
+        {
+            //txtTile.setText(jcbTile1.getSelectedItem().toString());
+            int Selected = jSlide1.getValue();
+//            String Tile = t.getArrTiles(Selected) + "";
+            txtTile.setText(Selected + "");
+        }
+        catch (Exception x)
+        {
+         // Do nothing!            
+        }
+    }//GEN-LAST:event_jSlide1MouseReleased
+
+    private void jSlide1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide1MouseDragged
+
+    }//GEN-LAST:event_jSlide1MouseDragged
+
+    private void jSlide2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide2MouseReleased
+        ASCII_Tiles t = new ASCII_Tiles();
+        try
+        {
+            //txtTile.setText(jcbTile1.getSelectedItem().toString());
+            int Selected = jSlide2.getValue();
+//            String Tile = t.getArrTiles(Selected) + "";
+            txtTile.setText(Selected + "");
+        }
+        catch (Exception x)
+        {
+         // Do nothing!            
+        }
+    }//GEN-LAST:event_jSlide2MouseReleased
 
     /**
      * @param args the command line arguments
@@ -401,10 +574,12 @@ public class MainFrame extends javax.swing.JFrame {
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelMeh;
+    private javax.swing.JPanel jPanelMurray;
+    private javax.swing.JSlider jSlide1;
+    private javax.swing.JSlider jSlide2;
     private javax.swing.JButton jbHelp;
     private javax.swing.JButton jbQuit;
-    private javax.swing.JComboBox jcbTile1;
-    private javax.swing.JComboBox jcbTile2;
     private javax.swing.JLabel jlSelectTile1;
     private javax.swing.JLabel jlSelectTile2;
     private javax.swing.JLabel jlTitle;
@@ -415,5 +590,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpTitle;
     private javax.swing.JSlider jslideMatchPairs;
     private javax.swing.JTextField jtMatchStatus;
+    private javax.swing.JTextField txtTile;
     // End of variables declaration//GEN-END:variables
 }
