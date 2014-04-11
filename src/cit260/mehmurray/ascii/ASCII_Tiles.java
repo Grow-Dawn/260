@@ -23,22 +23,22 @@ public class ASCII_Tiles extends ASCII_Art
     // Inherited variables define tile assignments
     // Tile character assignments; randomly selecting Unicode characters directly = phase 2
     
-    private String  tile0 = getHeart(); // Call inherited get function
-    private String  tile1 = getDiamond(); // Call inherited get function
-    private String  tile2 = getClover(); // Call inherited get function
-    private String  tile3 = getSpade(); // Call inherited get function
-    private String  tile4 = getSun(); // Call inherited get function
-    private String  tile5 = getEighth_note(); // Call inherited get function
-    private String  tile6 = getSixteenth_note(); // Call inherited get function
-    private String  tile7 = getSharp(); // Call inherited get function
-    private String  tile8 = getSmiley_light(); // Call inherited get function
-    private String  tile9 = getSmiley_dark(); // Call inherited get function
-    private String  tile10 = getTriangle_up(); // Call inherited get function
-    private String  tile11 = getTriangle_right(); // Call inherited get function
-    private String  tile12 = getTriangle_down(); // Call inherited get function
-    private String  tile13 = getTriangle_left(); // Call inherited get function
-    private String  tile14 = getThing1(); // Call inherited get function
-    private String  tile15 = getBullseye(); // Call inherited get function
+    private String  tile0 = "!"; //getHeart(); // Call inherited get function
+    private String  tile1 = "#"; //getDiamond(); // Call inherited get function
+    private String  tile2 = "%"; //getClover(); // Call inherited get function
+    private String  tile3 = "$"; //getSpade(); // Call inherited get function
+    private String  tile4 = "@"; //getSun(); // Call inherited get function
+    private String  tile5 = "*"; //getEighth_note(); // Call inherited get function
+    private String  tile6 = "^"; //getSixteenth_note(); // Call inherited get function
+    private String  tile7 = "&"; //getSharp(); // Call inherited get function
+    private String  tile8 = "?"; //getSmiley_light(); // Call inherited get function
+    private String  tile9 = "{"; //getSmiley_dark(); // Call inherited get function
+    private String  tile10 = "}"; //getTriangle_up(); // Call inherited get function
+    private String  tile11 = "<"; //getTriangle_right(); // Call inherited get function
+    private String  tile12 = ">"; //getTriangle_down(); // Call inherited get function
+    private String  tile13 = "~"; //getTriangle_left(); // Call inherited get function
+    private String  tile14 = "+"; //getThing1(); // Call inherited get function
+    private String  tile15 = "="; //getBullseye(); // Call inherited get function
     
     // Put the tiles into a 1D array
     private String [] arrTileChars = {tile0, tile1, tile2, tile3, tile4, tile5, tile6, tile7, tile8, tile9, tile10, tile11, tile12, tile13, tile14, tile15};
@@ -79,7 +79,90 @@ public class ASCII_Tiles extends ASCII_Art
      }
      
  }
-    
+ 
+ public int[] createTileArray2(int numTiles)
+ {
+     arrTiles = new int[numTiles];
+     arrTilesCount = new int[numTiles];
+     int halfTiles = numTiles / 2;
+     int c = 0;
+     
+     try
+     {
+         
+         // First set of tiles
+         for (int n = 0; n < (halfTiles); n++)
+         {
+             arrTiles[n] = randomTile2(halfTiles);
+         }
+         
+         // Second set of tiles, using the first set as the source: X / Chiasmus style... Meet in the middle!
+         int x = 0;
+         for (int o = (numTiles - 1); o >= halfTiles; o--)
+         {
+             arrTiles[o] = arrTiles[x];
+             x++;
+         }
+     }
+     catch (Exception x)
+     {
+         System.out.println("Error: " + x + "\n");
+     }
+     
+     return (arrTiles);
+ }
+
+ public int[] createTileArrays1(int numTiles)
+ {
+     arrTiles = new int[numTiles];
+     arrTilesCount = new int[numTiles];
+
+     int c = 0;
+     
+     try
+     {
+         
+         // First set of tiles
+         for (int n = 0; n < (numTiles); n++)
+         {
+             arrTiles[n] = randomTile2(numTiles);
+         }
+         
+     }
+     catch (Exception x)
+     {
+         System.out.println("Error: " + x + "\n");
+     }
+     
+     return (arrTiles);
+ }
+ 
+  public int[] createTileArrays2(int numTiles)
+ {
+     arrTiles = new int[numTiles];
+     arrTilesCount = new int[numTiles];
+
+     int c = 0;
+     
+     try
+     {
+         
+         // Second set of tiles, using the first set as the source: X / Chiasmus style... Meet in the middle!
+         int x = 0;
+         for (int o = (numTiles - 1); o >= numTiles; o--)
+         {
+             arrTiles[o] = arrTiles[x];
+             x++;
+         }
+     }
+     catch (Exception x)
+     {
+         System.out.println("Error 2: " + x + "\n");
+     }
+     
+     return (arrTiles);
+ }
+ 
  public int randomTile2(int maxNum)
  {
     Random r = new Random();
