@@ -33,6 +33,7 @@ public class MainFrame extends javax.swing.JFrame {
     public Boolean debug = false;
     public int[] arrTiles1;
     public int[] arrTiles2;
+    public String[] arrMatched;
     public int t1, t2, t1p, t2p;
     public String t1c, t2c;
     
@@ -92,6 +93,7 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtMatchStatus = new javax.swing.JTextArea();
         cbDebug = new javax.swing.JCheckBox();
+        jbClear = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -369,10 +371,11 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        cbDebug.setBackground(new java.awt.Color(204, 204, 204));
         cbDebug.setText("v");
         cbDebug.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -385,6 +388,22 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jbClear.setBackground(new java.awt.Color(255, 255, 255));
+        jbClear.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jbClear.setForeground(new java.awt.Color(0, 51, 153));
+        jbClear.setText("-");
+        jbClear.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jbClear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbClearMouseClicked(evt);
+            }
+        });
+        jbClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbClearActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
         jpBodyLayout.setHorizontalGroup(
@@ -393,8 +412,10 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpBodyLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jbClear, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cbDebug)
                 .addGap(14, 14, 14))
         );
@@ -403,7 +424,9 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbDebug)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbDebug)
+                    .addComponent(jbClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -456,9 +479,9 @@ public class MainFrame extends javax.swing.JFrame {
         }          
     }//GEN-LAST:event_jbHelpActionPerformed
 
-    public boolean tileMatch(int tile1, int arrTile1, int tile2, int arrTile2, String tile1c, String tile2c)
+    public boolean tileMatch(int tile1, int arrTile1, int tile2, int arrTile2, String tile1c, String tile2c, int invoker)
     {
-        if (tile1c == tile2c)
+        if (checkMatch(tile1c, tile2c))
         {
             if (debug)
             {
@@ -473,9 +496,52 @@ public class MainFrame extends javax.swing.JFrame {
             {
                 jtMatchStatus.append("\n tileMatch: " + tile1 + "!=" + tile2);
             }
-            jtMatchStatus.append("\n Sorry, try again.");
+            // Mismatches not currently being displayed
+            //jtMatchStatus.append("\n Sorry, try again.");
             return false;
         }
+    }
+    
+    public boolean checkMatch(String tile1, String tile2)
+    {
+        if (tile1 == tile2)
+        {
+            for (String m : arrMatched)
+            {
+                if (tile1 == m)
+                {
+                    jtMatchStatus.append("\n Tile already matched: " + m);
+                    return false;
+                }
+            }
+            
+            //Add to arrMatched array for future checks
+            int a = 0;
+            for (String m : arrMatched)
+            {
+                if (m == null)
+                {
+                    arrMatched[a] = tile1;
+                    a++;
+                    return true;
+                }
+                
+            }
+        }
+        else
+        {
+            return false;
+        }
+        
+        if (debug)
+        {
+            for (String e : arrMatched)
+            {
+                jtMatchStatus.append("\n Matched Tile: " + e);
+            }
+           
+        }
+        return false;
     }
     
     public void setTileArrays1(int tilePairs)
@@ -575,7 +641,10 @@ public class MainFrame extends javax.swing.JFrame {
         ASCII_Tiles t = new ASCII_Tiles();
         //t.createTileArray(tilePairs * 2);      
         setTileArrays1(tilePairs);
-        setTileArrays2(tilePairs);       
+        setTileArrays2(tilePairs);    
+        
+        //Initialize arrMatched array
+        arrMatched = new String[tilePairs];
 
     }//GEN-LAST:event_jslideMatchPairsStateChanged
 
@@ -612,7 +681,7 @@ public class MainFrame extends javax.swing.JFrame {
         jtMatchStatus.setCaretPosition(jtMatchStatus.getDocument().getLength());
         
         //Check for matches
-        tileMatch(t1, t2, t1p, t2p, t1c, t2c);
+        tileMatch(t1, t2, t1p, t2p, t1c, t2c, 1);
         
         // Toggle sliders
         jSlide1.setEnabled(false);
@@ -645,7 +714,7 @@ public class MainFrame extends javax.swing.JFrame {
         jtMatchStatus.setCaretPosition(jtMatchStatus.getDocument().getLength());
         
         //Check for matches
-        tileMatch(t1, t2, t1p, t2p, t1c, t2c);
+        tileMatch(t1, t2, t1p, t2p, t1c, t2c, 2);
         
         // Toggle sliders
         jSlide1.setEnabled(true);
@@ -659,6 +728,14 @@ public class MainFrame extends javax.swing.JFrame {
     private void cbDebugItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbDebugItemStateChanged
         debug = cbDebug.isSelected();
     }//GEN-LAST:event_cbDebugItemStateChanged
+
+    private void jbClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbClearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbClearActionPerformed
+
+    private void jbClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbClearMouseClicked
+        jtMatchStatus.setText("");
+    }//GEN-LAST:event_jbClearMouseClicked
 
     /**
      * @param args the command line arguments
@@ -702,6 +779,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JSlider jSlide1;
     public javax.swing.JSlider jSlide2;
+    private javax.swing.JButton jbClear;
     private javax.swing.JButton jbHelp;
     private javax.swing.JButton jbQuit;
     private javax.swing.JLabel jlSelectTile1;
