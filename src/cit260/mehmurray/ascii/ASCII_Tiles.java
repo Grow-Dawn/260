@@ -115,6 +115,34 @@ public class ASCII_Tiles extends ASCII_Art
  public int[] createTileArrays1(int numTiles)
  {
      arrTiles = new int[numTiles];
+     //Arrays.fill(arrTiles, 99);
+     arrTilesCount = new int[numTiles];
+
+     int c = 0;
+     
+     try
+     {
+         
+         // First set of tiles
+//         for (int n = 0; n < (numTiles); n++)
+//         {
+//             arrTiles[n] = randomTile2(numTiles, n, arrTiles);
+//         }
+         arrTiles = randomTileArray(numTiles);
+         
+     }
+     catch (Exception x)
+     {
+         System.out.println("Error: " + x + "\n");
+     }
+     
+     return (arrTiles);
+ }
+ 
+ public int[] createTileArrays1(int numTiles, boolean fixed)
+ {
+     arrTiles = new int[numTiles];
+     //Arrays.fill(arrTiles, 99);
      arrTilesCount = new int[numTiles];
 
      int c = 0;
@@ -125,7 +153,7 @@ public class ASCII_Tiles extends ASCII_Art
          // First set of tiles
          for (int n = 0; n < (numTiles); n++)
          {
-             arrTiles[n] = randomTile2(numTiles);
+             arrTiles[n] = n + 1;
          }
          
      }
@@ -135,7 +163,7 @@ public class ASCII_Tiles extends ASCII_Art
      }
      
      return (arrTiles);
- }
+ } 
  
   public int[] createTileArrays2(int numTiles)
  {
@@ -168,7 +196,7 @@ public class ASCII_Tiles extends ASCII_Art
     Random r = new Random();
     int rg = 0; // Initialize random generated number
     int rc = 0; // Initialize random count
-    int rm = 2; // Declare and set random count max (1 pair = 2)
+    int rm = 1; // Declare and set random count max (1 pair = 2)
     boolean pass = false;
     int returnRandom = 0;
     
@@ -176,6 +204,8 @@ public class ASCII_Tiles extends ASCII_Art
     {
         rg = r.nextInt(maxNum); // Generate new random number
         rc = arrTilesCount[rg]; // Get the value of the index array for the new random number; this tells us if it's been used before, and how many times.
+        
+        
         if (rc < rm)
         {
             arrTilesCount[rg] = arrTilesCount[rg] + 1;
@@ -191,6 +221,60 @@ public class ASCII_Tiles extends ASCII_Art
     while (pass = false);
     
     return returnRandom;
+ }
+ 
+ public int[] randomTileArray(int maxNum)
+ {
+    
+    int rg = 0; // Initialize random generated number
+    String rs = null; //String to hold rg for comparison
+    int rc = 0; // Initialize random count
+    int rm = 2; // Declare and set random count max (1 pair = 2)
+    boolean pass = false;
+    int returnRandom = 0;
+    boolean candidate = false;
+    int[] tempArray1 = new int[maxNum];
+    int[] tempArray2 = new int[maxNum];
+    
+    //Populate tempArray then return it to the calling method
+    for (int a = 0; a <= maxNum; a++)
+    {
+        do
+        {
+            Random r = new Random();
+            rg = r.nextInt(maxNum); // Generate new random number
+            rs = String.valueOf(rg);
+            
+            for (int b = 0; b <= maxNum; b++ )
+            {
+                String bs = String.valueOf(tempArray1[b]);
+                
+                if (!bs.equals(rs))
+                {
+                    //tempArray1[b] = rg;
+                   candidate = true;
+                }
+                else
+                {
+                    candidate = false;
+                }
+            }
+            
+            if (candidate){
+                pass = true;
+            }
+      
+        }
+        while (pass = false);
+        
+        tempArray2[a] = rg;
+        pass = false;
+
+    }
+    
+    // Return populated array
+    return tempArray2;
+
  }
     
     public String returnTile(int Tile)

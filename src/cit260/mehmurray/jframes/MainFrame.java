@@ -29,13 +29,418 @@ import java.util.Timer;
  * @author PATRICKS
  */
 public class MainFrame extends javax.swing.JFrame {
+
+    public Boolean getDebug() {
+        return debug;
+    }
+
+    public int[] getArrTiles1() {
+        return arrTiles1;
+    }
+
+    public int[] getArrTiles2() {
+        return arrTiles2;
+    }
+
+    public int[] getArrMatched() {
+        return arrMatched;
+    }
+
+    public int getT1_array_num() {
+        return t1_array_num;
+    }
+
+    public int getT2_array_num() {
+        return t2_array_num;
+    }
+
+    public int getT1_slider_position() {
+        return t1_slider_position;
+    }
+
+    public int getT2_slider_position() {
+        return t2_slider_position;
+    }
+
+    public String getT1_character() {
+        return t1_character;
+    }
+
+    public String getT2_character() {
+        return t2_character;
+    }
+
+    public int getMatchCount() {
+        return matchCount;
+    }
+
+    public String getMatch() {
+        return match;
+    }
+
+    public String getMismatch() {
+        return mismatch;
+    }
+
+    public JCheckBox getCbDebug() {
+        return cbDebug;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public JPanel getjPanelMeh() {
+        return jPanelMeh;
+    }
+
+    public JPanel getjPanelMurray() {
+        return jPanelMurray;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JSlider getjSlide1() {
+        return jSlide1;
+    }
+
+    public JSlider getjSlide2() {
+        return jSlide2;
+    }
+
+    public JButton getJbClear() {
+        return jbClear;
+    }
+
+    public JButton getJbHelp() {
+        return jbHelp;
+    }
+
+    public JButton getJbQuit() {
+        return jbQuit;
+    }
+
+    public JLabel getJlSelectTile1() {
+        return jlSelectTile1;
+    }
+
+    public JLabel getJlSelectTile2() {
+        return jlSelectTile2;
+    }
+
+    public JLabel getJlTitle() {
+        return jlTitle;
+    }
+
+    public JPanel getJpBody() {
+        return jpBody;
+    }
+
+    public JPanel getJpFirstTile() {
+        return jpFirstTile;
+    }
+
+    public JPanel getJpGame() {
+        return jpGame;
+    }
+
+    public JPanel getJpOptions() {
+        return jpOptions;
+    }
+
+    public JPanel getJpTitle() {
+        return jpTitle;
+    }
+
+    public JSlider getJslideMatchPairs() {
+        return jslideMatchPairs;
+    }
+
+    public JTextArea getJtMatchStatus() {
+        return jtMatchStatus;
+    }
+
+    public JTextField getTxtMatch() {
+        return txtMatch;
+    }
+
+    public JTextField getTxtTile() {
+        return txtTile;
+    }
+
+    public void setDebug(Boolean debug) {
+        this.debug = debug;
+    }
+
+    public void setArrTiles1(int[] arrTiles1) {
+        this.arrTiles1 = arrTiles1;
+    }
+
+    public void setArrTiles2(int[] arrTiles2) {
+        this.arrTiles2 = arrTiles2;
+    }
+
+    public void setArrMatched(int[] arrMatched) {
+        this.arrMatched = arrMatched;
+    }
+
+    public void setT1_array_num(int t1_array_num) {
+        this.t1_array_num = t1_array_num;
+    }
+
+    public void setT2_array_num(int t2_array_num) {
+        this.t2_array_num = t2_array_num;
+    }
+
+    public void setT1_slider_position(int t1_slider_position) {
+        this.t1_slider_position = t1_slider_position;
+    }
+
+    public void setT2_slider_position(int t2_slider_position) {
+        this.t2_slider_position = t2_slider_position;
+    }
+
+    public void setT1_character(String t1_character) {
+        this.t1_character = t1_character;
+    }
+
+    public void setT2_character(String t2_character) {
+        this.t2_character = t2_character;
+    }
+
+    public void setMatchCount(int matchCount) {
+        this.matchCount = matchCount;
+    }
+
+    public void setMatch(String match) {
+        this.match = match;
+    }
+
+    public void setMismatch(String mismatch) {
+        this.mismatch = mismatch;
+    }
+
+    public void setCbDebug(JCheckBox cbDebug) {
+        this.cbDebug = cbDebug;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public void setjPanelMeh(JPanel jPanelMeh) {
+        this.jPanelMeh = jPanelMeh;
+    }
+
+    public void setjPanelMurray(JPanel jPanelMurray) {
+        this.jPanelMurray = jPanelMurray;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public void setjSlide1(JSlider jSlide1) {
+        this.jSlide1 = jSlide1;
+    }
+
+    public void setjSlide2(JSlider jSlide2) {
+        this.jSlide2 = jSlide2;
+    }
+
+    public void setJbClear(JButton jbClear) {
+        this.jbClear = jbClear;
+    }
+
+    public void setJbHelp(JButton jbHelp) {
+        this.jbHelp = jbHelp;
+    }
+
+    public void setJbQuit(JButton jbQuit) {
+        this.jbQuit = jbQuit;
+    }
+
+    public void setJlSelectTile1(JLabel jlSelectTile1) {
+        this.jlSelectTile1 = jlSelectTile1;
+    }
+
+    public void setJlSelectTile2(JLabel jlSelectTile2) {
+        this.jlSelectTile2 = jlSelectTile2;
+    }
+
+    public void setJlTitle(JLabel jlTitle) {
+        this.jlTitle = jlTitle;
+    }
+
+    public void setJpBody(JPanel jpBody) {
+        this.jpBody = jpBody;
+    }
+
+    public void setJpFirstTile(JPanel jpFirstTile) {
+        this.jpFirstTile = jpFirstTile;
+    }
+
+    public void setJpGame(JPanel jpGame) {
+        this.jpGame = jpGame;
+    }
+
+    public void setJpOptions(JPanel jpOptions) {
+        this.jpOptions = jpOptions;
+    }
+
+    public void setJpTitle(JPanel jpTitle) {
+        this.jpTitle = jpTitle;
+    }
+
+    public void setJslideMatchPairs(JSlider jslideMatchPairs) {
+        this.jslideMatchPairs = jslideMatchPairs;
+    }
+
+    public void setJtMatchStatus(JTextArea jtMatchStatus) {
+        this.jtMatchStatus = jtMatchStatus;
+    }
+
+    public void setTxtMatch(JTextField txtMatch) {
+        this.txtMatch = txtMatch;
+    }
+
+    public void setTxtTile(JTextField txtTile) {
+        this.txtTile = txtTile;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MainFrame other = (MainFrame) obj;
+        if (!Objects.equals(this.debug, other.debug)) {
+            return false;
+        }
+        if (!Arrays.equals(this.arrTiles1, other.arrTiles1)) {
+            return false;
+        }
+        if (!Arrays.equals(this.arrTiles2, other.arrTiles2)) {
+            return false;
+        }
+        if (!Arrays.equals(this.arrMatched, other.arrMatched)) {
+            return false;
+        }
+        if (this.t1_array_num != other.t1_array_num) {
+            return false;
+        }
+        if (this.t2_array_num != other.t2_array_num) {
+            return false;
+        }
+        if (this.t1_slider_position != other.t1_slider_position) {
+            return false;
+        }
+        if (this.t2_slider_position != other.t2_slider_position) {
+            return false;
+        }
+        if (!Objects.equals(this.t1_character, other.t1_character)) {
+            return false;
+        }
+        if (!Objects.equals(this.t2_character, other.t2_character)) {
+            return false;
+        }
+        if (this.matchCount != other.matchCount) {
+            return false;
+        }
+        if (!Objects.equals(this.match, other.match)) {
+            return false;
+        }
+        if (!Objects.equals(this.mismatch, other.mismatch)) {
+            return false;
+        }
+        if (!Objects.equals(this.cbDebug, other.cbDebug)) {
+            return false;
+        }
+        if (!Objects.equals(this.jPanel1, other.jPanel1)) {
+            return false;
+        }
+        if (!Objects.equals(this.jPanelMeh, other.jPanelMeh)) {
+            return false;
+        }
+        if (!Objects.equals(this.jPanelMurray, other.jPanelMurray)) {
+            return false;
+        }
+        if (!Objects.equals(this.jScrollPane1, other.jScrollPane1)) {
+            return false;
+        }
+        if (!Objects.equals(this.jbClear, other.jbClear)) {
+            return false;
+        }
+        if (!Objects.equals(this.jbHelp, other.jbHelp)) {
+            return false;
+        }
+        if (!Objects.equals(this.jbQuit, other.jbQuit)) {
+            return false;
+        }
+        if (!Objects.equals(this.jlSelectTile1, other.jlSelectTile1)) {
+            return false;
+        }
+        if (!Objects.equals(this.jlSelectTile2, other.jlSelectTile2)) {
+            return false;
+        }
+        if (!Objects.equals(this.jlTitle, other.jlTitle)) {
+            return false;
+        }
+        if (!Objects.equals(this.jpBody, other.jpBody)) {
+            return false;
+        }
+        if (!Objects.equals(this.jpFirstTile, other.jpFirstTile)) {
+            return false;
+        }
+        if (!Objects.equals(this.jpGame, other.jpGame)) {
+            return false;
+        }
+        if (!Objects.equals(this.jpOptions, other.jpOptions)) {
+            return false;
+        }
+        if (!Objects.equals(this.jpTitle, other.jpTitle)) {
+            return false;
+        }
+        if (!Objects.equals(this.jslideMatchPairs, other.jslideMatchPairs)) {
+            return false;
+        }
+        if (!Objects.equals(this.jtMatchStatus, other.jtMatchStatus)) {
+            return false;
+        }
+        if (!Objects.equals(this.txtMatch, other.txtMatch)) {
+            return false;
+        }
+        if (!Objects.equals(this.txtTile, other.txtTile)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "MainFrame{" + "debug=" + debug + ", arrTiles1=" + arrTiles1 + ", arrTiles2=" + arrTiles2 + ", arrMatched=" + arrMatched + ", t1_array_num=" + t1_array_num + ", t2_array_num=" + t2_array_num + ", t1_slider_position=" + t1_slider_position + ", t2_slider_position=" + t2_slider_position + ", t1_character=" + t1_character + ", t2_character=" + t2_character + ", matchCount=" + matchCount + ", match=" + match + ", mismatch=" + mismatch + ", cbDebug=" + cbDebug + ", jPanel1=" + jPanel1 + ", jPanelMeh=" + jPanelMeh + ", jPanelMurray=" + jPanelMurray + ", jScrollPane1=" + jScrollPane1 + ", jSlide1=" + jSlide1 + ", jSlide2=" + jSlide2 + ", jbClear=" + jbClear + ", jbHelp=" + jbHelp + ", jbQuit=" + jbQuit + ", jlSelectTile1=" + jlSelectTile1 + ", jlSelectTile2=" + jlSelectTile2 + ", jlTitle=" + jlTitle + ", jpBody=" + jpBody + ", jpFirstTile=" + jpFirstTile + ", jpGame=" + jpGame + ", jpOptions=" + jpOptions + ", jpTitle=" + jpTitle + ", jslideMatchPairs=" + jslideMatchPairs + ", jtMatchStatus=" + jtMatchStatus + ", txtMatch=" + txtMatch + ", txtTile=" + txtTile + '}';
+    }
     
-    public Boolean debug = false;
-    public int[] arrTiles1;
-    public int[] arrTiles2;
-    public String[] arrMatched;
-    public int t1, t2, t1p, t2p;
-    public String t1c, t2c;
+    private Boolean debug = false;
+    private int[] arrTiles1;
+    private int[] arrTiles2;
+    public int[] arrMatched;
+    private int t1_array_num, t2_array_num, t1_slider_position, t2_slider_position;
+    private String t1_character, t2_character;
+    private int matchCount = 0;
+    private String match = "match";
+    private String mismatch = "doh!";
     
     /**
      * Creates new form MainFrame
@@ -87,7 +492,9 @@ public class MainFrame extends javax.swing.JFrame {
         jlSelectTile1 = new javax.swing.JLabel();
         jlSelectTile2 = new javax.swing.JLabel();
         jPanelMeh = new javax.swing.JPanel();
+        txtMatches = new javax.swing.JTextField();
         jPanelMurray = new javax.swing.JPanel();
+        txtMatch = new javax.swing.JTextField();
         jpOptions = new javax.swing.JPanel();
         jslideMatchPairs = new javax.swing.JSlider();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -239,28 +646,42 @@ public class MainFrame extends javax.swing.JFrame {
 
         jPanelMeh.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        txtMatches.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txtMatches.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtMatches.setToolTipText("");
+        txtMatches.setBorder(null);
+        txtMatches.setEnabled(false);
+        txtMatches.setOpaque(false);
+
         javax.swing.GroupLayout jPanelMehLayout = new javax.swing.GroupLayout(jPanelMeh);
         jPanelMeh.setLayout(jPanelMehLayout);
         jPanelMehLayout.setHorizontalGroup(
             jPanelMehLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(txtMatches, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanelMehLayout.setVerticalGroup(
             jPanelMehLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(txtMatches, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
         );
 
         jPanelMurray.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        txtMatch.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txtMatch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtMatch.setToolTipText("");
+        txtMatch.setBorder(null);
+        txtMatch.setEnabled(false);
+        txtMatch.setOpaque(false);
 
         javax.swing.GroupLayout jPanelMurrayLayout = new javax.swing.GroupLayout(jPanelMurray);
         jPanelMurray.setLayout(jPanelMurrayLayout);
         jPanelMurrayLayout.setHorizontalGroup(
             jPanelMurrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(txtMatch, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanelMurrayLayout.setVerticalGroup(
             jPanelMurrayLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(txtMatch, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jpFirstTileLayout = new javax.swing.GroupLayout(jpFirstTile);
@@ -294,8 +715,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addComponent(jPanelMeh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtTile)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelMurray, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpFirstTileLayout.createSequentialGroup()
                         .addContainerGap()
@@ -303,7 +724,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(jSlide1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSlide2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jpFirstTileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlSelectTile1)
                             .addComponent(jlSelectTile2))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -313,7 +734,7 @@ public class MainFrame extends javax.swing.JFrame {
         jSlide1.getAccessibleContext().setAccessibleDescription("");
 
         jpOptions.setBackground(new java.awt.Color(204, 204, 204));
-        jpOptions.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "x pairs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(0, 0, 0)));
+        jpOptions.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "x pairs (new game)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(0, 0, 0)));
 
         jslideMatchPairs.setBackground(new java.awt.Color(204, 204, 204));
         jslideMatchPairs.setFont(new java.awt.Font("Verdana", 0, 10)); // NOI18N
@@ -371,8 +792,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpFirstTile, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
         );
 
         cbDebug.setBackground(new java.awt.Color(204, 204, 204));
@@ -479,70 +899,312 @@ public class MainFrame extends javax.swing.JFrame {
         }          
     }//GEN-LAST:event_jbHelpActionPerformed
 
-    public boolean tileMatch(int tile1, int arrTile1, int tile2, int arrTile2, String tile1c, String tile2c, int invoker)
+    public boolean tileMatch(int t1an, int t2an, int t1sp, int t2sp, String t1c, String t2c, int invoker)
     {
-        if (checkMatch(tile1c, tile2c))
+//tileMatch(getT1_array_num(), getT2_array_num(), getT1_slider_position(), getT2_slider_position(), getT1_character(), getT2_character(), 1);
+        
+        int tilePairs = jslideMatchPairs.getValue();
+        
+        //Check for nulls
+        if (t1c == null)
         {
             if (debug)
             {
-                jtMatchStatus.append("\n tileMatch: " + tile1 + "==" + tile2);
+                jtMatchStatus.append("\n tileMatch: Tile 1 is null (not chosen yet)");
             }
-            jtMatchStatus.append("\n Match!");
+            return false;
+        }
+                  
+        if (t2c == null)
+        {
+            if (debug)
+            {
+                jtMatchStatus.append("\n tileMatch: Tile 2 is null (not chosen yet)");
+            }
+            return false;
+        }
+        
+        //manual checking...
+        
+        
+        
+        //Check for matches
+        
+        if (t1c.equals(t2c))
+        {
+            if (debug)
+            {
+                jtMatchStatus.append("\n tileMatch: " + t1c + " matches " + t2c);
+            }
+
+            //if (checkMatch(t1sp, t2sp, invoker))
+            if (checkMatch2(t1c, t2c, invoker))
+            {
+                jtMatchStatus.append("\n" + match);
+                txtMatch.setText(match);
+                matchCount = matchCount + 1;
+                txtMatches.setText(matchCount + "");
+                checkMatchCount(tilePairs, matchCount);
+                return true;
+            }
+        }
+        else
+        {
+            if (debug)
+            {
+                jtMatchStatus.append("\n tileMatch: " + t1c + " does not match " + t2c);
+            }
+            // Mismatches not currently being displayed in log window without debug on.
+            //jtMatchStatus.append("\n Sorry, try again.");
+            return false;
+        }
+        //Default return = false
+        return false;
+    }
+    
+    public void checkMatchCount(int maxMatches, int numMatches)
+    {
+        if (debug)
+        {
+            jtMatchStatus.append("\n checkMatchCount: \n Maximum Matches: " + maxMatches + "\n Actual Matches: " + numMatches);
+        }
+        
+        txtMatches.setText(numMatches + "");
+        
+        if (numMatches == maxMatches)
+        {
+            txtMatch.setText("victory!");
+            clearGame();
+            //return true;
+        }
+        else
+        {
+            //return false;
+        }
+    }
+    
+    public void clearGame()
+    {
+        jSlide1.setEnabled(false);
+        jSlide2.setEnabled(false);
+        setMatchCount(0);
+        txtTile.setText(null);
+//        txtMatch.setText("");
+//        Arrays.fill(arrMatched, 99);
+//       Arrays.fill(arrTiles1, 0);
+//        Arrays.fill(arrTiles2, 0);
+        
+    }
+    
+    public boolean checkMatch(int t1sp, int t2sp, int invoker)
+    {
+        ASCII_Tiles t = new ASCII_Tiles();
+        int[] arrMatchedTiles = new int[2];
+        arrMatchedTiles[0] = t1sp;
+        arrMatchedTiles[1] = t2sp;
+        boolean passedCheck = false; //Assume false as default
+        
+        // Check both tiles
+        for (int a : arrMatchedTiles)
+        {
+            // Check against previously matched tiles
+            for (int m : arrMatched)
+            {
+                if (a == m)
+                {
+                    jtMatchStatus.append("\n Tile already matched: " + m);
+                    txtMatch.setText(mismatch);
+                    passedCheck = false;
+                }
+                else
+                {
+                    passedCheck = true;
+                }
+            }
+        }
+            
+        //Return if false/the tile has already been matched
+        if (!passedCheck)
+        {
+            return false;
+        }           
+
+// -- Exit if check fails -- //     
+
+/* *************************** */
+        
+// -- Since the match has been confirmed, add both tiles to the arrMatched array for future checks -- //
+        
+        //int a = 0;
+        String tilesChosen = null;
+        boolean added = false;
+  
+        // Add both tiles
+        for (int add : arrMatchedTiles)
+        {
+            // Check against previously matched tiles
+            for (int a = 0; a <= arrMatched.length - 1; a++)
+            {
+                if (arrMatched[a] == 99)
+                {
+                    try
+                    {
+                        arrMatched[a] = (add);
+                        tilesChosen = tilesChosen + "," + add;
+                        //a++;
+                        added = true;
+                        break;
+                    }
+                    catch (Exception x)
+                    {
+                        added = false;
+                        if (debug)
+                        {
+                            jtMatchStatus.append("\n checkMatch: " + x);                            
+                        }
+                    }
+                }
+                else
+                {
+                    //arrMatched[a] = 99;
+                    added = false;
+                }
+            }
+        }
+            
+        // Print list of matched tiles    
+        if (debug)
+        {
+            for (int e : arrMatched)
+            {
+//                if (e != -99)
+//                {
+                   jtMatchStatus.append("\n checkMatch: Matched Tile: " + e);
+//                }
+            }
+        }
+        
+        //Ensure values are written to array (they are being reset for some reason
+        try
+        {
+            //setArrMatched({tilesChosen.substring(1))};
+            //setArrMatched(arrMatched);
+        }
+        catch (Exception z)
+        {
+            
+        }
+        
+        //Return if false/the tile has already been matched
+        if (!added)
+        {
+            if (debug)
+            {
+                jtMatchStatus.append("\n checkMatch: Matches not successfully added to list of matched.");
+            }
+            return false;
+        }              
+            
+        //Default return: No match or re-matched
+        return false;
+    }
+    
+public boolean checkMatch2(String t1c, String t2c, int invoker)
+    {
+        ASCII_Tiles t = new ASCII_Tiles();
+        int[] arrMatchedTiles = new int[2];
+        boolean passedCheck = false; //Assume false as default
+        
+        //Return if false/the tile has already been matched
+        if (t1c.equals(t2c))
+        {
             return true;
         }
         else
         {
-            if (debug)
-            {
-                jtMatchStatus.append("\n tileMatch: " + tile1 + "!=" + tile2);
-            }
-            // Mismatches not currently being displayed
-            //jtMatchStatus.append("\n Sorry, try again.");
             return false;
         }
-    }
-    
-    public boolean checkMatch(String tile1, String tile2)
-    {
-        if (tile1 == tile2)
-        {
-            for (String m : arrMatched)
-            {
-                if (tile1 == m)
-                {
-                    jtMatchStatus.append("\n Tile already matched: " + m);
-                    return false;
-                }
-            }
-            
-            //Add to arrMatched array for future checks
-            int a = 0;
-            for (String m : arrMatched)
-            {
-                if (m == null)
-                {
-                    arrMatched[a] = tile1;
-                    a++;
-                    return true;
-                }
-                
-            }
-        }
-        else
-        {
-            return false;
-        }
+
+// -- Exit if check fails -- //     
+
+/* *************************** */
         
-        if (debug)
-        {
-            for (String e : arrMatched)
-            {
-                jtMatchStatus.append("\n Matched Tile: " + e);
-            }
-           
-        }
-        return false;
-    }
+// -- Since the match has been confirmed, add both tiles to the arrMatched array for future checks -- //
+        
+//        int a = 0;
+//        String tilesChosen = null;
+//        boolean added = false;
+//  
+//         Add both tiles
+//        for (int add : arrMatchedTiles)
+//        {
+//             Check against previously matched tiles
+//            for (int a = 0; a <= arrMatched.length - 1; a++)
+//            {
+//                if (arrMatched[a] == 99)
+//                {
+//                    try
+//                    {
+//                        arrMatched[a] = (add);
+//                        tilesChosen = tilesChosen + "," + add;
+//                        a++;
+//                        added = true;
+//                        break;
+//                    }
+//                    catch (Exception x)
+//                    {
+//                        added = false;
+//                        if (debug)
+//                        {
+//                            jtMatchStatus.append("\n checkMatch: " + x);                            
+//                        }
+//                    }
+//                }
+//                else
+//                {
+//                    arrMatched[a] = 99;
+//                    added = false;
+//                }
+//            }
+//        }
+//            
+//         Print list of matched tiles    
+//        if (debug)
+//        {
+//            for (int e : arrMatched)
+//            {
+//                if (e != -99)
+//                {
+//                   jtMatchStatus.append("\n checkMatch: Matched Tile: " + e);
+//                }
+//            }
+//        }
+//        
+//        Ensure values are written to array (they are being reset for some reason
+//        try
+//        {
+//            setArrMatched({tilesChosen.substring(1))};
+//            setArrMatched(arrMatched);
+//        }
+//        catch (Exception z)
+//        {
+//            
+//        }
+//        
+//        Return if false/the tile has already been matched
+//        if (!added)
+//        {
+//            if (debug)
+//            {
+//                jtMatchStatus.append("\n checkMatch: Matches not successfully added to list of matched.");
+//            }
+//            return false;
+//        }              
+//            
+//        Default return: No match or re-matched
+//        return false;
+    }    
+    
     
     public void setTileArrays1(int tilePairs)
     {
@@ -560,7 +1222,7 @@ public class MainFrame extends javax.swing.JFrame {
                 {
                     arr = arr + "," + e;
                 }
-                jtMatchStatus.append("\n setTileArrays1: " + arr);
+                jtMatchStatus.append("\n setTileArrays1: " + arr.substring(1));
             }
                     
         }
@@ -573,6 +1235,35 @@ public class MainFrame extends javax.swing.JFrame {
         }   
 
     }
+    
+    public void setTileArrays1(int tilePairs, boolean fixed)
+    {
+        try
+        {
+            ASCII_Tiles t = new ASCII_Tiles();
+            arrTiles1 = t.createTileArrays1(tilePairs, true);
+            
+            if (debug)
+            {
+                String arr = "";
+            
+                for (int e : arrTiles1)
+                {
+                    arr = arr + "," + e;
+                }
+                jtMatchStatus.append("\n setTileArrays1: " + arr.substring(1));
+            }
+                    
+        }
+        catch (Exception xx)
+        {
+            if (debug)
+            {
+                jtMatchStatus.append("\n setTileArrays1: " + xx.toString());
+            }
+        }   
+
+    }    
     
     public void setTileArrays2(int tilePairs2)
     {             
@@ -595,7 +1286,7 @@ public class MainFrame extends javax.swing.JFrame {
             {
                 arr2 = arr2 + "," + f;
             }
-            jtMatchStatus.append("\n setTileArrays2: " + arr2);
+            jtMatchStatus.append("\n setTileArrays2: " + arr2.substring(1));
         }         
 
         }
@@ -608,9 +1299,54 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
     }
-       
+
+    public void setTileArrays2(int tilePairs2, boolean fixed)
+    {             
+        try
+        {
+         // Second set of tiles, using the first set as the source: X / Chiasmus style... Meet in the middle!
+         int o = (tilePairs2 - 1);
+         arrTiles2 = new int[o + 1];
+         for (int e : arrTiles1)
+         {
+            arrTiles2[o] = e;
+            o--;
+         }
+         
+        if (debug)
+        {
+            String arr2 = "";
+            
+            for (int f : arrTiles2)
+            {
+                arr2 = arr2 + "," + f;
+            }
+            jtMatchStatus.append("\n setTileArrays2: " + arr2.substring(1));
+        }         
+
+        }
+        catch (Exception x)
+        {
+            if (debug)
+            {
+                jtMatchStatus.append("\n setTileArrays2: " + x.toString());
+            }
+        }
+
+    }
+    
+
     private void jslideMatchPairsStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jslideMatchPairsStateChanged
 
+        
+        // Clear previous values if clear method didn't work or fire)
+        setMatchCount(0);
+        txtMatches.setText("0");
+        txtMatch.setText(null);
+        txtTile.setText(null);
+        jtMatchStatus.setText(null);
+        
+        // Start new game
         int tilePairs = jslideMatchPairs.getValue();
         // Enable controls
         if (tilePairs >= 4)
@@ -640,11 +1376,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         ASCII_Tiles t = new ASCII_Tiles();
         //t.createTileArray(tilePairs * 2);      
-        setTileArrays1(tilePairs);
-        setTileArrays2(tilePairs);    
+        setTileArrays1(tilePairs, true);
+        setTileArrays2(tilePairs, true);    
         
         //Initialize arrMatched array
-        arrMatched = new String[tilePairs];
+        //arrMatched = new int[tilePairs * 2];
+        //Arrays.fill(arrMatched, 99);
 
     }//GEN-LAST:event_jslideMatchPairsStateChanged
 
@@ -661,13 +1398,15 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jSlide1MouseExited
 
     private void jSlide1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide1MouseReleased
+        
         ASCII_Tiles t = new ASCII_Tiles();
         try
         {
-            t1p = (jSlide1.getValue() - 1);
-            t1 = arrTiles1[t1p];
-            t1c = t.returnTile(t1);
-            txtTile.setText(t1c);
+            setT1_slider_position(jSlide1.getValue()); //Slider position minus one for array compatibility
+            setT1_array_num(arrTiles1[getT1_slider_position() - 1]); //Tile array value (not character value) pulled from the tile array
+            setT1_character(t.returnTile(getT1_array_num())); //Tile value
+            setT1_character(t.returnTile(getT1_array_num())); //Tile value
+            txtTile.setText(getT1_character());
         }
         catch (Exception x)
         {
@@ -681,11 +1420,19 @@ public class MainFrame extends javax.swing.JFrame {
         jtMatchStatus.setCaretPosition(jtMatchStatus.getDocument().getLength());
         
         //Check for matches
-        tileMatch(t1, t2, t1p, t2p, t1c, t2c, 1);
+        tileMatch(getT1_array_num(), getT2_array_num(), getT1_slider_position(), getT2_slider_position(), getT1_character(), getT2_character(), 1);        
         
         // Toggle sliders
-        jSlide1.setEnabled(false);
-        jSlide2.setEnabled(true);
+        if (txtMatch.getText() != "victory!")
+        {
+            jSlide1.setEnabled(false);
+            jSlide2.setEnabled(true);
+        }
+        else
+        {
+            jSlide1.setEnabled(false);
+            jSlide2.setEnabled(false);           
+        }
     }//GEN-LAST:event_jSlide1MouseReleased
 
     private void jSlide1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide1MouseDragged
@@ -693,14 +1440,15 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jSlide1MouseDragged
 
     private void jSlide2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSlide2MouseReleased
+        
         ASCII_Tiles t = new ASCII_Tiles();
         try
         {
-            int t2l = (arrTiles2.length + 1);
-            t2p = jSlide2.getValue() - t2l;
-            t2 = arrTiles2[t2p];
-            t2c = t.returnTile(t2);
-            txtTile.setText(t2c);
+            setT2_slider_position(jSlide2.getValue()); //Slider position minus one for array compatibility
+            int tilePairsPlus1 = jSlide1.getMaximum() + 1;
+            setT2_array_num(arrTiles2[getT2_slider_position() - tilePairsPlus1]); //Tile array value (not character value) pulled from the tile array
+            setT2_character(t.returnTile(getT2_array_num())); //Tile value
+            txtTile.setText(getT2_character());
         }
         catch (Exception x)
         {
@@ -714,11 +1462,19 @@ public class MainFrame extends javax.swing.JFrame {
         jtMatchStatus.setCaretPosition(jtMatchStatus.getDocument().getLength());
         
         //Check for matches
-        tileMatch(t1, t2, t1p, t2p, t1c, t2c, 2);
+        tileMatch(getT1_array_num(), getT2_array_num(), getT1_slider_position(), getT2_slider_position(), getT1_character(), getT2_character(), 1);
         
         // Toggle sliders
-        jSlide1.setEnabled(true);
-        jSlide2.setEnabled(false);
+        if (txtMatch.getText() != "victory!")
+        {
+            jSlide1.setEnabled(true);
+            jSlide2.setEnabled(false);
+        }
+        else
+        {
+            jSlide1.setEnabled(false);
+            jSlide2.setEnabled(false);           
+        }
     }//GEN-LAST:event_jSlide2MouseReleased
 
     private void cbDebugPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbDebugPropertyChange
@@ -734,7 +1490,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbClearActionPerformed
 
     private void jbClearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbClearMouseClicked
-        jtMatchStatus.setText("");
+        jtMatchStatus.setText(null);
     }//GEN-LAST:event_jbClearMouseClicked
 
     /**
@@ -792,6 +1548,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpTitle;
     private javax.swing.JSlider jslideMatchPairs;
     private javax.swing.JTextArea jtMatchStatus;
+    private javax.swing.JTextField txtMatch;
+    private javax.swing.JTextField txtMatches;
     private javax.swing.JTextField txtTile;
     // End of variables declaration//GEN-END:variables
 }
